@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ফি কাঠামো - দারুল হিকমাহ মডেল মাদ্রাসা, ফুলপুর, ময়মনসিংহ</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- মেইন স্টাইলশীট -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Fee page specific styles */
+        .fee-table th {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+        .fee-table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+        .fee-table tr:hover {
+            background-color: rgba(26, 35, 126, 0.05);
+        }
+        
+        .fee-card {
+            border: 2px solid var(--primary-color);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            transition: var(--transition-normal);
+            height: 100%;
+        }
+        
+        .fee-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .fee-card-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .fee-card-body {
+            padding: 20px;
+        }
+        
+        .fee-amount {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .fee-period {
+            color: var(--medium-gray);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .fee-features {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .fee-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .fee-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+        
+        .discount-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--accent-color);
+            color: var(--dark-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transform: rotate(15deg);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .payment-method {
+            text-align: center;
+            padding: 20px;
+            border: 2px dashed var(--primary-color);
+            border-radius: var(--border-radius-lg);
+            margin-bottom: 20px;
+            transition: var(--transition-normal);
+        }
+        
+        .payment-method:hover {
+            background-color: rgba(26, 35, 126, 0.05);
+            transform: scale(1.02);
+        }
+        
+        .payment-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .comparison-table {
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .fee-calculator {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: var(--border-radius-lg);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .calculator-result {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+        
+        .calculator-amount {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 10px 0;
+        }
+        
+        .installment-plan {
+            border-left: 4px solid var(--success-color);
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .waiver-card {
+            border: 2px solid var(--success-color);
+            border-radius: var(--border-radius-lg);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .waiver-icon {
+            font-size: 2rem;
+            color: var(--success-color);
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Top -->
+    <div class="header-top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <div class="madrasah-info">
+                        <i class="fas fa-school me-1"></i>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center datetime-info">
+                    <i class="fas fa-clock me-2"></i>
+                    <span id="currentTime"></span> | 
+                    <i class="fas fa-calendar ms-3 me-2"></i>
+                    <span id="currentDate"></span>
+                </div>
+                <div class="col-md-4 text-end">
+                    <a href="admission.html" class="online-admission-btn">
+                        <i class="fas fa-user-graduate me-2"></i>অনলাইন আবেদন
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <div class="logo-section">
+                        <img src="https://scontent.fdac202-1.fna.fbcdn.net/v/t39.30808-6/594437875_122155874504631183_6094808059214753320_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=669761&_nc_eui2=AeGkjCmetusz0yLGpP3NMQ1U7Q-MENJt2sbtD4wQ0m3axs_niYDW6LofwQZru2lgYtXnFKtcehd8zP6qFpBI0OHf&_nc_ohc=5rBq4hyYFQ4Q7kNvwHNrzIW&_nc_oc=AdmFCB5YouVzO--tXl_-VtnJ1K8tcVGZVpudzWlK9pPKkyY_QyqJdYlvC5i_kEdK-UM&_nc_zt=23&_nc_ht=scontent.fdac202-1.fna&_nc_gid=cj3MxcGrO73bNmQWFbmD5w&oh=00_Afs0tcNfcL3pPz20zjqL7r2hd4MbUP7TvBO7Ma9jNS6GTg&oe=6985BE61" alt="দারুল হিকমাহ মডেল মাদ্রাসার লোগো" class="logo-img">
+                        <div class="logo-text">
+                            <h1>দারুল হিকমাহ মডেল মাদ্রাসা</h1>
+                            <p>ফুলপুর, ময়মনসিংহ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="text-center">
+                        <h3 class="text-primary fw-bold mb-1">ইসলামী ব্যাংকের বিপরীত পার্শ্বে, ফুলপুর, ময়মনসিংহ</h3>
+                        <p class="text-muted mb-0">আধুনিক শিক্ষা ও ইসলামী মূল্যবোধের সমন্বয়ে গড়ে উঠেছে একটি আদর্শ শিক্ষাপ্রতিষ্ঠান</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Notice Section -->
+    <section class="notice-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-2 col-lg-1">
+                    <div class="notice-label">নোটিশঃ</div>
+                </div>
+                <div class="col-md-10 col-lg-11">
+                    <div class="notice-marquee">
+                        <div class="notice-content">
+                            <span class="notice-item"><a href="#"><i class="fas fa-money-bill-wave me-1"></i>বার্ষিক ফি একসাথে জমা দিলে ১০% ছাড়!</a></span>
+                            <span class="notice-separator">||</span>
+                            <span class="notice-item"><a href="#"><i class="fas fa-calendar-alt me-1"></i>নভেম্বর মাসের ফি জমার শেষ তারিখ ১০ নভেম্বর</a></span>
+                            <span class="notice-separator">||</span>
+                            <span class="notice-item"><a href="#"><i class="fas fa-percentage me-1"></i>ভাই-বোন একসাথে পড়লে বিশেষ ছাড়</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark main-nav">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> হোম</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-info-circle me-1"></i> পরিচিতি
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="about.html"><i class="fas fa-eye me-2"></i>এক নজরে মাদ্রাসা</a></li>
+                            <li><a class="dropdown-item" href="about.html#principal"><i class="fas fa-quote-left me-2"></i>প্রধান শিক্ষকের বাণী</a></li>
+                            <li><a class="dropdown-item" href="about.html#history"><i class="fas fa-history me-2"></i>প্রতিষ্ঠার ইতিহাস</a></li>
+                            <li><a class="dropdown-item" href="about.html#mission"><i class="fas fa-bullseye me-2"></i>লক্ষ্য ও উদ্দেশ্য</a></li>
+                            <li><a class="dropdown-item" href="about.html#teachers"><i class="fas fa-chalkboard-teacher me-2"></i>শিক্ষকমণ্ডলী</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-graduation-cap me-1"></i> একাডেমিক
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="departments.html"><i class="fas fa-school me-2"></i>বিভাগসমূহ</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-book me-2"></i>পাঠ্যক্রম</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-calendar-alt me-2"></i>ক্লাস রুটিন</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-file-alt me-2"></i>পরীক্ষা ব্যবস্থা</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line me-2"></i>ফলাফল</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admission.html"><i class="fas fa-user-graduate me-1"></i> ভর্তি তথ্য</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="fee.html"><i class="fas fa-money-bill-wave me-1"></i> ফি কাঠামো</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="facilities.html"><i class="fas fa-tools me-1"></i> সুবিধাসমূহ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html"><i class="fas fa-images me-1"></i> গ্যালারি</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html"><i class="fas fa-phone-alt me-1"></i> যোগাযোগ</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="admission.html" class="btn btn-outline-light btn-sm me-2">
+                        <i class="fas fa-user-graduate me-1"></i>ভর্তি হোন
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h2 class="page-title">ফি কাঠামো ২০২৬</h2>
+                    <p class="lead">দারুল হিকমাহ মডেল মাদ্রাসার ফি কাঠামো সম্পূর্ণ স্বচ্ছ ও যুক্তিসঙ্গত। শিক্ষার মান বজায় রেখে আমরা মধ্যবিত্ত পরিবারের সাধ্যমত ফি নির্ধারণ করেছি। বিশেষ অফার ও ছাড়ের ব্যবস্থা রয়েছে।</p>
+                </div>
+            </div>
+            <!-- Fee Structure for General Section -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="card border-primary">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0"><i class="fas fa-graduation-cap me-2"></i>সাধারণ বিভাগের ফি কাঠামো (মাসিক)</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered fee-table">
+                                    <thead>
+                                        <tr>
+                                            <th>শ্রেণি</th>
+                                            <th>মাসিক বেতন</th>
+                                            <th>পরীক্ষা ফি</th>
+                                            <th>মোট মাসিক</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>প্লে</td>
+                                            <td>৭০০ টাকা</td>
+                                            <td>1৫০ টাকা</td>
+                                            <td><strong>৭০০ টাকা</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>নার্সারি</td>
+                                            <td>৭০০ টাকা</td>
+                                            <td>1৫০ টাকা</td>
+                                            <td><strong>৭০০ টাকা</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>প্রথম শ্রেণি</td>
+                                            <td>৮০০ টাকা</td>
+                                            <td>২০০ টাকা</td>
+                                            <td><strong>৮০০ টাকা</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>দ্বিতীয় শ্রেণি</td>
+                                            <td>৮০০ টাকা</td>
+                                            <td>২০০ টাকা</td>
+                                            <td><strong>৮০০ টাকা</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>তৃতীয় শ্রেণি</td>
+                                            <td>1০০০ টাকা</td>
+                                            <td>২০০ টাকা</td>
+                                            <td><strong>১,০০০ টাকা</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>চতুর্থ শ্রেণি</td>
+                                            <td>1০০০ টাকা</td>
+                                            <td>২০০ টাকা</td>
+                                            <td><strong>১,০০০ টাকা</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>পঞ্চম শ্রেণি</td>
+                                            <td>1০০০ টাকা</td>
+                                            <td>২০০ টাকা</td>
+                                            <td><strong>১,০০০ টাকা</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ষষ্ঠ শ্রেণি</td>
+                                            <td>1০০০ টাকা</td>
+                                            <td>1০০ টাকা</td>
+                                            <td><strong>১,০০০ টাকা</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="alert alert-info mt-3">
+                                <i class="fas fa-info-circle me-2"></i><strong>   </strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fee Structure for Islamic Studies -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="card border-success">
+                        <div class="card-header bg-success text-white">
+                            <h4 class="mb-0"><i class="fas fa-book-quran me-2"></i>ইসলামী শিক্ষা বিভাগের ফি কাঠামো (মাসিক)</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3 mb-4">
+                                    <div class="fee-card">
+                                        <div class="fee-card-header">
+                                            <h5 class="mb-0">নূরানী বিভাগ(আবাসিক)</h5>
+                                        </div>
+                                        <div class="fee-card-body">
+                                            <div class="fee-amount">২০০০ টাকা</div>
+                                            <div class="fee-period">বেতন প্রতি মাসে</div>
+                                            <ul class="fee-features">
+                                                <li>খাবার: ৩,৫০০ টাকা</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-3 mb-4">
+                                    <div class="fee-card">
+                                        <div class="fee-card-header">
+                                            <h5 class="mb-0">নাযেরা বিভাগ(আবাসিক)</h5>
+                                        </div>
+                                        <div class="fee-card-body">
+                                            <div class="fee-amount">২০০০ টাকা</div>
+                                            <div class="fee-period">বেতন প্রতি মাসে</div>
+                                            <ul class="fee-features">
+                                                <li>খাবার: ৩,৫০০ টাকা</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-3 mb-4">
+                                    <div class="fee-card">
+                                        <div class="fee-card-header">
+                                            <h5 class="mb-0">হিফয (আবাসিক)</h5>
+                                        </div>
+                                        <div class="fee-card-body">
+                                            <div class="fee-amount">২০০০ টাকা</div>
+                                            <div class="fee-period">বেতন প্রতি মাসে</div>
+                                            <ul class="fee-features">
+                                                <li>খাবার: ৩,৫০০ টাকা</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-3 mb-4">
+                                    <div class="fee-card">
+                                        <div class="discount-badge"></div>
+                                        <div class="fee-card-header">
+                                            <h5 class="mb-0">হিফয (আবাসিক)</h5>
+                                        </div>
+                                        <div class="fee-card-body">
+                                            <div class="fee-amount">৫,৫০০ টাকা</div>
+                                            <div class="fee-period">প্রতি মাসে</div>
+                                            <ul class="fee-features">
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="alert alert-info mt-3">
+                                <i class="fas fa-info-circle me-2"></i><strong>দ্রষ্টব্য:</strong>হিফয বিভাগের ফিতে থাকা, খাওয়া, পড়াশোনার সকল সুবিধা, স্বাস্থ্যসেবা ও অন্যান্য সুযোগ-সুবিধা অন্তর্ভুক্ত।
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- One Time Fees & Discounts -->
+            <div class="row mb-5">
+                <div class="col-md-6">
+                    <div class="card h-100 border-warning">
+                        <div class="card-header bg-warning">
+                            <h4 class="mb-0"><i class="fas fa-file-invoice-dollar me-2"></i>এককালীন ফিসমূহ</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>ফির ধরন</th>
+                                            <th>পরিমাণ</th>
+                                            <th>মন্তব্য</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>ভর্তি ফি</td>
+                                            <td>৪,০০০ টাকা</td>
+                                            <td>শুধুমাত্র নতুন ভর্তির ক্ষেত্রে</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ডায়েরি বাবদ</td>
+                                            <td> 1৫০ টাকা</td>
+                                            <td>প্রতিবছর নবায়নযোগ্য</td>
+                                        </tr>
+                                        <tr>
+                                            <td>আইডি কার্ড ফি</td>
+                                            <td>1৫০ টাকা</td>
+                                            <td>প্রতি শিক্ষাবর্ষে</td>
+                                        </tr>
+                                        <tr>
+                                            <td>সাংস্কৃতিক কার্যক্রম ফি</td>
+                                            <td>২০০ টাকা</td>
+                                            <td>বছরে একবার</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card h-100 border-success">
+                        <div class="card-header bg-success text-white">
+                            <h4 class="mb-0"><i class="fas fa-percentage me-2"></i>ছাড়ের ব্যবস্থা</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="text-primary mb-3">যেসব ক্ষেত্রে ছাড় প্রদান করা হয়:</h5>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <div class="waiver-card">
+                                        <div class="waiver-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <h6>ভাই-বোন ছাড়</h6>
+                                        <p class="mb-0">দ্বিতীয় শিশুর জন্য ২০% ছাড়, তৃতীয় শিশুর জন্য ৩০% ছাড়</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <div class="waiver-card">
+                                        <div class="waiver-icon">
+                                            <i class="fas fa-graduation-cap"></i>
+                                        </div>
+                                        <h6>এতিম ও গরিব মেধাবী</h6>
+                                        <p class="mb-0">৫০% থেকে 1০০% পর্যন্ত ছাড়</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <div class="waiver-card">
+                                        <div class="waiver-icon">
+                                            <i class="fas fa-calendar-check"></i>
+                                        </div>
+                                        <h6>সময়মতো ফি জমা</h6>
+                                        <p class="mb-0">মাসের প্রথম 1০ তারিখের মধ্যে ফি জমা দিতে হবে</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <div class="waiver-card">
+                                        <div class="waiver-icon">
+                                            <i class="fas fa-money-bill-wave"></i>
+                                        </div>
+                                        <h6>বার্ষিক ফি</h6>
+                                        <p class="mb-0">বার্ষিক ফি একসাথে জমা দিলে 1০% ছাড়</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="alert alert-warning mt-3">
+                                <i class="fas fa-exclamation-triangle me-2"></i><strong>ছাড়ের জন্য আবেদন:</strong> ছাড়ের জন্য সংশ্লিষ্ট কাগজপত্রসহ প্রধান শিক্ষকের কাছে আবেদন করতে হবে। কমিটির সিদ্ধান্ত চূড়ান্ত।
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Payment Methods -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="card border-info">
+                        <div class="card-header bg-info text-white">
+                            <h4 class="mb-0"><i class="fas fa-credit-card me-2"></i>ফি জমার পদ্ধতি</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4 mb-4">
+                                    <div class="payment-method">
+                                        <div class="payment-icon">
+                                            <i class="fas fa-money-bill-wave"></i>
+                                        </div>
+                                        <h5>নগদ জমা</h5>
+                                        <p class="mb-2">সরাসরি মাদ্রাসা অফিসে এসে নগদ ফি জমা দিন। রসিদ সংগ্রহ করে রাখুন।</p>
+                                        <p class="mb-0"><strong>সময়:</strong> শনি-বৃহঃ সকাল ৯টা - রাত ৯টা</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4 mb-4">
+                                    <div class="payment-method">
+                                        <div class="payment-icon">
+                                            <i class="fas fa-university"></i>
+                                        </div>
+                                        <h5>ব্যাংক ডিপোজিট</h5>
+                                        <p class="mb-2">ইসলামী ব্যাংক বাংলাদেশ লিমিটেড, ফুলপুর শাখা</p>
+                                        <p class="mb-0"><strong>একাউন্ট নম্বর:</strong><br>(পরবর্তিতে যোগ করা হবে)</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4 mb-4">
+                                    <div class="payment-method">
+                                        <div class="payment-icon">
+                                            <i class="fas fa-mobile-alt"></i>
+                                        </div>
+                                        <h5>মোবাইল ব্যাংকিং</h5>
+                                        <p class="mb-2">bKash, Nagad  - নম্বর</p>
+                                        <p class="mb-0"><strong>নাম্বার:</strong> 01728517544<br><strong>নাম:</strong> Darul Hikmah Madrasah</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="alert alert-danger mt-3">
+                                <i class="fas fa-exclamation-circle me-2"></i><strong>সতর্কতা:</strong> ফি জমার পর অবশ্যই রসিদ সংগ্রহ করুন। অনলাইন/মোবাইল পেমেন্টের পর স্ক্রিনশট সংরক্ষণ করুন এবং সেটি অফিসে দেখিয়ে রসিদ সংগ্রহ করুন।
+                            </div>
+                            
+                            <div class="installment-plan">
+                                <h5 class="text-primary mb-3"><i class="fas fa-calendar-day me-2"></i>কিস্তিতে ফি জমার সুবিধা</h5>
+                                <p>যেসব অভিভাবক একসাথে সম্পূর্ণ ফি জমা দিতে অসুবিধা বোধ করেন, তাদের জন্য আমরা কিস্তিতে ফি জমার সুবিধা প্রদান করি। কিস্তি পরিকল্পনা:</p>
+                                <ul>
+                                    <li><strong>ত্রৈমাসিক পরিকল্পনা:</strong> তিন কিস্তিতে সম্পূর্ণ ফি জমা দেওয়া যাবে</li>
+                                    <li><strong>ষান্মাসিক পরিকল্পনা:</strong> দুই কিস্তিতে সম্পূর্ণ ফি জমা দেওয়া যাবে</li>
+                                    <li><strong>বিশেষ প্রয়োজনে:</strong> প্রধান শিক্ষকের অনুমতি সাপেক্ষে আরও কিস্তিতে ফি জমা দেওয়া যাবে</li>
+                                </ul>
+                                <p class="mb-0">কিস্তি পরিকল্পনার জন্য অফিসে যোগাযোগ করুন।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contact for Fee -->
+            <div class="text-center py-5 bg-light rounded">
+                <h4 class="text-primary mb-3">ফি সংক্রান্ত যেকোনো তথ্যের জন্য যোগাযোগ করুন</h4>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 border rounded">
+                            <i class="fas fa-phone-alt fa-2x text-primary mb-3"></i>
+                            <h6>ফোন নম্বর</h6>
+                            <p class="mb-0">০1৭২৮-৫1৭৫৪৪ (অ্যাকাউন্টস)</p>
+                            <p class="mb-0">০1৯৭০-৫1৭৫৬৬ (অফিস)</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 border rounded">
+                            <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
+                            <h6>ইমেইল ঠিকানা</h6>
+                            <p class="mb-0">darulhikmahphulpur2025@gmail.com</p>
+                            <p class="mb-0">darulhikmahphulpur2025@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 border rounded">
+                            <i class="fas fa-clock fa-2x text-primary mb-3"></i>
+                            <h6>ফি জমার সময়</h6>
+                            <p class="mb-0">শনি-বৃহস্পতিবার: সকাল ১০টা - রাত ৯টা</p>
+                            <p class="mb-0">শুক্রবার: সন্ধার পর</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <a href="contact.html" class="btn btn-primary btn-lg me-3">
+                        <i class="fas fa-address-book me-2"></i>যোগাযোগের তথ্য
+                    </a>
+                    <a href="admission.html" class="btn btn-success btn-lg">
+                        <i class="fas fa-user-graduate me-2"></i>ভর্তি সংক্রান্ত তথ্য
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <h4>দারুল হিকমাহ মডেল মাদ্রাসা</h4>
+                    <p class="mt-3">আধুনিক শিক্ষা ও ইসলামী মূল্যবোধের সমন্বয়ে গড়ে উঠেছে একটি আদর্শ শিক্ষাপ্রতিষ্ঠান। ২০২৫ সাল থেকে ফুলপুর, ময়মনসিংহে শিক্ষার আলো ছড়িয়ে দিচ্ছি।</p>
+                    <div class="social-links mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-youtube fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>গুরুত্বপূর্ণ লিংক</h4>
+                    <div class="footer-links mt-3">
+                        <a href="index.html"><i class="fas fa-chevron-right me-2"></i>হোম</a>
+                        <a href="about.html"><i class="fas fa-chevron-right me-2"></i>আমাদের সম্পর্কে</a>
+                        <a href="departments.html"><i class="fas fa-chevron-right me-2"></i>বিভাগসমূহ</a>
+                        <a href="admission.html"><i class="fas fa-chevron-right me-2"></i>ভর্তি তথ্য</a>
+                        <a href="fee.html"><i class="fas fa-chevron-right me-2"></i>ফি কাঠামো</a>
+                        <a href="facilities.html"><i class="fas fa-chevron-right me-2"></i>সুবিধাসমূহ</a>
+                        <a href="gallery.html"><i class="fas fa-chevron-right me-2"></i>গ্যালারি</a>
+                        <a href="contact.html"><i class="fas fa-chevron-right me-2"></i>যোগাযোগ</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>যোগাযোগ</h4>
+                    <div class="mt-3">
+                        <p><i class="fas fa-map-marker-alt me-2"></i>ইসলামী ব্যাংকের বিপরীত পার্শ্বে, ফুলপুর, ময়মনসিংহ</p>
+                        <p><i class="fas fa-phone me-2"></i>০১৯৭০-৫১৭৫৬৬ (প্রধান শিক্ষক)</p>
+                        <p><i class="fas fa-phone me-2"></i>০১৯৭০-৫১৭৫৬৭ (অফিস সহকারী)</p>
+                        <p><i class="fas fa-envelope me-2"></i>darulhikmahphulpur2025@gmail.com</p>
+                        <p><i class="fas fa-clock me-2"></i>অফিস সময়: শনি-বৃহঃ সকাল ৯টা - রাত ৯টা</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; © ২০২৪ দারুল হিকমাহ মডেল মাদ্রাসা, ফুলপুর, ময়মনসিংহ। সকল অধিকার সংরক্ষিত।</p>
+                <p class="mb-0">ডিজাইন ও ডেভেলপমেন্ট: আব্দুল্লাহ ফাহিম</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="tel:01970517566" class="floating-btn call">
+            <i class="fas fa-phone"></i>
+            <span class="floating-btn-tooltip">কল করুন</span>
+        </a>
+        <a href="https://wa.me/8801970517566" class="floating-btn whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="floating-btn-tooltip">WhatsApp</span>
+        </a>
+        <a href="#calculator" class="floating-btn email" onclick="scrollToCalculator()">
+            <i class="fas fa-calculator"></i>
+            <span class="floating-btn-tooltip">ফি ক্যালকুলেটর</span>
+        </a>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn btn-primary" style="position: fixed; bottom: 100px; right: 30px; z-index: 1000; display: none;">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Current Date and Time
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            let ampm = hours >= 12 ? 'PM' : 'AM';
+            
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            
+            const timeString = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+            const dateString = now.toLocaleDateString('bn-BD', options);
+            
+            document.getElementById('currentTime').textContent = timeString;
+            document.getElementById('currentDate').textContent = dateString;
+        }
+        
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+        
+        // Fee Calculator
+        function calculateFee() {
+            const classSelect = document.getElementById('studentClass');
+            const transportSelect = document.getElementById('transportOption');
+            const discountSelect = document.getElementById('discountOption');
+            const lunchCheckbox = document.getElementById('lunchOption');
+            const computerCheckbox = document.getElementById('computerOption');
+            
+            // Base fees for different classes
+            const feeStructure = {
+                'play': 750,
+                'nursery': 800,
+                'class1': 1050,
+                'class2': 1100,
+                'class3': 1250,
+                'class4': 1300,
+                'class5': 1550,
+                'class6': 1650,
+                'noorani': 800,
+                'nazera': 1100,
+                'hifz_nonres': 1600,
+                'hifz_res': 3300
+            };
+            
+            // Transport fees
+            const transportFees = {
+                'no': 0,
+                'mymensingh': 1200,
+                'phulpur': 800,
+                'valuka': 1000,
+                'haluaghat': 1500
+            };
+            
+            // Discount percentages
+            const discounts = {
+                'none': 0,
+                'sibling': 20,
+                'early': 5,
+                'annual': 10
+            };
+            
+            // Calculate base fee
+            let baseFee = feeStructure[classSelect.value] || 0;
+            
+            // Add transport fee
+            let transportFee = transportFees[transportSelect.value] || 0;
+            
+            // Add additional fees
+            let additionalFees = 0;
+            if (lunchCheckbox.checked) additionalFees += 500;
+            if (computerCheckbox.checked) additionalFees += 200;
+            
+            // Calculate total before discount
+            let totalBeforeDiscount = baseFee + transportFee + additionalFees;
+            
+            // Apply discount
+            let discountPercent = discounts[discountSelect.value] || 0;
+            let discountAmount = (totalBeforeDiscount * discountPercent) / 100;
+            let totalFee = totalBeforeDiscount - discountAmount;
+            
+            // Add development and IT fees (200 + 100 = 300)
+            totalFee += 300;
+            
+            // Display result
+            const resultDiv = document.getElementById('calculatorResult');
+            const totalFeeElement = document.getElementById('totalFee');
+            
+            totalFeeElement.textContent = Math.round(totalFee) + ' টাকা';
+            resultDiv.style.display = 'block';
+            
+            // Scroll to result
+            resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        function printFeeDetails() {
+            const printContent = `
+                <div style="font-family: 'Hind Siliguri', sans-serif; padding: 20px;">
+                    <h2 style="text-align: center; color: #1a237e;">দারুল হিকমাহ মডেল মাদ্রাসা</h2>
+                    <h3 style="text-align: center; color: #0d47a1;">ফি হিসাব বিবরণ</h3>
+                    <hr>
+                    <p><strong>তারিখ:</strong> ${new Date().toLocaleDateString('bn-BD')}</p>
+                    <p><strong>শ্রেণি/বিভাগ:</strong> ${document.getElementById('studentClass').options[document.getElementById('studentClass').selectedIndex].text}</p>
+                    <p><strong>পরিবহন:</strong> ${document.getElementById('transportOption').options[document.getElementById('transportOption').selectedIndex].text}</p>
+                    <p><strong>ছাড়:</strong> ${document.getElementById('discountOption').options[document.getElementById('discountOption').selectedIndex].text}</p>
+                    <h4 style="text-align: center; margin: 20px 0; color: #1a237e;">মোট মাসিক ফি: ${document.getElementById('totalFee').textContent}</h4>
+                    <hr>
+                    <p style="font-size: 12px; text-align: center; margin-top: 30px;">
+                        দারুল হিকমাহ মডেল মাদ্রাসা, ফুলপুর, ময়মনসিংহ<br>
+                        ফোন: ০১৯৭০-৫১৭৫৬৬ | ইমেইল: darulhikmahphulpur2025@gmail.com
+                    </p>
+                </div>
+            `;
+            
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(printContent);
+            printWindow.document.close();
+            printWindow.focus();
+            printWindow.print();
+        }
+        
+        function scrollToCalculator() {
+            document.querySelector('.fee-calculator').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Active navigation highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            
+            navLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                
+                if (currentPage === 'fee.html') {
+                    if (linkHref === 'fee.html') {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                }
+            });
+            
+            // Pause notice marquee on hover
+            const noticeMarquee = document.querySelector('.notice-content');
+            if (noticeMarquee) {
+                noticeMarquee.addEventListener('mouseenter', function() {
+                    this.style.animationPlayState = 'paused';
+                });
+                
+                noticeMarquee.addEventListener('mouseleave', function() {
+                    this.style.animationPlayState = 'running';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সুবিধাসমূহ - দারুল হিকমাহ মডেল মাদ্রাসা, ফুলপুর, ময়মনসিংহ</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- মেইন স্টাইলশীট -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Facilities page specific styles */
+        .facility-category {
+            margin-bottom: 50px;
+        }
+        
+        .category-header {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .category-header::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .facility-detail-card {
+            border: none;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition-normal);
+            height: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .facility-detail-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .facility-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .facility-detail-body {
+            padding: 25px;
+        }
+        
+        .facility-features {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+        
+        .facility-features li {
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .facility-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+        
+        .facility-stats {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: var(--border-radius-lg);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .equipment-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .equipment-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .equipment-quantity {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .safety-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .badge-success {
+            background-color: rgba(46, 125, 50, 0.1);
+            color: var(--success-color);
+            border: 1px solid var(--success-color);
+        }
+        
+        .badge-warning {
+            background-color: rgba(245, 124, 0, 0.1);
+            color: var(--warning-color);
+            border: 1px solid var(--warning-color);
+        }
+        
+        .badge-info {
+            background-color: rgba(2, 136, 209, 0.1);
+            color: var(--info-color);
+            border: 1px solid var(--info-color);
+        }
+        
+        .infrastructure-map {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .map-legend {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+            margin-right: 10px;
+        }
+        
+        .transport-table {
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .transport-table th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .transport-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .transport-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .facility-comparison {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: var(--border-radius-lg);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .comparison-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .comparison-item:last-child {
+            border-bottom: none;
+        }
+        
+        .comparison-status {
+            font-weight: bold;
+        }
+        
+        .status-available {
+            color: var(--success-color);
+        }
+        
+        .status-unavailable {
+            color: var(--danger-color);
+        }
+        
+        .status-partial {
+            color: var(--warning-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Top -->
+    <div class="header-top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <div class="madrasah-info">
+                        <i class="fas fa-school me-1"></i> 
+                    </div>
+                </div>
+                <div class="col-md-4 text-center datetime-info">
+                    <i class="fas fa-clock me-2"></i>
+                    <span id="currentTime"></span> | 
+                    <i class="fas fa-calendar ms-3 me-2"></i>
+                    <span id="currentDate"></span>
+                </div>
+                <div class="col-md-4 text-end">
+                    <a href="admission.html" class="online-admission-btn">
+                        <i class="fas fa-user-graduate me-2"></i>অনলাইন আবেদন
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <div class="logo-section">
+                        <img src="https://scontent.fdac202-1.fna.fbcdn.net/v/t39.30808-1/465864294_3887613201505139_5546741385621062236_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=104&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeEISxw_14mdWAa5JvgouYvn9BsHlc6WOBr0GweVzpY4GpIezgTB_LL3jkdxc9vAH74Q44jkVC_heL1tw20iec6I&_nc_ohc=dQiqPWHTA6UQ7kNvwFS5nyS&_nc_oc=AdkutGlH9Yl7CxhgWBWmWXlk-TTOTDPBJ3d30VIQ7LyokX26pn2dLb3vjdDkSatgbmc&_nc_zt=24&_nc_ht=scontent.fdac202-1.fna&_nc_gid=5yA3FXf-DoEFpvaLyBg5hg&oh=00_AfvlMQjbnPxnbX6MhrTNHJVV3mwNcx35CN3GmgGTa6O7QA&oe=6985EEAA" alt="দারুল হিকমাহ মডেল মাদ্রাসার লোগো" class="logo-img">
+                        <div class="logo-text">
+                            <h1>দারুল হিকমাহ মডেল মাদ্রাসা</h1>
+                            <p>ফুলপুর, ময়মনসিংহ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="text-center">
+                        <h3 class="text-primary fw-bold mb-1">ইসলামী ব্যাংকের বিপরীত পার্শ্বে, ফুলপুর, ময়মনসিংহ</h3>
+                        <p class="text-muted mb-0">আধুনিক শিক্ষা ও ইসলামী মূল্যবোধের সমন্বয়ে গড়ে উঠেছে একটি আদর্শ শিক্ষাপ্রতিষ্ঠান</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Notice Section -->
+    <section class="notice-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-2 col-lg-1">
+                    <div class="notice-label">নোটিশঃ</div>
+                </div>
+                <div class="col-md-10 col-lg-11">
+                    <div class="notice-marquee">
+                        <div class="notice-content">
+                            <span class="notice-item"><a href="#"><i class="fas fa-wifi me-1"></i>নতুন হাই-স্পিড ইন্টারনেট সংযোগ চালু</a></span>
+                            <span class="notice-separator">||</span>
+                            <span class="notice-item"><a href="#"><i class="fas fa-book me-1"></i>লাইব্রেরিতে ৫০০ নতুন বই সংযোজন</a></span>
+                            <span class="notice-separator">||</span>
+                            <span class="notice-item"><a href="#"><i class="fas fa-bus me-1"></i></a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark main-nav">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> হোম</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-info-circle me-1"></i> পরিচিতি
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="about.html"><i class="fas fa-eye me-2"></i>এক নজরে মাদ্রাসা</a></li>
+                            <li><a class="dropdown-item" href="about.html#principal"><i class="fas fa-quote-left me-2"></i>প্রধান শিক্ষকের বাণী</a></li>
+                            <li><a class="dropdown-item" href="about.html#history"><i class="fas fa-history me-2"></i>প্রতিষ্ঠার ইতিহাস</a></li>
+                            <li><a class="dropdown-item" href="about.html#mission"><i class="fas fa-bullseye me-2"></i>লক্ষ্য ও উদ্দেশ্য</a></li>
+                            <li><a class="dropdown-item" href="about.html#teachers"><i class="fas fa-chalkboard-teacher me-2"></i>শিক্ষকমণ্ডলী</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-graduation-cap me-1"></i> একাডেমিক
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="departments.html"><i class="fas fa-school me-2"></i>বিভাগসমূহ</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-book me-2"></i>পাঠ্যক্রম</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-calendar-alt me-2"></i>ক্লাস রুটিন</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-file-alt me-2"></i>পরীক্ষা ব্যবস্থা</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line me-2"></i>ফলাফল</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admission.html"><i class="fas fa-user-graduate me-1"></i> ভর্তি তথ্য</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="fee.html"><i class="fas fa-money-bill-wave me-1"></i> ফি কাঠামো</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="facilities.html"><i class="fas fa-tools me-1"></i> সুবিধাসমূহ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html"><i class="fas fa-images me-1"></i> গ্যালারি</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html"><i class="fas fa-phone-alt me-1"></i> যোগাযোগ</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="gallery.html" class="btn btn-outline-light btn-sm">
+                        <i class="fas fa-images me-1"></i>ফটো গ্যালারি
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h2 class="page-title">আমাদের সুবিধাসমূহ</h2>
+                    <p class="lead">দারুল হিকমাহ মডেল মাদ্রাসায় শিক্ষার্থীদের সর্বোত্তম শিক্ষা নিশ্চিত করতে আধুনিক সকল সুযোগ-সুবিধা বিদ্যমান। নিরাপদ পরিবেশ, আধুনিক অবকাঠামো ও প্রয়োজনীয় সকল সুবিধা শিক্ষার্থীদের জন্য সংযোজন করা হয়েছে।</p>
+                </div>
+            </div>
+            
+            <!-- Stats Overview -->
+            <div class="row mb-5">
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="facility-stats">
+                        <span class="stat-number">২ তলা</span>
+                        <span class="stat-label">আধুনিক ভবন</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="facility-stats">
+                        <span class="stat-number">১২টি</span>
+                        <span class="stat-label">স্মার্ট ক্লাসরুম</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="facility-stats">
+                        <span class="stat-number">২৪/৭</span>
+                        <span class="stat-label">নিরাপত্তা ব্যবস্থা</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Infrastructure -->
+            <div class="facility-category">
+                <div class="category-header">
+                    <h3><i class="fas fa-building me-2"></i>অবকাঠামোগত সুবিধা</h3>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <img src="https://scontent.fdac202-1.fna.fbcdn.net/v/t39.30808-6/503334961_4076432989289825_3667592790890484698_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFppVMJr-d0B1LZeTqo9TVp2eswcKrs8k_Z6zBwquzyT6YCiiygweUU2urH89ZT4WpFmLqjhQlwQlj5DkFzO9gc&_nc_ohc=oZ2-zBxHNAYQ7kNvwF6--DP&_nc_oc=AdlqGquVYGQ_vmQYjNP-Fv1n2Ygb5Gmv3o_KwJeSrXtHL_-xoD52nOFwZ8k3V0JIdMs&_nc_zt=23&_nc_ht=scontent.fdac202-1.fna&_nc_gid=zapF4idUJocc6wMDPLTRYg&oh=00_AflgahMi5l6HaBqGA91YJ0RRZ7in87ouXzzfzftJ3TUeBg&oe=6934C4E9" 
+                                 class="facility-image" alt="আধুনিক ভবন">
+                            <div class="facility-detail-body">
+                                <h5 class="text-primary">আধুনিক ভবন</h5>
+                                <p>আলো-বাতাসপূর্ণ ২ তলা বিশিষ্ট আধুনিক ভবন। প্রতিটি কক্ষে পর্যাপ্ত আলো ও বাতাস চলাচলের ব্যবস্থা রয়েছে। ভবনের নকশা আধুনিক স্থাপত্য অনুসারে করা হয়েছে।</p>
+                                <ul class="facility-features">
+                                    <li>২ তলা বিশিষ্ট আধুনিক ভবন</li>
+                                    <li>১২টি শ্রেণিকক্ষ</li>
+                                    <li>প্রতিটি কক্ষে পর্যাপ্ত আলো-বাতাস</li>
+                                    <li>আধুনিক স্থাপত্য নকশা</li>
+                                    <li>ভূমিকম্প সহনশীল নির্মাণ</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <img src="https://scontent.fdac202-1.fna.fbcdn.net/v/t39.30808-6/591909468_122155874846631183_4954546931123834909_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFopTD4Zg4Z0UZVZ3izOij-VOtZ-lRh_61U61n6VGH_rbMOfTE1UjNOSeOU5e7g8K3atlbXPHMTN8yTSW7cAEQP&_nc_ohc=3N0IiN69y7gQ7kNvwFqULgv&_nc_oc=AdnOR6ztEq7U4xoKDZV07wex4toya5TTs6ogOMsOMQkFPvZ7-kGU-G-4HGn3jzCTPSc&_nc_zt=23&_nc_ht=scontent.fdac202-1.fna&_nc_gid=IVUIl_rfbpF_qXQw-ZiNuQ&oh=00_AfmOhbAdLzHMNEXNFB3MonFNDT_SFwGOsNGY09qj_N1Zyw&oe=6934D49C" 
+                                 class="facility-image" alt="স্মার্ট ক্লাসরুম">
+                            <div class="facility-detail-body">
+                                <h5 class="text-primary">স্মার্ট ক্লাসরুম</h5>
+                                <p>মাল্টিমিডিয়া প্রজেক্টর, সাউন্ড সিস্টেম ও ইন্টারনেট সংযোগযুক্ত আধুনিক স্মার্ট ক্লাসরুম। প্রতিটি ক্লাসরুমে ডিজিটাল হোয়াইটবোর্ড ও অডিও-ভিজুয়াল সুবিধা রয়েছে।</p>
+                                <ul class="facility-features">
+                                    <li>মাল্টিমিডিয়া প্রজেক্টর</li>
+                                    <li>ডিজিটাল হোয়াইটবোর্ড</li>
+                                    <li>হাই-স্পিড ইন্টারনেট</li>
+                                    <li>সাউন্ড সিস্টেম</li>
+                                    <li>অডিও-ভিজুয়াল সুবিধা</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400&q=80" 
+                                 class="facility-image" alt="কম্পিউটার ল্যাব (পরবর্তিতে হবে)">
+                            <div class="facility-detail-body">
+                                <h5 class="text-primary">কম্পিউটার ল্যাব</h5>
+                                <p>আধুনিক কম্পিউটার ল্যাবে ডেস্কটপ কম্পিউটার, ইন্টারনেট সংযোগ ও প্রয়োজনীয় সফটওয়্যার রয়েছে। প্রতিটি কম্পিউটারে প্রজেক্টর সংযুক্ত রয়েছে।</p>
+                                <ul class="facility-features">
+                                    <li>হাই-স্পিড ইন্টারনেট</li>
+                                    <li>মাল্টিমিডিয়া প্রজেক্টর</li>
+                                    <li>প্রয়োজনীয় সফটওয়্যার</li>
+                                    <li>এয়ার কন্ডিশন সুবিধা</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="facility-detail-card">
+                            <img src="https://static.vecteezy.com/system/resources/thumbnails/000/225/554/small/chemistry-lab-vector-illustration.jpg" 
+                                 class="facility-image" alt="বিজ্ঞান ল্যাব">
+                            <div class="facility-detail-body">
+                                <h5 class="text-primary">বিজ্ঞান ল্যাব</h5>
+                                <p>পদার্থবিদ্যা, রসায়ন ও জীববিজ্ঞানের জন্য আলাদা আলাদা ল্যাব। প্রয়োজনীয় সকল যন্ত্রপাতি ও নিরাপত্তা ব্যবস্থা বিদ্যমান। প্রতিটি ল্যাবে অভিজ্ঞ ল্যাব সহকারী রয়েছে।</p>
+                                <ul class="facility-features">
+                                    <li>পদার্থবিদ্যা ল্যাব</li>
+                                    <li>রসায়ন ল্যাব</li>
+                                    <li>জীববিজ্ঞান ল্যাব</li>
+                                    <li>আধুনিক যন্ত্রপাতি</li>
+                                    <li>নিরাপত্তা ব্যবস্থা</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Academic Facilities -->
+            <div class="facility-category">
+                <div class="category-header">
+                    <h3><i class="fas fa-book-reader me-2"></i>শিক্ষা সহায়ক সুবিধা</h3>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="display-4 text-primary mb-3">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <h5>সমৃদ্ধ লাইব্রেরি</h5>
+                                <p>৫,০০+ বইয়ের সংগ্রহশালা। বাংলা, ইংরেজি, আরবি ও উর্দু ভাষায় নানা বিষয়ের বই রয়েছে। গবেষণা কক্ষও রয়েছে।</p>
+                                <div class="mt-3">
+                                    <span class="badge bg-primary me-1">৫,০০+ বই</span>
+                                    <span class="badge bg-success">গবেষণা কক্ষ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="display-4 text-primary mb-3">
+                                    <i class="fas fa-pray"></i>
+                                </div>
+                                <h5>মসজিদ ও প্রার্থনা কক্ষ</h5>
+                                <p>প্রাতিষ্ঠানিক মসজিদ রয়েছে।</p>
+                                <div class="mt-3">
+                                    <span class="badge bg-primary me-1">মসজিদ</span>
+                                    <span class="badge bg-success">প্রার্থনা কক্ষ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="display-4 text-primary mb-3">
+                                    <i class="fas fa-microphone-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header bg-info text-white">
+                                <h5 class="mb-0"><i class="fas fa-tools me-2"></i>লাইব্রেরি উপকরণ</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>বইয়ের ধরণ</th>
+                                                <th>সংখ্যা</th>
+                                                <th>ভাষা</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>ইসলামী সাহিত্য</td>
+                                                <td>৫০</td>
+                                                <td>বাংলা, আরবি, উর্দু</td>
+                                            </tr>
+                                            <tr>
+                                                <td>সাধারণ শিক্ষা</td>
+                                                <td>৫০</td>
+                                                <td>বাংলা, ইংরেজি</td>
+                                            </tr>
+                                            <tr>
+                                                <td>কুরআন ও হাদিস</td>
+                                                <td>৫০</td>
+                                                <td>আরবি, বাংলা অনুবাদ</td>
+                                            </tr>
+                                            <tr>
+                                                <td>সাহিত্য ও কবিতা</td>
+                                                <td>৫০</td>
+                                                <td>বাংলা</td>
+                                            </tr>
+                                            <tr>
+                                                <td>বিজ্ঞান ও প্রযুক্তি</td>
+                                                <td>৫০</td>
+                                                <td>বাংলা, ইংরেজি</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Security & Safety -->
+            <div class="facility-category">
+                <div class="category-header">
+                    <h3><i class="fas fa-shield-alt me-2"></i>নিরাপত্তা ও নিরাপদ পরিবেশ</h3>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 border-success">
+                            <div class="card-header bg-success text-white">
+                                <h5 class="mb-0"><i class="fas fa-video me-2"></i>সিসি ক্যামেরা ও নিরাপত্তা ব্যবস্থা</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="facility-features">
+                                    <li>পুরো ক্যাম্পাস 1৬ ঘন্টা সিসি ক্যামেরা দ্বারা নিয়ন্ত্রিত</li>
+                                    <li>প্রধান গেটে সিকিউরিটি গার্ডের ব্যবস্থা</li>
+                                    <li>ফায়ার নিরাপত্তা ব্যবস্থা (ফায়ার এক্সটিংগুইশার)</li>
+                                    <li>ইমারজেন্সি এক্সিট পথ ও সংকেত ব্যবস্থা</li>
+                                    <li>নিয়মিত নিরাপত্তা ড্রিল পরিচালনা</li>
+                                    <li>ছাত্রছাত্রীদের জন্য আলাদা প্রবেশপথ</li>
+                                    <li>নিয়ন্ত্রিত প্রবেশাধিকার ব্যবস্থা</li>
+                                </ul>
+                                
+                                <div class="mt-4">
+                                    <h6 class="text-primary">নিরাপত্তা ব্যবস্থা:</h6>
+                                    <span class="safety-badge badge-success">২৪/৭ সিসি ক্যামেরা</span>
+                                    <span class="safety-badge badge-warning">ফায়ার সেফটি</span>
+                                    <span class="safety-badge badge-info">ইমারজেন্সি এক্সিট</span>
+                                    <span class="safety-badge badge-success">সিকিউরিটি গার্ড</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 border-primary">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0"><i class="fas fa-heartbeat me-2"></i>স্বাস্থ্য সেবা</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="facility-features">
+                                    <li>প্রাথমিক চিকিৎসার জন্য মেডিকেল রুম</li>
+                                    <li>প্রশিক্ষণপ্রাপ্ত নার্সের ব্যবস্থা</li>
+                                    <li>নিকটস্থ হাসপাতালের সাথে এম্বুলেন্স ব্যবস্থা</li>
+                                    <li>নিয়মিত স্বাস্থ্য পরীক্ষা কার্যক্রম</li>
+                                    <li>স্বাস্থ্য শিক্ষা সেশন</li>
+                                    <li>আপৎকালীন ওষুধের ব্যবস্থা</li>
+                                    <li>মনস্তাত্ত্বিক কাউন্সেলিং সেবা</li>
+                                </ul>
+                                
+                                <div class="mt-4">
+                                    <h6 class="text-primary">স্বাস্থ্য সেবা উপকরণ:</h6>
+                                    <ul class="equipment-list">
+                                        <li>ফার্স্ট এইড কিট <span class="equipment-quantity">৫ সেট</span></li>
+                                        <li>ব্লাড প্রেসার মেশিন <span class="equipment-quantity">২টি</span></li>
+                                        <li>থার্মোমিটার <span class="equipment-quantity">১০টি</span></li>
+                                        <li>ইমারজেন্সি ওষুধ <span class="equipment-quantity">সম্পূর্ণ</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header bg-warning">
+                                <h5 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i>দুর্যোগ ব্যবস্থাপনা</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h6 class="text-primary">আগুন নিরাপত্তা:</h6>
+                                        <ul>
+                                            <li>ফায়ার এক্সটিংগুইশার: ১৫টি</li>
+                                            <li>ফায়ার হাইড্রেন্ট: ৪টি</li>
+                                            <li>ফায়ার অ্যালার্ম সিস্টেম</li>
+                                            <li>নিয়মিত ফায়ার ড্রিল</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6 class="text-primary">প্রাথমিক চিকিৎসা:</h6>
+                                        <ul>
+                                            <li>প্রশিক্ষিত ফার্স্ট এইডার: ৮জন</li>
+                                            <li>ইমারজেন্সি মেডিকেল কিট</li>
+                                            <li>নিকটস্থ হাসপাতাল লিঙ্ক</li>
+                                            <li>এম্বুলেন্স ব্যবস্থা</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6 class="text-primary">পরিকল্পনা:</h6>
+                                        <ul>
+                                            <li>ইমারজেন্সি রেসপন্স প্ল্যান</li>
+                                            <li>নিয়মিত সেফটি অডিট</li>
+                                            <li>কর্মী ও শিক্ষার্থী প্রশিক্ষণ</li>
+                                            <li>প্যারেন্ট কমিউনিকেশন সিস্টেম</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Residential Facilities -->
+            <div class="facility-category">
+                <div class="category-header">
+                    <h3><i class="fas fa-home me-2"></i>আবাসিক সুবিধা</h3>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="display-4 text-primary mb-3">
+                                    <i class="fas fa-bed"></i>
+                                </div>
+                                <h5>আবাসিক হোস্টেল</h5>
+                                <p>হিফয বিভাগের শিক্ষার্থীদের জন্য স্বতন্ত্র আবাসিক হোস্টেল। প্রতি রুমে ৪ জন শিক্ষার্থীর থাকার ব্যবস্থা।</p>
+                                <ul class="facility-features">
+                                    <li>আলাদা হোস্টেল ভবন</li>
+                                    <li>শীতাতপ নিয়ন্ত্রণ ব্যবস্থা</li>
+                                    <li>স্বতন্ত্র শয্যাসামগ্রী</li>
+                                    <li>পড়ার টেবিল ও আলমারি</li>
+                                    <li>২৪/৭ পানির ব্যবস্থা</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="display-4 text-primary mb-3">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                                <h5>খাদ্য ব্যবস্থা</h5>
+                                <p>সুষম ও পুষ্টিকর খাদ্যের ব্যবস্থা। অভিজ্ঞ রাঁধুনির তত্ত্বাবধানে স্বাস্থ্যকর খাবার প্রস্তুত করা হয়।</p>
+                                <ul class="facility-features">
+                                    <li>হালাল খাবার</li>
+                                    <li>সুষম খাদ্য তালিকা</li>
+                                    <li>পরিচ্ছন্ন ডাইনিং হল</li>
+                                    <li>নিয়মিত মেনু পরিবর্তন</li>
+                                    <li>স্বাস্থ্যকর রান্না পদ্ধতি</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="display-4 text-primary mb-3">
+                                    <i class="fas fa-user-friends"></i>
+                                </div>
+                                <h5>সুপারভিশন</h5>
+                                <p>আবাসিক সুপারিনটেনডেন্ট ও সহকারী সুপারিনটেনডেন্টের তত্ত্বাবধানে আবাসিক শিক্ষার্থীদের দেখাশোনা করা হয়।</p>
+                                <ul class="facility-features">
+                                    <li>২৪/৭ সুপারভিশন</li>
+                                    <li>শিক্ষকদের তত্ত্বাবধান</li>
+                                    <li>নিয়মিত মনিটরিং</li>
+                                    <li>পাঠাভ্যাস তদারকি</li>
+                                    <li>ব্যক্তিগত কাউন্সেলিং</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header bg-info text-white">
+                                <h5 class="mb-0"><i class="fas fa-concierge-bell me-2"></i>হোস্টেল সুবিধা</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li>স্বতন্ত্র বিছানা</li>
+                                            <li>পড়ার টেবিল</li>
+                                            <li>ব্যক্তিগত আলমারি</li>
+                                            <li>ফ্যান/এসি সুবিধা</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li>গোসলখানা</li>
+                                            <li>পরিষ্কার পানি</li>
+                                            <li>লন্ড্রি সুবিধা</li>
+                                            <li>কমন রুম</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header bg-success text-white">
+                                <h5 class="mb-0"><i class="fas fa-apple-alt me-2"></i>খাদ্য মেনু</h5>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>সাপ্তাহিক মেনু:</strong></p>
+                                <ul>
+                                    <li>সকাল: ডিম, রুটি, সবজি, দুধ</li>
+                                    <li>দুপুর: ভাত, মাছ/মাংস, ডাল, সবজি</li>
+                                    <li>রাত: ভাত/রুটি, মাছ/ডাল, সবজি</li>
+                                    <li>সন্ধ্যা: ফল/বিস্কুট/নাস্তা</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Transportation -->
+            <div class="facility-category">
+                <div class="category-header">
+                    <h3><i class="fas fa-bus me-2"></i>দৈনিক খাবার তালিকা</h3>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary">খাবার তালিকা</h5>
+                                <p>শিক্ষার্থীদের সাস্থসম্মত খাবার পরিবেশন করা হয়</p>
+                                
+                                <div class="table-responsive">
+                                    <table class="transport-table">
+                                        <thead>
+                                            <tr>
+                                                <th>বার</th>
+                                                <th>সকালের নাস্তা</th>
+                                                <th>সকাল</th>
+                                                <th>দুপুর</th>
+                                                <th>বিকাল</th>
+                                                <th>রাত</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>শনিবার</td>
+                                                <td>বিস্কুট/টোস্ট</td>
+                                                <td>ভাত, ভর্তা, ডাল</td>
+                                                <td>ভাত, বড় মাছ</td>
+                                                <td>বিস্কুট/টোস্ট</td>
+                                                <td><strong>১,২০০ টাকা</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>রবিবার</td>
+                                                <td>বিস্কুট/টোস্ট</td>
+                                                <td>সবজি খিচুরি</td>
+                                                <td>ভাত, বড় মাছ</td>
+                                                <td>বিস্কুট/টোস্ট</td>
+                                                <td><strong>৮০০ টাকা</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>সোমবার</td>
+                                                <td>বিস্কুট/টোস্ট</td>
+                                                <td>ভাত, সবজি, ডাল</td>
+                                                <td>ভাত, বড় মাছ</td>
+                                                <td>বিস্কুট/টোস্ট</td>
+                                                <td><strong>১,০০০ টাকা</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>মঙ্গলবার</td>
+                                                <td>বিস্কুট/টোস্ট</td>
+                                                <td>ভাত, ভর্তা, ডাল</td>
+                                                <td>ভাত, মুরগির গোস্ত, ডাল</td>
+                                                <td>বিস্কুট/টোস্ট</td>
+                                                <td>ভাত, ছোট মাছ, ডাল</td>
+                                            </tr>
+                                            <tr>
+                                                <td>বুধবার</td>
+                                                <td>বিস্কুট/টোস্ট</td>
+                                                <td>মাদ্রাসা</td>
+                                                <td>৬:৩০ AM</td>
+                                                <td>বিস্কুট/টোস্ট</td>
+                                                <td><strong>১,৫০০ টাকা</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>বৃহস্পতিবার</td>
+                                                <td>বিস্কুট/টোস্ট</td>
+                                                <td>মাদ্রাসা</td>
+                                                <td>ভাত, বড় মাছ</td>
+                                                <td>বিস্কুট/টোস্ট</td>
+                                                <td>১,৫০০ টাকা</td>
+                                            </tr>
+                                            <tr>
+                                                <td>শুক্রবার</td>
+                                                <td>বিস্কুট/টোস্ট</td>
+                                                <td>ভাত, ভর্তা, ডাল</td>
+                                                <td>ভাত, মুরগির গোস্ত ডাল</td>
+                                                <td>বিস্কুট/টোস্ট</td>
+                                                <td>ভাত, ছোট মাছ, ডাল</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary">পরিবহন নিরাপত্তা</h5>
+                                <ul class="facility-features">
+                                    <li>সব গাড়িতে ফার্স্ট এইড বক্স</li>
+                                    <li>প্রতিটি গাড়িতে একজন সহকারী</li>
+                                    <li>সব ড্রাইভার প্রশিক্ষণপ্রাপ্ত</li>
+                                    <li>গাড়িতে সিসি ক্যামেরা</li>
+                                    <li>নিয়মিত গাড়ি চেকআপ</li>
+                                    <li>ইমারজেন্সি যোগাযোগ ব্যবস্থা</li>
+                                    <li>প্যারেন্ট ট্র্যাকিং সিস্টেম</li>
+                                </ul>
+                                
+                                <div class="alert alert-info mt-3">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    <strong>দ্রষ্টব্য:</strong> পরিবহন ফি মাসিক ভিত্তিতে আদায় করা হয়। নিরাপত্তার জন্য প্রতিটি গাড়িতে একজন সহকারী রয়েছে।
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Extra-Curricular -->
+            <div class="facility-category">
+                <div class="category-header">
+                    <h3><i class="fas fa-futbol me-2"></i>সহপাঠ্যক্রমিক সুবিধা</h3>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-3 mb-4">
+                        <div class="text-center p-3 border rounded h-100">
+                            <div class="display-4 text-primary mb-3">
+                                <i class="fas fa-futbol"></i>
+                            </div>
+                            <h5>খেলার মাঠ</h5>
+                            <p>ফুটবল, ক্রিকেট, ভলিবল ও অন্যান্য খেলার জন্য পর্যাপ্ত মাঠ। বছরে দুইবার স্পোর্টস কম্পিটিশন আয়োজন করা হয়।</p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary me-1">ফুটবল</span>
+                                <span class="badge bg-success">ক্রিকেট</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4">
+                        <div class="text-center p-3 border rounded h-100">
+                            <div class="display-4 text-primary mb-3">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <h5>সাংস্কৃতিক কার্যক্রম</h5>
+                            <p>নাটক, আবৃত্তি, গান ও নাচের প্রশিক্ষণ। বছরে দুইবার সাংস্কৃতিক অনুষ্ঠানের আয়োজন করা হয়।</p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary me-1">নাটক</span>
+                                <span class="badge bg-success">আবৃত্তি</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4">
+                        <div class="text-center p-3 border rounded h-100">
+                            <div class="display-4 text-primary mb-3">
+                                <i class="fas fa-hiking"></i>
+                            </div>
+                            <h5>শিক্ষা সফর</h5>
+                            <p>শিক্ষামূলক স্থান ও ঐতিহাসিক স্থান পরিদর্শন। বছরে কমপক্ষে দুইবার শিক্ষা সফরের আয়োজন করা হয়।</p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary me-1">দেশভ্রমণ</span>
+                                <span class="badge bg-success">শিক্ষামূলক</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4">
+                        <div class="text-center p-3 border rounded h-100">
+                            <div class="display-4 text-primary mb-3">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h5>ক্লাব কার্যক্রম</h5>
+                            <p>বিজ্ঞান ক্লাব, সাহিত্য ক্লাব, বিতর্ক ক্লাব ও ইসলামী সাহিত্য ক্লাব সক্রিয়ভাবে পরিচালিত হচ্ছে।</p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary me-1">বিজ্ঞান</span>
+                                <span class="badge bg-success">বিতর্ক</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <div class="facility-comparison">
+                            <h5 class="text-primary mb-3"><i class="fas fa-balance-scale me-2"></i>সুবিধা তুলনা</h5>
+                            <p>আমাদের মাদ্রাসার সুবিধাসমূহ অন্যান্য প্রতিষ্ঠানের সাথে তুলনা:</p>
+                            
+                            <div class="comparison-item">
+                                <span>স্মার্ট ক্লাসরুম</span>
+                                <span class="comparison-status status-available">উপলব্ধ</span>
+                            </div>
+                            <div class="comparison-item">
+                                <span>বিজ্ঞান ল্যাব</span>
+                                <span class="comparison-status status-available">উপলব্ধ</span>
+                            </div>
+                            <div class="comparison-item">
+                                <span>আবাসিক সুবিধা</span>
+                                <span class="comparison-status status-available">উপলব্ধ</span>
+                            </div>
+                            <div class="comparison-item">
+                                <span>পরিবহন ব্যবস্থা</span>
+                                <span class="comparison-status status-available">উপলব্ধ</span>
+                            </div>
+                            <div class="comparison-item">
+                                <span>সিসি ক্যামেরা নিরাপত্তা</span>
+                                <span class="comparison-status status-available">উপলব্ধ</span>
+                            </div>
+                            <div class="comparison-item">
+                                <span>স্বাস্থ্য সেবা</span>
+                                <span class="comparison-status status-available">উপলব্ধ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Future Facilities -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="card border-warning">
+                        <div class="card-header bg-warning">
+                            <h5 class="mb-0"><i class="fas fa-rocket me-2"></i>ভবিষ্যৎ পরিকল্পনা</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3 text-warning">
+                                            <i class="fas fa-solar-panel fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h6>সোলার পাওয়ার সিস্টেম</h6>
+                                            <p class="mb-0"> IPS  ব্যবস্থা রয়েছে</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3 text-warning">
+                                            <i class="fas fa-swimming-pool fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h6>সাঁতার শিখন পুল(পরবর্তিতে হবে)</h6>
+                                            <p class="mb-0">শিশুদের জন্য সাঁতার শেখার পুল নির্মাণ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="d-flex">
+                                        <div class="me-3 text-warning">
+                                            <i class="fas fa-robot fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h6>রোবটিক্স ল্যাব(পরবর্তিতে হবে)</h6>
+                                            <p class="mb-0">আধুনিক রোবটিক্স ল্যাব স্থাপনের পরিকল্পনা</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact for Facilities -->
+            <div class="text-center py-5 bg-light rounded">
+                <h4 class="text-primary mb-3">সুবিধা সংক্রান্ত যেকোনো তথ্যের জন্য যোগাযোগ করুন</h4>
+                <p class="mb-4">আমরা সর্বদা আমাদের সুবিধা উন্নয়নের জন্য কাজ করছি। আপনার কোন পরামর্শ বা প্রশ্ন থাকলে আমাদের জানান।</p>
+                
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="p-4 border rounded">
+                            <i class="fas fa-hard-hat fa-2x text-primary mb-3"></i>
+                            <h6>পরিচালক</h6>
+                            <p class="mb-2">মোঃ আলী</p>
+                            <p class="mb-0">মোবাইল: ০১৯৭০-৫১৭৫৬৮</p>
+                            <p class="mb-0">ইমেইল: darulhikmahphulpur2025@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <a href="contact.html" class="btn btn-primary btn-lg me-3">
+                        <i class="fas fa-phone-alt me-2"></i>যোগাযোগ করুন
+                    </a>
+                    <a href="gallery.html" class="btn btn-success btn-lg">
+                        <i class="fas fa-images me-2"></i>সুবিধার ছবি দেখুন
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <h4>দারুল হিকমাহ মডেল মাদ্রাসা</h4>
+                    <p class="mt-3">আধুনিক শিক্ষা ও ইসলামী মূল্যবোধের সমন্বয়ে গড়ে উঠেছে একটি আদর্শ শিক্ষাপ্রতিষ্ঠান। ২০০৮ সাল থেকে ফুলপুর, ময়মনসিংহে শিক্ষার আলো ছড়িয়ে দিচ্ছি।</p>
+                    <div class="social-links mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-youtube fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>গুরুত্বপূর্ণ লিংক</h4>
+                    <div class="footer-links mt-3">
+                        <a href="index.html"><i class="fas fa-chevron-right me-2"></i>হোম</a>
+                        <a href="about.html"><i class="fas fa-chevron-right me-2"></i>আমাদের সম্পর্কে</a>
+                        <a href="departments.html"><i class="fas fa-chevron-right me-2"></i>বিভাগসমূহ</a>
+                        <a href="admission.html"><i class="fas fa-chevron-right me-2"></i>ভর্তি তথ্য</a>
+                        <a href="fee.html"><i class="fas fa-chevron-right me-2"></i>ফি কাঠামো</a>
+                        <a href="facilities.html"><i class="fas fa-chevron-right me-2"></i>সুবিধাসমূহ</a>
+                        <a href="gallery.html"><i class="fas fa-chevron-right me-2"></i>গ্যালারি</a>
+                        <a href="contact.html"><i class="fas fa-chevron-right me-2"></i>যোগাযোগ</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>যোগাযোগ</h4>
+                    <div class="mt-3">
+                        <p><i class="fas fa-map-marker-alt me-2"></i>ইসলামী ব্যাংকের বিপরীত পার্শ্বে, ফুলপুর, ময়মনসিংহ</p>
+                        <p><i class="fas fa-phone me-2"></i>০১৯৭০-৫১৭৫৬৬ (প্রধান শিক্ষক)</p>
+                        <p><i class="fas fa-phone me-2"></i>০১৯৭০-৫১৭৫৬৭ (অফিস সহকারী)</p>
+                        <p><i class="fas fa-envelope me-2"></i>darulhikmahphulpur2025@gmail.com</p>
+                        <p><i class="fas fa-clock me-2"></i>অফিস সময়: শনি-বৃহঃ সকাল ৯টা - রাত ৯টা</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; ২০২৪ দারুল হিকমাহ মডেল মাদ্রাসা, ফুলপুর, ময়মনসিংহ। সকল অধিকার সংরক্ষিত।</p>
+                <p class="mb-0">ডিজাইন ও ডেভেলপমেন্ট: আবদুল্লাহ ফাহিম</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="tel:01970517566" class="floating-btn call">
+            <i class="fas fa-phone"></i>
+            <span class="floating-btn-tooltip">কল করুন</span>
+        </a>
+        <a href="https://wa.me/8801970517566" class="floating-btn whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="floating-btn-tooltip">WhatsApp</span>
+        </a>
+        <a href="gallery.html" class="floating-btn email">
+            <i class="fas fa-images"></i>
+            <span class="floating-btn-tooltip">গ্যালারি</span>
+        </a>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn btn-primary" style="position: fixed; bottom: 100px; right: 30px; z-index: 1000; display: none;">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Current Date and Time
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            let ampm = hours >= 12 ? 'PM' : 'AM';
+            
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            
+            const timeString = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+            const dateString = now.toLocaleDateString('bn-BD', options);
+            
+            document.getElementById('currentTime').textContent = timeString;
+            document.getElementById('currentDate').textContent = dateString;
+        }
+        
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Active navigation highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            
+            navLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                
+                if (currentPage === 'facilities.html') {
+                    if (linkHref === 'facilities.html') {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                }
+            });
+            
+            // Pause notice marquee on hover
+            const noticeMarquee = document.querySelector('.notice-content');
+            if (noticeMarquee) {
+                noticeMarquee.addEventListener('mouseenter', function() {
+                    this.style.animationPlayState = 'paused';
+                });
+                
+                noticeMarquee.addEventListener('mouseleave', function() {
+                    this.style.animationPlayState = 'running';
+                });
+            }
+            
+            // Infrastructure Map
+            const infrastructureMap = `
+                <div style="width: 100%; height: 400px; background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%); border-radius: 10px; position: relative;">
+                    <div style="position: absolute; top: 50px; left: 100px; width: 150px; height: 100px; background: #1a237e; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">প্রধান ভবন</div>
+                    <div style="position: absolute; top: 200px; left: 50px; width: 120px; height: 80px; background: #0d47a1; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">হোস্টেল</div>
+                    <div style="position: absolute; top: 100px; right: 100px; width: 100px; height: 100px; background: #0288d1; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">ল্যাব</div>
+                    <div style="position: absolute; bottom: 100px; left: 200px; width: 150px; height: 80px; background: #2e7d32; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">মাঠ</div>
+                    <div style="position: absolute; top: 250px; right: 50px; width: 120px; height: 80px; background: #ff9800; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">মসজিদ</div>
+                </div>
+            `;
+            
+            // You can uncomment the following line if you want to add a map container
+            // document.getElementById('mapContainer').innerHTML = infrastructureMap;
+        });
+    </script>
+</body>
+</html>

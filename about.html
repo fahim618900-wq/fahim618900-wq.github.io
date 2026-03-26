@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>পরিচিতি - দারুল হিকমাহ মডেল মাদ্রাসা, ফুলপুর, ময়মনসিংহ</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Root Variables */
+        :root {
+            --primary-color: #1a237e;
+            --primary-light: #534bae;
+            --primary-dark: #000051;
+            --secondary-color: #00bcd4;
+            --secondary-light: #62efff;
+            --secondary-dark: #008ba3;
+            --accent-color: #ff9800;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #424242;
+            --text-color: #212121;
+            --white: #ffffff;
+            --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 6px 12px rgba(0, 0, 0, 0.15);
+            --shadow-heavy: 0 10px 20px rgba(0, 0, 0, 0.2);
+            --border-radius-sm: 5px;
+            --border-radius-md: 10px;
+            --border-radius-lg: 15px;
+            --transition-normal: all 0.3s ease;
+        }
+        
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-gray);
+            line-height: 1.6;
+            padding-top: 60px; /* Navigation bar height */
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        a:hover {
+            color: var(--primary-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .section-title.text-center::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Header Top */
+        .header-top {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .madrasah-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .madrasah-info i {
+            margin-right: 5px;
+        }
+        
+        .datetime-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .online-admission-btn {
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: var(--border-radius-sm);
+            font-weight: 600;
+            transition: var(--transition-normal);
+            display: inline-block;
+        }
+        
+        .online-admission-btn:hover {
+            background-color: #f57c00;
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        /* Main Header */
+        .main-header {
+            background-color: var(--white);
+            padding: 20px 0;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .logo-text h1 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            margin-bottom: 0;
+        }
+        
+        /* Notice Section */
+        .notice-section {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 10px 0;
+        }
+        
+        .notice-label {
+            background-color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: var(--border-radius-sm);
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .notice-marquee {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .notice-content {
+            display: flex;
+            align-items: center;
+            animation: marquee 30s linear infinite;
+            white-space: nowrap;
+        }
+        
+        .notice-item {
+            margin: 0 15px;
+        }
+        
+        .notice-item a {
+            color: var(--white);
+        }
+        
+        .notice-item a:hover {
+            color: var(--light-gray);
+            text-decoration: underline;
+        }
+        
+        .notice-separator {
+            margin: 0 10px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        /* Navigation - Sticky */
+        .main-nav {
+            background-color: var(--primary-dark);
+            padding: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--white) !important;
+            padding: 10px 15px !important;
+            transition: var(--transition-normal);
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            background-color: var(--primary-color);
+        }
+        
+        .dropdown-menu {
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: var(--border-radius-md);
+        }
+        
+        .dropdown-item {
+            color: var(--white);
+            padding: 8px 10px;
+            transition: var(--transition-normal);
+        }
+        
+        .dropdown-item:hover {
+            background-color: var(--primary-light);
+            color: var(--white);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 40px 0;
+            min-height: 70vh;
+        }
+        
+        .page-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .page-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .page-title.text-center::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* About page specific styles */
+        .principal-message {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: var(--border-radius-lg);
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        
+        .principal-message::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--primary-color);
+        }
+        
+        .principal-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--primary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary-color);
+        }
+        
+        .mission-vision {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            border-radius: var(--border-radius-lg);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .teacher-card {
+            border: none;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            transition: var(--transition-normal);
+            height: 100%;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .teacher-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .teacher-photo {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .teacher-info {
+            padding: 20px;
+            background-color: var(--white);
+        }
+        
+        .teacher-qualification {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+        
+        .achievement-counter {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-light);
+            transition: var(--transition-normal);
+        }
+        
+        .achievement-counter:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .counter-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: block;
+            line-height: 1;
+        }
+        
+        .about-section {
+            margin-bottom: 50px;
+            padding-top: 30px;
+        }
+        
+        .section-anchor {
+            display: block;
+            position: relative;
+            top: -80px;
+            visibility: hidden;
+        }
+        
+        /* Table of Contents - Sticky */
+        .toc {
+            position: sticky;
+            top: 100px;
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 20px;
+            box-shadow: var(--shadow-light);
+            margin-bottom: 30px;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+        
+        .toc-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .toc-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .toc-list li {
+            margin-bottom: 8px;
+        }
+        
+        .toc-list a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            display: block;
+            padding: 8px 12px;
+            border-radius: var(--border-radius-sm);
+            transition: var(--transition-normal);
+            border-left: 3px solid transparent;
+        }
+        
+        .toc-list a:hover {
+            background-color: rgba(26, 35, 126, 0.1);
+            color: var(--primary-color);
+            border-left-color: var(--primary-color);
+            padding-left: 15px;
+        }
+        
+        .toc-list a.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-left-color: var(--accent-color);
+        }
+        
+        /* Cards */
+        .card {
+            border: none;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-light);
+            transition: var(--transition-normal);
+            margin-bottom: 20px;
+        }
+        
+        .card:hover {
+            box-shadow: var(--shadow-medium);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+        
+        .footer h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links a {
+            color: var(--medium-gray);
+            display: block;
+            margin-bottom: 10px;
+            transition: var(--transition-normal);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition-normal);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            text-align: center;
+        }
+        
+        /* Floating Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition-normal);
+            position: relative;
+        }
+        
+        .floating-btn.call {
+            background-color: var(--primary-color);
+        }
+        
+        .floating-btn.whatsapp {
+            background-color: #25D366;
+        }
+        
+        .floating-btn.email {
+            background-color: var(--accent-color);
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .floating-btn-tooltip {
+            position: absolute;
+            right: 70px;
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 5px 10px;
+            border-radius: var(--border-radius-sm);
+            white-space: nowrap;
+            opacity: 0;
+            transition: var(--transition-normal);
+            pointer-events: none;
+        }
+        
+        .floating-btn:hover .floating-btn-tooltip {
+            opacity: 1;
+            right: 75px;
+        }
+        
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 150px;
+            right: 30px;
+            z-index: 1000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-medium);
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+        }
+        
+        #backToTop:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* Fade-in Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+            
+            .header-top .col-md-4 {
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            
+            .datetime-info {
+                justify-content: center;
+                margin: 10px 0;
+            }
+            
+            .logo-section {
+                justify-content: center;
+                margin-bottom: 15px;
+            }
+            
+            .logo-img {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .main-header .col-md-9 {
+                text-align: center;
+            }
+            
+            .notice-label {
+                margin-bottom: 10px;
+            }
+            
+            .principal-photo {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .teacher-photo {
+                height: 200px;
+            }
+            
+            .toc {
+                position: relative;
+                top: 0;
+                margin-bottom: 30px;
+            }
+            
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            #backToTop {
+                bottom: 120px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding-top: 60px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1rem;
+            }
+            
+            .section-title, .page-title {
+                font-size: 1.5rem;
+            }
+            
+            .counter-number {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .toc {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Top -->
+    <div class="header-top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <div class="madrasah-info">
+                        <i class="fas fa-school me-1"></i> 
+                    </div>
+                </div>
+                <div class="col-md-4 text-center datetime-info">
+                    <i class="fas fa-clock me-2"></i>
+                    <span id="currentTime"></span> | 
+                    <i class="fas fa-calendar ms-3 me-2"></i>
+                    <span id="currentDate"></span>
+                </div>
+                <div class="col-md-4 text-end">
+                    <a href="admission.html" class="online-admission-btn">
+                        <i class="fas fa-user-graduate me-2"></i>অনলাইন আবেদন
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <div class="logo-section">
+                        <img src="https://i.ibb.co/9HydQGR4/logo.jpg" alt="দারুল হিকমাহ মডেল মাদ্রাসার লোগো" class="logo-img">
+                        <div class="logo-text">
+                            <h1>দারুল হিকমাহ মডেল মাদ্রাসা</h1>
+                            <p>ফুলপুর, ময়মনসিংহ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="text-center">
+                        <h3 class="text-primary fw-bold mb-1">ইসলামী ব্যাংকের বিপরীত পার্শ্বে, ফুলপুর, ময়মনসিংহ</h3>
+                        <p class="text-muted mb-0">আধুনিক শিক্ষা ও ইসলামী মূল্যবোধের সমন্বয়ে গড়ে উঠেছে একটি আদর্শ শিক্ষাপ্রতিষ্ঠান</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Notice Section -->
+    <section class="notice-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-2 col-lg-1">
+                    <div class="notice-label">নোটিশঃ</div>
+                </div>
+                <div class="col-md-10 col-lg-11">
+                    <div class="notice-marquee">
+                        <div class="notice-content">
+                            <span class="notice-item"><a href="admission.html">🎓 ভর্তি চলছে ২০২৬ শিক্ষাবর্ষের জন্য</a></span>
+                            <span class="notice-separator">||</span>
+                            <span class="notice-item"><a href="about.html">🏫 পরিচিতি পৃষ্ঠায় বিস্তারিত তথ্য</a></span>
+                            <span class="notice-separator">||</span>
+                            <span class="notice-item"><a href="gallery.html">📸 নতুন ছবি আপলোড করা হয়েছে</a></span>
+                            <span class="notice-separator">||</span>
+                            <span class="notice-item"><a href="admission.html">🎓 ভর্তি চলছে ২০২৬ শিক্ষাবর্ষের জন্য</a></span>
+                            <span class="notice-separator">||</span>
+                            <span class="notice-item"><a href="about.html">🏫 পরিচিতি পৃষ্ঠায় বিস্তারিত তথ্য</a></span>
+                            <span class="notice-separator">||</span>
+                            <span class="notice-item"><a href="gallery.html">📸 নতুন ছবি আপলোড করা হয়েছে</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Navigation - Sticky Menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark main-nav">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> হোম</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-info-circle me-1"></i> পরিচিতি
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="about.html"><i class="fas fa-eye me-2"></i>এক নজরে মাদ্রাসা</a></li>
+                            <li><a class="dropdown-item" href="#principal"><i class="fas fa-quote-left me-2"></i>প্রধান শিক্ষকের বাণী</a></li>
+                            <li><a class="dropdown-item" href="#history"><i class="fas fa-history me-2"></i>প্রতিষ্ঠার ইতিহাস</a></li>
+                            <li><a class="dropdown-item" href="#mission"><i class="fas fa-bullseye me-2"></i>লক্ষ্য ও উদ্দেশ্য</a></li>
+                            <li><a class="dropdown-item" href="#teachers"><i class="fas fa-chalkboard-teacher me-2"></i>শিক্ষকমণ্ডলী</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-graduation-cap me-1"></i> একাডেমিক
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="departments.html"><i class="fas fa-school me-2"></i>বিভাগসমূহ</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-book me-2"></i>পাঠ্যক্রম</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-calendar-alt me-2"></i>ক্লাস রুটিন</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-file-alt me-2"></i>পরীক্ষা ব্যবস্থা</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line me-2"></i>ফলাফল</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admission.html"><i class="fas fa-user-graduate me-1"></i> ভর্তি তথ্য</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="fee.html"><i class="fas fa-money-bill-wave me-1"></i> ফি কাঠামো</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="facilities.html"><i class="fas fa-tools me-1"></i> সুবিধাসমূহ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html"><i class="fas fa-images me-1"></i> গ্যালারি</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html"><i class="fas fa-phone-alt me-1"></i> যোগাযোগ</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="খুঁজুন..." aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Table of Contents - Sticky -->
+                <div class="col-lg-3">
+                    <div class="toc">
+                        <h5 class="toc-title"><i class="fas fa-list me-2"></i>সূচিপত্র</h5>
+                        <ul class="toc-list">
+                            <li><a href="#overview" class="active">এক নজরে মাদ্রাসা</a></li>
+                            <li><a href="#principal">প্রধান শিক্ষকের বাণী</a></li>
+                            <li><a href="#history">প্রতিষ্ঠার ইতিহাস</a></li>
+                            <li><a href="#mission">লক্ষ্য ও উদ্দেশ্য</a></li>
+                            <li><a href="#achievements">অর্জনসমূহ</a></li>
+                            <li><a href="#teachers">শিক্ষকমণ্ডলী</a></li>
+                            <li><a href="#governance">গভর্নিং বডি</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Main Content -->
+                <div class="col-lg-9">
+                    <!-- Overview Section -->
+                    <div class="about-section fade-in" id="overview">
+                        <span class="section-anchor" id="overview-anchor"></span>
+                        <h2 class="page-title">এক নজরে দারুল হিকমাহ মডেল মাদ্রাসা</h2>
+                        
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <img src="https://dainikbangladeshnews.com/wp-content/uploads/2025/04/IMG_20250416_064105-1024x701.jpg" 
+                                     class="img-fluid rounded mb-3" alt="মাদ্রাসা ভবন">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-primary"><i class="fas fa-info-circle me-2"></i>প্রতিষ্ঠানের তথ্য</h5>
+                                        <table class="table table-borderless">
+                                            <tr>
+                                                <th width="40%">প্রতিষ্ঠানের নাম:</th>
+                                                <td>দারুল হিকমাহ মডেল মাদ্রাসা</td>
+                                            </tr>
+                                            <tr>
+                                                <th>প্রতিষ্ঠা সাল:</th>
+                                                <td>২০০৫ সাল</td>
+                                            </tr>
+                                            <tr>
+                                            </tr>
+                                            <tr>
+                                                <th>ঠিকানা:</th>
+                                                <td>ইসলামী ব্যাংকের বিপরীত পার্শ্বে, ফুলপুর, ময়মনসিংহ</td>
+                                            </tr>
+                                            <tr>
+                                                <th>ধরণ:</th>
+                                                <td>কওমী মাদ্রাসা ও সাধারণ শিক্ষার সমন্বয়</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-4 mb-3 fade-in delay-1">
+                                <div class="achievement-counter">
+                                    <span class="counter-number">২০০+</span>
+                                    <h6>শিক্ষার্থী</h6>
+                                    <p class="text-muted mb-0">সক্রিয় শিক্ষার্থী</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3 fade-in delay-2">
+                                <div class="achievement-counter">
+                                    <span class="counter-number">৩০+</span>
+                                    <h6>শিক্ষক</h6>
+                                    <p class="text-muted mb-0">অভিজ্ঞ শিক্ষকমণ্ডলী</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3 fade-in delay-3">
+                                <div class="achievement-counter">
+                                    <span class="counter-number">1</span>
+                                    <h6>বছর</h6>
+                                    <p class="text-muted mb-0">সফলতার ইতিহাস</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <h4 class="text-primary mb-3"><i class="fas fa-star me-2"></i>আমাদের বৈশিষ্ট্য</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>আধুনিক শিক্ষা ও ইসলামী শিক্ষার সমন্বয়</li>
+                                        <li>স্মার্ট ক্লাসরুম ও আধুনিক সুযোগ-সুবিধা</li>
+                                        <li>অভিজ্ঞ ও প্রশিক্ষণপ্রাপ্ত শিক্ষকমণ্ডলী</li>
+                                        <li>নিরাপদ ও সুন্দর পরিবেশ</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>সহপাঠ্যক্রমিক কার্যক্রম</li>
+                                        <li>আবাসিক ও অনাবাসিক সুবিধা</li>
+                                        <li>পরিবহন ব্যবস্থা</li>
+                                        <li>যুক্তিসঙ্গত ফি কাঠামো</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Principal's Message -->
+                    <div class="about-section fade-in" id="principal">
+                        <span class="section-anchor" id="principal-anchor"></span>
+                        <h2 class="page-title">প্রধান শিক্ষকের বাণী</h2>
+                        
+                        <div class="principal-message">
+                            <div class="row align-items-center">
+                                <div class="col-md-3 text-center mb-4 mb-md-0">
+                                    <img src="https://i.ibb.co/6RHgFh4h/bg-removed-8-removebg-preview.png" 
+                                         class="principal-photo" alt="প্রধান শিক্ষক">
+                                    <h5 class="mt-3 mb-1">মােহাম্মদ আলী</h5>
+                                    <p class="text-muted mb-0">প্রধান শিক্ষক</p>
+                                </div>
+                                <div class="col-md-9">
+                                    <h4 class="text-primary mb-3">"জ্ঞানের আলোয় আলোকিত হোক প্রতিটি প্রাণ"</h4>
+                                    <p>বিসমিল্লাহির রাহমানির রাহিম।</p>
+                                    <p>দারুল হিকমাহ মডেল মাদ্রাসার পক্ষ থেকে আপনাদের সকলকে আন্তরিক সালাম ও শুভেচ্ছা জানাচ্ছি।</p>
+                                    <p>আল্লাহ তায়ালার অপার কৃপায় এবং স্থানীয় গণ্যমান্য ব্যক্তিবর্গ ও অভিভাবকদের সার্বিক সহযোগিতায় ২০০৮ সালে দারুল হিকমাহ মডেল মাদ্রাসা প্রতিষ্ঠিত হয়। আমাদের মূল লক্ষ্য হল আধুনিক শিক্ষা ও ইসলামী মূল্যবোধের সমন্বয়ে এমন একদল সুনাগরিক গড়ে তোলা যারা জ্ঞান-বিজ্ঞানে সমৃদ্ধ হওয়ার পাশাপাশি নৈতিক ও আধ্যাত্মিক মূল্যবোধে সমৃদ্ধ হবে।</p>
+                                    <p>আমাদের মাদ্রাসায় প্লে থেকে ৬ষ্ঠ শ্রেণি পর্যন্ত সাধারণ শিক্ষার পাশাপাশি নূরানী, নাযেরা ও হিফয বিভাগ চালু রয়েছে। আমরা শিক্ষার্থীদের শুধু বইয়ের জ্ঞানই দেই না, বরং তাদের চরিত্র গঠন, নৈতিকতা ও ইসলামী আদর্শের উপর বিশেষ গুরুত্ব দেই।</p>
+                                    <p>আমাদের প্রতিজ্ঞা, আমরা শিক্ষার্থীদেরকে এমনভাবে গড়ে তুলব যেন তারা দেশ ও জাতির সেবায় আত্মনিয়োগ করতে পারে এবং বিশ্বমানবতার কল্যাণে ভূমিকা রাখতে পারে।</p>
+                                    <p class="mb-0">আপনাদের সকলের সহযোগিতা ও দোয়া কামনা করছি।</p>
+                                    <p class="mt-3 fst-italic">- মাওলানা মোঃ আবদুল্লাহ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- History -->
+                    <div class="about-section fade-in" id="history">
+                        <span class="section-anchor" id="history-anchor"></span>
+                        <h2 class="page-title">প্রতিষ্ঠার ইতিহাস</h2>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h4 class="text-primary">২০২৫: প্রতিষ্ঠার সূচনা</h4>
+                                <p>স্থানীয় কিছু শিক্ষানুরাগী ও ইসলামী চিন্তাবিদদের উদ্যোগে দারুল হিকমাহ মাদ্রাসা প্রতিষ্ঠিত হয়। শুরুতে মাত্র ৩৫ জন শিক্ষার্থী ও ৫ জন শিক্ষক নিয়ে যাত্রা শুরু করে। প্রথমদিকে একটি ভাড়া বাড়িতে পাঠদান শুরু হয়।</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4 class="text-primary">২০২৫: হিফয বিভাগ চালু</h4>
+                                <p>সমাজের চাহিদার পরিপ্রেক্ষিতে হিফয বিভাগ চালু করা হয়। শুরুতে মাত্র ৭ জন হাফেজে কুরআন তৈরি করে। এ বছরই প্রথমবারের মতো আমাদের শিক্ষার্থীরা জাতীয় পর্যায়ে কুরআন প্রতিযোগিতায় অংশগ্রহণ করে পুরস্কার লাভ করে।</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4 class="text-primary">২০২৫: আধুনিকায়ন</h4>
+                                <p>স্মার্ট ক্লাসরুম স্থাপন, উচ্চগতির ইন্টারনেট সংযোগ ও ডিজিটাল লাইব্রেরি চালু করা হয়। </p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <h4 class="text-primary">২০২৬: বর্তমান অবস্থা</h4>
+                                <p>বর্তমানে ২০০+ শিক্ষার্থী, ১০+ শিক্ষক ও আধুনিক সকল সুযোগ-সুবিধা নিয়ে একটি আদর্শ শিক্ষাপ্রতিষ্ঠান হিসেবে প্রতিষ্ঠিত।</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mission & Vision -->
+                    <div class="about-section fade-in" id="mission">
+                        <span class="section-anchor" id="mission-anchor"></span>
+                        <h2 class="page-title">লক্ষ্য ও উদ্দেশ্য</h2>
+                        
+                        <div class="mission-vision mb-4">
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="text-center p-3">
+                                        <i class="fas fa-eye fa-3x mb-3"></i>
+                                        <h4>আমাদের ভিশন</h4>
+                                        <p>"আধুনিক শিক্ষা ও ইসলামী মূল্যবোধের সমন্বয়ে বিশ্বমানের শিক্ষাপ্রতিষ্ঠান হিসেবে গড়ে তোলা যেখানে শিক্ষার্থীরা জ্ঞান-বিজ্ঞানে সমৃদ্ধ হয়ে নৈতিক ও আধ্যাত্মিকভাবে পরিপূর্ণ মানুষ হিসেবে গড়ে উঠবে।"</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="text-center p-3">
+                                        <i class="fas fa-bullseye fa-3x mb-3"></i>
+                                        <h4>আমাদের মিশন</h4>
+                                        <p>"শিক্ষার্থীদেরকে কুরআন-সুন্নাহ ভিত্তিক আদর্শ শিক্ষা প্রদানের মাধ্যমে তাদেরকে সুনাগরিক হিসেবে গড়ে তোলা এবং আধুনিক শিক্ষায় দক্ষ করে তোলা যাতে তারা দেশ ও জাতির উন্নয়নে অবদান রাখতে পারে।"</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-4 fade-in delay-1">
+                                <div class="card h-100">
+                                    <div class="card-header bg-primary text-white">
+                                        <h5 class="mb-0"><i class="fas fa-star me-2"></i>লক্ষ্যসমূহ</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>কুরআন-সুন্নাহ ভিত্তিক আদর্শ শিক্ষা প্রদান</li>
+                                            <li>আধুনিক শিক্ষার সাথে ইসলামী শিক্ষার সমন্বয়</li>
+                                            <li>শিক্ষার্থীদের নৈতিক ও চারিত্রিক উন্নয়ন</li>
+                                            <li>শিক্ষার্থীদেরকে দেশপ্রেমিক ও দায়িত্বশীল নাগরিক হিসেবে গড়ে তোলা</li>
+                                            <li>সামাজিক মূল্যবোধ ও সম্প্রীতি বৃদ্ধি</li>
+                                            <li>শিক্ষার্থীদেরকে উচ্চশিক্ষার জন্য প্রস্তুত করা</li>
+                                            <li>সহপাঠ্যক্রমিক কার্যক্রমের মাধ্যমে মেধা ও মননের বিকাশ</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-4 fade-in delay-2">
+                                <div class="card h-100">
+                                    <div class="card-header bg-success text-white">
+                                        <h5 class="mb-0"><i class="fas fa-handshake me-2"></i>উদ্দেশ্যসমূহ</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>প্রাথমিক থেকে মাধ্যমিক স্তর পর্যন্ত মানসম্মত শিক্ষা প্রদান</li>
+                                            <li>কুরআন হিফয ও তেলাওয়াত শিক্ষার ব্যবস্থা</li>
+                                            <li>ইসলামী জ্ঞান ও আদর্শের প্রচার ও প্রসার</li>
+                                            <li>শিক্ষার্থীদের মধ্যে নেতৃত্বের গুণাবলী বিকাশ</li>
+                                            <li>সামাজিক দায়িত্ববোধ ও সম্প্রীতি বৃদ্ধি</li>
+                                            <li>গরিব ও মেধাবী শিক্ষার্থীদের জন্য বৃত্তির ব্যবস্থা</li>
+                                            <li>অভিভাবকদের সাথে সুসম্পর্ক বজায় রাখা</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Achievements -->
+                    <div class="about-section fade-in" id="achievements">
+                        <h2 class="page-title">আমাদের অর্জনসমূহ</h2>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-4 fade-in delay-1">
+                                <div class="card h-100">
+                                    <div class="card-header bg-info text-white">
+                                        <h5 class="mb-0"><i class="fas fa-trophy me-2"></i>একাডেমিক অর্জন</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>প্রতিবছর ১০০% পাসের হার</li>
+                                            <li>নিয়মিত ক্লাসে উপস্থিত থাকা, সময়মতো কাজ জমা দেওয়া।</li>
+                                            <li>পাঠ্যবইয়ের বাইরে অতিরিক্ত বই পড়া ও শেখার আগ্রহ।</li>
+                                            <li>বেসিক কম্পিউটার, টাইপিং, অফিস অ্যাপ্লিকেশন ইত্যাদি।</li>
+                                            <li>ড্রইং, রাইটিং, ডিজাইনিং, হস্তশিল্প ইত্যাদি।</li>
+                                            <li>নিয়মিত ক্লাসে উপস্থিত থাকা, সময়মতো কাজ জমা দেওয়া।</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 mb-3 fade-in delay-1">
+                            </div>
+                            <div class="col-md-3 col-sm-6 mb-3 fade-in delay-2">
+                                <div class="achievement-counter">
+                                    <span class="counter-number">১০০%</span>
+                                    <h6>পাসের হার</h6>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 mb-3 fade-in delay-3">
+                                <div class="achievement-counter">
+                                    <span class="counter-number">৫০+</span>
+                                    <h6>পুরস্কার</h6>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 mb-3 fade-in">
+                                <div class="achievement-counter">
+                                    <span class="counter-number">১০০+</span>
+                                    <h6>উচ্চশিক্ষার্থী</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Teachers -->
+                    <div class="about-section fade-in" id="teachers">
+                        <span class="section-anchor" id="teachers-anchor"></span>
+                        <h2 class="page-title">শিক্ষকমণ্ডলী</h2>
+                        
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <p class="lead">আমাদের রয়েছে অভিজ্ঞ, দক্ষ ও প্রশিক্ষণপ্রাপ্ত শিক্ষকমণ্ডলী যারা শিক্ষার্থীদের শিক্ষাদানের পাশাপাশি তাদের চরিত্র গঠনে বিশেষ ভূমিকা রাখেন।</p>
+                            </div>
+                        </div>
+                        
+                        <div class="row g-4">
+                            <div class="col-md-4 col-sm-6 fade-in delay-1">
+                                <div class="teacher-card">
+                                    <img src="https://i.ibb.co/rRmL5ZG2/608155520-122149800182900161-2586275437205094532-n.jpg" 
+                                         class="teacher-photo" alt="প্রধান শিক্ষক">
+                                    <div class="teacher-info">
+                                        <h5>মাওলানা শরিফুল ইসলাম</h5>
+                                        <p class="mb-2"><strong>শ্রেণি:</strong> প্রে, নার্সারি</p>
+                                        <p class="mb-2"><strong>বিষয়:</strong> আরবি, বাংলা</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-sm-6 fade-in delay-2">
+                                <div class="teacher-card">
+                                    <img src="https://i.ibb.co/mrJhFpG2/481075488-1954463245082006-2433620558699439646-n.jpg" 
+                                         class="teacher-photo" alt="উপাধ্যক্ষ">
+                                    <div class="teacher-info">
+                                        <h5>মোঃ জরিরুল ইসলাম</h5>
+                                        <p class="mb-2"><strong>শ্রেণি:</strong>প্রে, নার্সারি</p>
+                                        <p class="mb-2"><strong>বিষয়:</strong> আরবি</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-sm-6 fade-in delay-3">
+                                <div class="teacher-card">
+                                    <img src="https://i.ibb.co/fdYPpNnX/601404806-850356300947868-6122365751793603418-n.jpg" 
+                                         class="teacher-photo" alt="সিনিয়র শিক্ষক">
+                                    <div class="teacher-info">
+                                        <h5>শেখ হাবিব</h5>
+                                        <p class="mb-2"><strong>শ্রেণি:</strong> ১ম-৬ষ্ঠ</p>
+                                        <p class="mb-2"><strong>বিষয়:</strong>  ইংরেজি</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-sm-6 fade-in delay-1">
+                                <div class="teacher-card">
+                                    <img src="https://i.ibb.co/mFYcCSrK/574297604-1379561877124069-4029446327575823561-n.jpg" 
+                                         class="teacher-photo" alt="হিফয শিক্ষক">
+                                    <div class="teacher-info">
+                                        <h5>মো: নূর আহমদ উসামা</h5>
+                                        <p class="teacher-qualification">কুরআনে হাফেজ</p>
+                                        <p class="mb-2"><strong>শ্রেণি:</strong> হিফয বিভাগ প্রধান</p>
+                                        <p class="mb-2"><strong>বিষয়:</strong> হিফয</p>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="row mt-4 fade-in">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header bg-primary text-white">
+                                        <h5 class="mb-0"><i class="fas fa-chart-bar me-2"></i>শিক্ষকদের তালিকা</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>নাম</th>
+                                                        <th>মোবাইল</th>
+                                                        <th>শ্রেণি</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>শরিফুল ইসলাম</td>
+                                                        <td>01234567890(example)</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>শেখ হাবিব</td>
+                                                        <td>01234567890(example)</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>জহিরুল ইসলাম</td>
+                                                        <td>01234567890(example)</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>নূর মোহাম্মদ উসামা</td>
+                                                        <td>01234567890(example)</td>
+                                                        <td>হিফজ</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>সাবিহা ইয়াসমীন</td>
+                                                        <td>01710569808</td>
+                                                        <td>-</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Governing Body -->
+                    <div class="about-section fade-in" id="governance">
+                        <h2 class="page-title">গভর্নিং বডি ও কমিটি</h2>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-4 fade-in delay-1">
+                                <div class="card h-100">
+                                    <div class="card-header bg-success text-white">
+                                        <h5 class="mb-0"><i class="fas fa-users-cog me-2"></i>গভর্নিং বডি</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <strong>প্রধান পরিচালক:</strong><br>
+                                                    সাদেকুল ইসলাম
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <strong>পরিচালক:</strong><br>
+                                                    মোহাম্মদ আলী
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <strong>পরিচালক:</strong><br>
+                                                    সিরাজ আলী
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <strong>পরিচালক:</strong><br>
+                                                    উসমান গণী
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <strong>পরিচালক:</strong><br>
+                                                    সাবিহা ইয়াসমীন সাথী
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-4 fade-in delay-2">
+                                <div class="card h-100">
+                                    <div class="card-header bg-info text-white">
+                                        <h5 class="mb-0"><i class="fas fa-clipboard-list me-2"></i>কমিটিসমূহ</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <strong>একাডেমিক কমিটি:</strong> পাঠ্যক্রম উন্নয়ন ও মূল্যায়ন
+                                            </li>
+                                            <li class="list-group-item">
+                                                <strong>শৃঙ্খলা কমিটি:</strong> শৃঙ্খলা রক্ষা ও আচরণ বিধি
+                                            </li>
+                                            <li class="list-group-item">
+                                                <strong>অর্থ কমিটি:</strong> আর্থিক ব্যবস্থাপনা ও অডিট
+                                            </li>
+                                            <li class="list-group-item">
+                                                <strong>সহপাঠ্যক্রমিক কমিটি:</strong> খেলাধুলা ও সাংস্কৃতিক কার্যক্রম
+                                            </li>
+                                            <li class="list-group-item">
+                                                <strong>পরীক্ষা কমিটি:</strong> পরীক্ষা ব্যবস্থাপনা
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <h4>দারুল হিকমাহ মডেল মাদ্রাসা</h4>
+                    <p class="mt-3">আধুনিক শিক্ষা ও ইসলামী মূল্যবোধের সমন্বয়ে গড়ে উঠেছে একটি আদর্শ শিক্ষাপ্রতিষ্ঠান। ২০০৮ সাল থেকে ফুলপুর, ময়মনসিংহে শিক্ষার আলো ছড়িয়ে দিচ্ছি।</p>
+                    <div class="social-links mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-youtube fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>গুরুত্বপূর্ণ লিংক</h4>
+                    <div class="footer-links mt-3">
+                        <a href="index.html"><i class="fas fa-chevron-right me-2"></i>হোম</a>
+                        <a href="about.html"><i class="fas fa-chevron-right me-2"></i>আমাদের সম্পর্কে</a>
+                        <a href="departments.html"><i class="fas fa-chevron-right me-2"></i>বিভাগসমূহ</a>
+                        <a href="admission.html"><i class="fas fa-chevron-right me-2"></i>ভর্তি তথ্য</a>
+                        <a href="fee.html"><i class="fas fa-chevron-right me-2"></i>ফি কাঠামো</a>
+                        <a href="facilities.html"><i class="fas fa-chevron-right me-2"></i>সুবিধাসমূহ</a>
+                        <a href="gallery.html"><i class="fas fa-chevron-right me-2"></i>গ্যালারি</a>
+                        <a href="contact.html"><i class="fas fa-chevron-right me-2"></i>যোগাযোগ</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>যোগাযোগ</h4>
+                    <div class="mt-3">
+                        <p><i class="fas fa-map-marker-alt me-2"></i>ইসলামী ব্যাংকের বিপরীত পার্শ্বে, ফুলপুর, ময়মনসিংহ</p>
+                        <p><i class="fas fa-phone me-2"></i>০১৯৭০-৫১৭৫৬৬ (প্রধান শিক্ষক)</p>
+                        <p><i class="fas fa-phone me-2"></i>০১৯৭০-৫১৭৫৬৭ (অফিস সহকারী)</p>
+                        <p><i class="fas fa-envelope me-2"></i>darulhikmahphulpur2025@gmail.com</p>
+                        <p><i class="fas fa-clock me-2"></i>অফিস সময়: রবি-বৃহঃ সকাল ৯টা - বিকাল ৪টা</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy;© ২০২৪ দারুল হিকমাহ মডেল মাদ্রাসা, ফুলপুর, ময়মনসিংহ। সকল অধিকার সংরক্ষিত।</p>
+                <p class="mb-0">ডিজাইন ও ডেভেলপমেন্ট: আব্দুল্লাহ্ ফাহিম</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="tel:01970517566" class="floating-btn call">
+            <i class="fas fa-phone"></i>
+            <span class="floating-btn-tooltip">কল করুন</span>
+        </a>
+        <a href="https://wa.me/8801970517566" class="floating-btn whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="floating-btn-tooltip">WhatsApp</span>
+        </a>
+        <a href="contact.html" class="floating-btn email">
+            <i class="fas fa-envelope"></i>
+            <span class="floating-btn-tooltip">যোগাযোগ</span>
+        </a>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn btn-primary">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Current Date and Time
+        function updateDateTime() {
+            const now = new Date();
+            
+            // Custom Bengali date formatting
+            const weekdays = ['রবিবার', 'সোমবার', 'মঙ্গলবার', 'বুধবার', 'বৃহস্পতিবার', 'শুক্রবার', 'শনিবার'];
+            const months = ['জানুয়ারি', 'ফেব্রুয়ারি', 'মার্চ', 'এপ্রিল', 'মে', 'জুন', 'জুলাই', 'আগস্ট', 'সেপ্টেম্বর', 'অক্টোবর', 'নভেম্বর', 'ডিসেম্বর'];
+            
+            const weekday = weekdays[now.getDay()];
+            const day = now.getDate();
+            const month = months[now.getMonth()];
+            const year = now.getFullYear();
+            
+            // Time formatting
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            let ampm = hours >= 12 ? 'PM' : 'AM';
+            
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            
+            const timeString = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+            const dateString = weekday + ', ' + day + ' ' + month + ' ' + year;
+            
+            document.getElementById('currentTime').textContent = timeString;
+            document.getElementById('currentDate').textContent = dateString;
+        }
+        
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+        
+        // Table of Contents active link
+        document.addEventListener('DOMContentLoaded', function() {
+            const tocLinks = document.querySelectorAll('.toc-list a');
+            const sections = document.querySelectorAll('.about-section');
+            
+            function updateActiveLink() {
+                let currentSection = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        currentSection = section.id;
+                    }
+                });
+                
+                tocLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', updateActiveLink);
+            updateActiveLink();
+            
+            // Smooth scrolling for TOC links
+            tocLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Active navigation highlighting
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            
+            navLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                
+                if (currentPage === 'about.html') {
+                    if (linkHref === 'about.html') {
+                        link.classList.add('active');
+                        // Also make the parent dropdown active
+                        if (link.closest('.dropdown-toggle')) {
+                            link.closest('.dropdown-toggle').classList.add('active');
+                        }
+                    } else {
+                        link.classList.remove('active');
+                    }
+                }
+            });
+            
+            // Back to Top Button
+            const backToTopButton = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Pause notice marquee on hover
+            const noticeMarquee = document.querySelector('.notice-content');
+            if (noticeMarquee) {
+                noticeMarquee.addEventListener('mouseenter', function() {
+                    this.style.animationPlayState = 'paused';
+                });
+                
+                noticeMarquee.addEventListener('mouseleave', function() {
+                    this.style.animationPlayState = 'running';
+                });
+            }
+            
+            // Form validation for search
+            const searchForm = document.querySelector('form.d-flex');
+            if (searchForm) {
+                searchForm.addEventListener('submit', function(e) {
+                    const searchInput = this.querySelector('input[type="search"]');
+                    if (searchInput.value.trim() === '') {
+                        e.preventDefault();
+                        searchInput.focus();
+                        searchInput.style.borderColor = 'red';
+                        setTimeout(() => {
+                            searchInput.style.borderColor = '';
+                        }, 2000);
+                    }
+                });
+            }
+            
+            // Fade in animation on scroll
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('visible');
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', fadeInOnScroll);
+            fadeInOnScroll(); // Initial check
+        });
+    </script>
+</body>
+</html>

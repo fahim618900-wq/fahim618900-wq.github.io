@@ -1,0 +1,1458 @@
+/* ============================================
+   দারুল হিকমাহ মডেল মাদ্রাসা - মেইন স্টাইলশীট
+   Version: 1.0
+   Author: Darul Hikmah IT Team
+   ============================================ */
+
+/* ============================================
+   ১. ভেরিয়েবল ও রুট স্টাইল
+   ============================================ */
+:root {
+    /* প্রাইমারি কালার প্যালেট */
+    --primary-color: #1a237e;
+    --primary-dark: #0d1458;
+    --primary-light: #534bae;
+    
+    /* সেকেন্ডারি কালার প্যালেট */
+    --secondary-color: #0d47a1;
+    --secondary-dark: #002171;
+    --secondary-light: #5472d3;
+    
+    /* অ্যাকসেন্ট কালার */
+    --accent-color: #ffc107;
+    --accent-dark: #c79100;
+    --accent-light: #fff350;
+    
+    /* সাফল্য ও তথ্য কালার */
+    --success-color: #2e7d32;
+    --info-color: #0288d1;
+    --warning-color: #f57c00;
+    --danger-color: #d32f2f;
+    
+    /* নিরপেক্ষ কালার */
+    --light-color: #f5f5f5;
+    --light-gray: #e0e0e0;
+    --medium-gray: #9e9e9e;
+    --dark-gray: #616161;
+    --dark-color: #212121;
+    
+    /* শেড ও ছায়া */
+    --shadow-light: 0 2px 5px rgba(0,0,0,0.1);
+    --shadow-medium: 0 4px 10px rgba(0,0,0,0.15);
+    --shadow-heavy: 0 8px 20px rgba(0,0,0,0.2);
+    
+    /* বর্ডার রেডিয়াস */
+    --border-radius-sm: 5px;
+    --border-radius-md: 10px;
+    --border-radius-lg: 15px;
+    --border-radius-xl: 20px;
+    
+    /* ট্রানজিশন */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* ফন্ট সাইজ */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-xxl: 1.5rem;
+    --font-size-xxxl: 2rem;
+}
+
+/* ============================================
+   ২. রিসেট ও বেসিক স্টাইল
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Hind Siliguri', 'SolaimanLipi', 'Siyam Rupali', sans-serif;
+    color: var(--dark-color);
+    background-color: #f8f9fa;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-normal);
+}
+
+ul, ol {
+    list-style-position: inside;
+    margin-bottom: 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ============================================
+   ৩. ইউটিলিটি ক্লাস
+   ============================================ */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.text-secondary {
+    color: var(--secondary-color) !important;
+}
+
+.text-accent {
+    color: var(--accent-color) !important;
+}
+
+.text-success {
+    color: var(--success-color) !important;
+}
+
+.text-danger {
+    color: var(--danger-color) !important;
+}
+
+.text-warning {
+    color: var(--warning-color) !important;
+}
+
+.text-info {
+    color: var(--info-color) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.bg-secondary {
+    background-color: var(--secondary-color) !important;
+}
+
+.bg-accent {
+    background-color: var(--accent-color) !important;
+}
+
+.bg-light {
+    background-color: var(--light-color) !important;
+}
+
+.rounded-sm {
+    border-radius: var(--border-radius-sm);
+}
+
+.rounded-md {
+    border-radius: var(--border-radius-md);
+}
+
+.rounded-lg {
+    border-radius: var(--border-radius-lg);
+}
+
+.rounded-xl {
+    border-radius: var(--border-radius-xl);
+}
+
+.shadow-light {
+    box-shadow: var(--shadow-light);
+}
+
+.shadow-medium {
+    box-shadow: var(--shadow-medium);
+}
+
+.shadow-heavy {
+    box-shadow: var(--shadow-heavy);
+}
+
+.transition {
+    transition: var(--transition-normal);
+}
+
+/* ============================================
+   ৪. হেডার টপ সেকশন
+   ============================================ */
+.header-top {
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
+    color: white;
+    padding: 5px 0;
+    font-size: var(--font-size-xs);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.header-top a {
+    color: white;
+    text-decoration: none;
+}
+
+.header-top a:hover {
+    color: var(--accent-color);
+}
+
+.madrasah-info {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin-right: 10px;
+    font-weight: 600;
+    font-size: var(--font-size-xs);
+}
+
+.datetime-info {
+    font-weight: 500;
+    font-size: var(--font-size-xs);
+}
+
+.online-admission-btn {
+    background-color: var(--accent-color);
+    color: var(--dark-color) !important;
+    padding: 3px 10px;
+    border-radius: var(--border-radius-sm);
+    font-weight: 600;
+    font-size: var(--font-size-xs);
+    transition: var(--transition-normal);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.online-admission-btn:hover {
+    background-color: var(--accent-dark);
+    color: #000 !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-light);
+}
+
+/* ============================================
+   ৫. মেইন হেডার
+   ============================================ */
+.main-header {
+    background-color: white;
+    padding: 10px 0;
+    box-shadow: var(--shadow-light);
+    position: relative;
+    z-index: 100;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+    transition: var(--transition-normal);
+}
+
+.logo-img:hover {
+    transform: rotate(10deg);
+}
+
+.logo-text h1 {
+    font-size: var(--font-size-xxl);
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 3px;
+    line-height: 1.2;
+}
+
+.logo-text p {
+    font-size: var(--font-size-sm);
+    color: var(--dark-gray);
+    margin-bottom: 0;
+}
+
+/* ============================================
+   ৬. নোটিশ সেকশন
+   ============================================ */
+.notice-section {
+    background-color: var(--light-color);
+    border-top: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding: 8px 0;
+    margin: 0;
+}
+
+.notice-label {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    font-weight: 700;
+    white-space: nowrap;
+    font-size: var(--font-size-sm);
+    border-radius: var(--border-radius-sm);
+}
+
+.notice-marquee {
+    overflow: hidden;
+    position: relative;
+    height: 25px;
+}
+
+.notice-content {
+    position: absolute;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.notice-item {
+    display: inline-flex;
+    align-items: center;
+    color: var(--danger-color);
+    font-weight: 500;
+    font-size: var(--font-size-sm);
+}
+
+.notice-item a {
+    color: var(--danger-color);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    transition: var(--transition-fast);
+}
+
+.notice-item a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.notice-separator {
+    color: var(--medium-gray);
+}
+
+/* ============================================
+   ৭. নেভিগেশন মেনু
+   ============================================ */
+.main-nav {
+    background-color: var(--primary-color);
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 5px 0;
+    box-shadow: var(--shadow-medium);
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: 500;
+    padding: 8px 15px !important;
+    font-size: var(--font-size-sm);
+    transition: var(--transition-normal);
+    border-radius: var(--border-radius-sm);
+    margin: 0 2px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    background-color: var(--accent-color);
+    color: var(--dark-color) !important;
+    transform: translateY(-2px);
+}
+
+.dropdown-menu {
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-medium);
+    padding: 5px 0;
+    margin-top: 5px !important;
+}
+
+.dropdown-item {
+    color: white !important;
+    padding: 8px 15px;
+    font-size: var(--font-size-sm);
+    transition: var(--transition-fast);
+}
+
+.dropdown-item:hover,
+.dropdown-item.active {
+    background-color: var(--accent-color) !important;
+    color: var(--dark-color) !important;
+    padding-left: 20px;
+}
+
+.navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 5px 10px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+/* ============================================
+   ৮. মেইন কন্টেন্ট
+   ============================================ */
+.main-content {
+    min-height: 500px;
+    padding: 30px 0;
+    background-color: white;
+}
+
+.page-title {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    position: relative;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+/* ============================================
+   ৯. হিরো স্লাইডার
+   ============================================ */
+.slider-container {
+    margin-bottom: 30px;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-heavy);
+    position: relative;
+}
+
+.slider-img {
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: var(--transition-normal);
+}
+
+.slider-container:hover .carousel-control-prev,
+.slider-container:hover .carousel-control-next {
+    opacity: 1;
+}
+
+.carousel-indicators button {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50%;
+    margin: 0 5px !important;
+}
+
+/* ============================================
+   ১০. দ্রুত অ্যাক্সেস কার্ড
+   ============================================ */
+.quick-links {
+    background-color: var(--light-color);
+    padding: 30px 0;
+}
+
+.quick-link-card {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition-normal);
+    height: 100%;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.quick-link-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.quick-link-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-heavy);
+    border-color: var(--primary-color);
+}
+
+.quick-link-card:hover::before {
+    transform: scaleX(1);
+}
+
+.quick-link-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    transition: var(--transition-normal);
+}
+
+.quick-link-card:hover .quick-link-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.quick-link-card h5 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    transition: var(--transition-normal);
+}
+
+.quick-link-card:hover h5 {
+    color: var(--secondary-color);
+}
+
+.quick-link-card p {
+    color: var(--dark-gray);
+    font-size: var(--font-size-sm);
+    margin-bottom: 0;
+}
+
+/* ============================================
+   ১১. বিভাগ কার্ড
+   ============================================ */
+.department-card {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition-normal);
+    height: 100%;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.department-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius-lg);
+    opacity: 0;
+    transition: var(--transition-normal);
+}
+
+.department-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.department-card:hover::before {
+    opacity: 1;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+}
+
+.department-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    transition: var(--transition-normal);
+}
+
+.department-card:hover .department-icon {
+    transform: scale(1.1);
+    color: var(--secondary-color);
+}
+
+.department-card h5 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.department-card p {
+    color: var(--dark-gray);
+    font-size: var(--font-size-sm);
+    margin-bottom: 0;
+}
+
+/* ============================================
+   ১২. সুবিধা কার্ড
+   ============================================ */
+.facility-card {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    padding: 25px;
+    text-align: center;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition-normal);
+    height: 100%;
+    border-top: 4px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.facility-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.facility-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.facility-card:hover::after {
+    transform: scaleX(1);
+}
+
+.facility-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    transition: var(--transition-normal);
+}
+
+.facility-card:hover .facility-icon {
+    transform: rotate(15deg);
+    color: var(--secondary-color);
+}
+
+.facility-card h6 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: var(--font-size-lg);
+}
+
+.facility-card p {
+    color: var(--dark-gray);
+    font-size: var(--font-size-sm);
+    margin-bottom: 0;
+}
+
+/* ============================================
+   ১৩. বিভাগ বিবরণ কার্ড
+   ============================================ */
+.department-details {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius-lg);
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-light);
+    border-left: 5px solid var(--primary-color);
+}
+
+.department-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.department-icon-lg {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    transition: var(--transition-normal);
+}
+
+.department-header:hover .department-icon-lg {
+    transform: rotate(15deg);
+}
+
+/* ============================================
+   ১৪. টেবিল স্টাইল
+   ============================================ */
+.table th {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 15px;
+}
+
+.table td {
+    padding: 10px 15px;
+    vertical-align: middle;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid var(--light-gray);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(26, 35, 126, 0.05);
+}
+
+.table-responsive {
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+}
+
+/* ============================================
+   ১৫. গ্যালারি স্টাইল
+   ============================================ */
+.gallery-container {
+    position: relative;
+}
+
+.gallery-item {
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition-normal);
+    position: relative;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.05);
+}
+
+.gallery-item .card-body {
+    padding: 15px;
+}
+
+.gallery-item .card-title {
+    color: var(--primary-color);
+    font-size: var(--font-size-md);
+    margin-bottom: 8px;
+}
+
+.gallery-item .card-text {
+    color: var(--dark-gray);
+    font-size: var(--font-size-sm);
+    margin-bottom: 0;
+}
+
+/* গ্যালারি ফিল্টার বাটন */
+[data-filter] {
+    transition: var(--transition-normal);
+    padding: 8px 20px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+}
+
+[data-filter].active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+[data-filter]:hover:not(.active) {
+    background-color: rgba(26, 35, 126, 0.1);
+}
+
+/* ============================================
+   ১৬. ফর্ম স্টাইল
+   ============================================ */
+.form-control,
+.form-select {
+    padding: 10px 15px;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius-sm);
+    font-family: 'Hind Siliguri', sans-serif;
+    transition: var(--transition-normal);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1);
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 5px;
+}
+
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* ============================================
+   ১৭. বাটন স্টাইল
+   ============================================ */
+.btn {
+    padding: 10px 25px;
+    border-radius: var(--border-radius-sm);
+    font-weight: 600;
+    font-family: 'Hind Siliguri', sans-serif;
+    transition: var(--transition-normal);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+    border: 2px solid var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-dark);
+    border-color: var(--secondary-dark);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    color: white;
+    border: 2px solid var(--success-color);
+}
+
+.btn-success:hover {
+    background-color: #1b5e20;
+    border-color: #1b5e20;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-outline-primary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-lg {
+    padding: 12px 30px;
+    font-size: var(--font-size-lg);
+}
+
+/* ============================================
+   ১৮. ফুটার
+   ============================================ */
+.footer {
+    background: linear-gradient(180deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 50px 0 20px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--accent-color), var(--warning-color));
+}
+
+.footer h4 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-size: var(--font-size-xl);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px;
+    transition: var(--transition-fast);
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+    padding-left: 10px;
+    border-bottom-color: var(--accent-color);
+}
+
+.footer p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 15px;
+}
+
+.footer i {
+    color: var(--accent-color);
+    width: 20px;
+}
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 30px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: var(--font-size-sm);
+}
+
+/* ============================================
+   ১৯. ফ্লোটিং বাটন
+   ============================================ */
+.floating-buttons {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.floating-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-heavy);
+    text-decoration: none;
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.floating-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.floating-btn:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.floating-btn:hover::before {
+    transform: translateY(0);
+}
+
+.floating-btn.call {
+    background: linear-gradient(135deg, #25d366, #128C7E);
+}
+
+.floating-btn.whatsapp {
+    background: linear-gradient(135deg, #25d366, #128C7E);
+}
+
+.floating-btn.email {
+    background: linear-gradient(135deg, #ea4335, #d14836);
+}
+
+.floating-btn i {
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.floating-btn-tooltip {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--dark-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-xs);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-normal);
+}
+
+.floating-btn:hover .floating-btn-tooltip {
+    opacity: 1;
+    visibility: visible;
+    right: 75px;
+}
+
+/* ============================================
+   ২০. অ্যালার্ট ও ব্যাজ
+   ============================================ */
+.alert {
+    border-radius: var(--border-radius-md);
+    border: none;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+.alert-info {
+    background-color: rgba(2, 136, 209, 0.1);
+    border-left: 4px solid var(--info-color);
+    color: var(--info-color);
+}
+
+.alert-success {
+    background-color: rgba(46, 125, 50, 0.1);
+    border-left: 4px solid var(--success-color);
+    color: var(--success-color);
+}
+
+.alert-warning {
+    background-color: rgba(245, 124, 0, 0.1);
+    border-left: 4px solid var(--warning-color);
+    color: var(--warning-color);
+}
+
+.alert-danger {
+    background-color: rgba(211, 47, 47, 0.1);
+    border-left: 4px solid var(--danger-color);
+    color: var(--danger-color);
+}
+
+.badge {
+    padding: 5px 10px;
+    border-radius: var(--border-radius-sm);
+    font-weight: 600;
+    font-size: var(--font-size-xs);
+}
+
+.badge.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.badge.bg-success {
+    background-color: var(--success-color) !important;
+}
+
+.badge.bg-info {
+    background-color: var(--info-color) !important;
+}
+
+.badge.bg-warning {
+    background-color: var(--warning-color) !important;
+}
+
+/* ============================================
+   ২১. কার্ড স্টাইল
+   ============================================ */
+.card {
+    border: none;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition-normal);
+    overflow: hidden;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-5px);
+}
+
+.card-header {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+}
+
+.card.border-primary {
+    border: 2px solid var(--primary-color);
+}
+
+.card.border-success {
+    border: 2px solid var(--success-color);
+}
+
+.card.border-warning {
+    border: 2px solid var(--warning-color);
+}
+
+.card.border-info {
+    border: 2px solid var(--info-color);
+}
+
+.card.border-danger {
+    border: 2px solid var(--danger-color);
+}
+
+/* ============================================
+   ২২. ম্যাপ স্টাইল
+   ============================================ */
+#map {
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    border: 2px solid var(--light-gray);
+}
+
+/* ============================================
+   ২৩. রেসপন্সিভ ডিজাইন
+   ============================================ */
+@media (max-width: 1200px) {
+    .logo-text h1 {
+        font-size: var(--font-size-xl);
+    }
+}
+
+@media (max-width: 992px) {
+    .slider-img {
+        height: 350px;
+    }
+    
+    .quick-link-card,
+    .department-card,
+    .facility-card {
+        margin-bottom: 20px;
+    }
+    
+    .floating-buttons {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo-img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .logo-text h1 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .slider-img {
+        height: 250px;
+    }
+    
+    .notice-label {
+        padding: 4px 8px;
+        font-size: var(--font-size-xs);
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    
+    .header-top .col-md-4 {
+        text-align: center !important;
+        margin-bottom: 5px;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 6px 12px !important;
+        font-size: var(--font-size-sm);
+    }
+    
+    .floating-buttons {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .floating-btn {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .floating-btn i {
+        font-size: 1.25rem;
+    }
+    
+    .page-title {
+        font-size: var(--font-size-xl);
+    }
+    
+    .department-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-nav .nav-link {
+        padding: 5px 10px !important;
+        font-size: var(--font-size-sm);
+    }
+    
+    .slider-img {
+        height: 200px;
+    }
+    
+    .page-title {
+        font-size: var(--font-size-lg);
+    }
+    
+    .btn {
+        padding: 8px 20px;
+        font-size: var(--font-size-sm);
+    }
+    
+    .footer {
+        padding: 30px 0 15px;
+    }
+    
+    .footer h4 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .floating-buttons {
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .floating-btn {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .floating-btn i {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo-text h1 {
+        font-size: var(--font-size-md);
+    }
+    
+    .logo-text p {
+        font-size: var(--font-size-xs);
+    }
+    
+    .slider-img {
+        height: 150px;
+    }
+    
+    .page-title {
+        font-size: var(--font-size-md);
+    }
+}
+
+/* ============================================
+   ২৪. অ্যানিমেশন ও এফেক্ট
+   ============================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+}
+
+/* লোডিং এফেক্ট */
+.loading-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(26, 35, 126, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* হোভার জুম এফেক্ট */
+.hover-zoom {
+    transition: transform 0.3s ease;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.05);
+}
+
+/* শাইন এফেক্ট */
+.shine-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine-effect::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    transition: transform 0.6s;
+}
+
+.shine-effect:hover::after {
+    transform: rotate(30deg) translate(20%, 20%);
+}
+
+/* ============================================
+   ২৫. প্রিন্ট স্টাইল
+   ============================================ */
+@media print {
+    .header-top,
+    .main-nav,
+    .floating-buttons,
+    .footer,
+    .btn,
+    .notice-section {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .main-content {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    a {
+        color: black !important;
+        text-decoration: underline !important;
+    }
+    
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+    
+    .table {
+        border: 1px solid #ddd !important;
+    }
+    
+    .page-title {
+        color: black !important;
+        border-bottom: 2px solid black !important;
+    }
+}

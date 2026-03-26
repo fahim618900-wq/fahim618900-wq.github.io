@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>গ্যালারি - দারুল হিকমাহ মডেল মাদ্রাসা, ফুলপুর, ময়মনসিংহ</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lightbox CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    
+    <style>
+        /* Root Variables */
+        :root {
+            --primary-color: #1a237e;
+            --primary-light: #534bae;
+            --primary-dark: #000051;
+            --secondary-color: #00bcd4;
+            --secondary-light: #62efff;
+            --secondary-dark: #008ba3;
+            --accent-color: #ff9800;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #424242;
+            --text-color: #212121;
+            --white: #ffffff;
+            --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 6px 12px rgba(0, 0, 0, 0.15);
+            --shadow-heavy: 0 10px 20px rgba(0, 0, 0, 0.2);
+            --border-radius-sm: 5px;
+            --border-radius-md: 10px;
+            --border-radius-lg: 15px;
+            --transition-normal: all 0.3s ease;
+        }
+        
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-gray);
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        a:hover {
+            color: var(--primary-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+        }
+        
+        /* Header Top */
+        .header-top {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .madrasah-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .datetime-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .online-admission-btn {
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: var(--border-radius-sm);
+            font-weight: 600;
+            transition: var(--transition-normal);
+            display: inline-block;
+        }
+        
+        .online-admission-btn:hover {
+            background-color: #f57c00;
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        /* Main Header */
+        .main-header {
+            background-color: var(--white);
+            padding: 20px 0;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .logo-text h1 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            margin-bottom: 0;
+        }
+        
+        /* Notice Section */
+        .notice-section {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 10px 0;
+        }
+        
+        .notice-label {
+            background-color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: var(--border-radius-sm);
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .notice-marquee {
+            overflow: hidden;
+        }
+        
+        .notice-content {
+            display: flex;
+            align-items: center;
+            animation: marquee 30s linear infinite;
+            white-space: nowrap;
+        }
+        
+        .notice-item {
+            margin: 0 15px;
+        }
+        
+        .notice-item a {
+            color: var(--white);
+        }
+        
+        .notice-item a:hover {
+            color: var(--light-gray);
+            text-decoration: underline;
+        }
+        
+        .notice-separator {
+            margin: 0 10px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        /* Navigation */
+        .main-nav {
+            background-color: var(--primary-dark);
+            padding: 0;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--white) !important;
+            padding: 15px 20px !important;
+            transition: var(--transition-normal);
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            background-color: var(--primary-color);
+        }
+        
+        .dropdown-menu {
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: var(--border-radius-md);
+        }
+        
+        .dropdown-item {
+            color: var(--white);
+            padding: 10px 15px;
+            transition: var(--transition-normal);
+        }
+        
+        .dropdown-item:hover {
+            background-color: var(--primary-light);
+            color: var(--white);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 40px 0;
+            min-height: 70vh;
+        }
+        
+        .page-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .page-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        /* Gallery page specific styles */
+        .gallery-container {
+            position: relative;
+        }
+        
+        .gallery-filter {
+            margin-bottom: 30px;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            margin: 5px;
+            border: 2px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition-normal);
+            cursor: pointer;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .gallery-item {
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition-normal);
+            position: relative;
+            height: 300px;
+            background-color: var(--white);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            padding: 15px;
+            background: white;
+        }
+        
+        .gallery-caption h5 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        
+        .gallery-caption p {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        
+        .gallery-category {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--primary-color);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+        
+        /* Lightbox custom styles */
+        .lightbox-image {
+            cursor: pointer;
+        }
+        
+        .lightbox-overlay {
+            background: rgba(0, 0, 0, 0.9) !important;
+        }
+        
+        .lightbox-container {
+            border-radius: 10px !important;
+            overflow: hidden !important;
+        }
+        
+        /* Video gallery styles */
+        .video-thumbnail {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            border-radius: var(--border-radius-lg);
+            cursor: pointer;
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(26, 35, 126, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition-normal);
+        }
+        
+        .video-thumbnail:hover .video-play-btn {
+            background: rgba(26, 35, 126, 1);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        /* Album styles */
+        .album-card {
+            border: none;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition-normal);
+            height: 100%;
+            margin-bottom: 30px;
+            background-color: var(--white);
+        }
+        
+        .album-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .album-cover {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .album-info {
+            padding: 20px;
+        }
+        
+        .album-count {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .album-title {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        /* Modal styles */
+        .modal-gallery {
+            max-width: 90%;
+        }
+        
+        .modal-gallery .modal-content {
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+        }
+        
+        .modal-gallery-img {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+        }
+        
+        /* Photo counter */
+        .photo-counter {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 15px;
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .counter-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        /* Upload section */
+        .upload-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: var(--border-radius-lg);
+            padding: 30px;
+            margin-top: 50px;
+        }
+        
+        .upload-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 25px;
+            border-radius: var(--border-radius-md);
+            border: none;
+            font-weight: 600;
+            transition: var(--transition-normal);
+            cursor: pointer;
+        }
+        
+        .upload-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        /* Slideshow styles */
+        .slideshow-container {
+            position: relative;
+            height: 400px;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .slideshow-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        
+        .slideshow-img.active {
+            opacity: 1;
+        }
+        
+        .slideshow-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px;
+        }
+        
+        .slideshow-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            transform: translateY(-50%);
+        }
+        
+        .slideshow-btn {
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-normal);
+        }
+        
+        .slideshow-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+        
+        .footer-widget {
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid var(--white);
+        }
+        
+        .footer-logo-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .footer-logo-text p {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            margin-bottom: 0;
+        }
+        
+        .footer-about {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            color: var(--medium-gray);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition-normal);
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--medium-gray);
+            transition: var(--transition-normal);
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            color: var(--medium-gray);
+        }
+        
+        .contact-info i {
+            margin-top: 5px;
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .map-btn {
+            margin-top: 20px;
+        }
+        
+        .footer-divider {
+            border-color: rgba(255, 255, 255, 0.1);
+            margin: 30px 0;
+        }
+        
+        .copyright, .developer {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+        
+        .developer a {
+            color: var(--secondary-color);
+        }
+        
+        .developer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-top .col-md-4 {
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            
+            .datetime-info {
+                justify-content: center;
+                margin: 10px 0;
+            }
+            
+            .logo-section {
+                justify-content: center;
+                margin-bottom: 15px;
+            }
+            
+            .main-header .col-md-9 {
+                text-align: center;
+            }
+            
+            .notice-label {
+                margin-bottom: 10px;
+            }
+            
+            .slideshow-container {
+                height: 300px;
+            }
+            
+            .filter-btn {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+                margin: 3px;
+            }
+            
+            .gallery-item {
+                height: auto;
+            }
+            
+            .footer .col-lg-4 {
+                margin-bottom: 30px;
+            }
+            
+            .copyright, .developer {
+                text-align: center !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo-text h1 {
+                font-size: 1rem;
+            }
+            
+            .page-title {
+                font-size: 1.5rem;
+            }
+            
+            .slideshow-container {
+                height: 250px;
+            }
+            
+            .slideshow-caption h4 {
+                font-size: 1rem;
+            }
+            
+            .slideshow-caption p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Top -->
+    <div class="header-top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <div class="madrasah-info">
+                        <i class="fas fa-school me-1"></i>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center datetime-info">
+                    <i class="fas fa-clock me-2"></i>
+                    <span id="currentTime"></span> | 
+                    <i class="fas fa-calendar ms-3 me-2"></i>
+                    <span id="currentDate"></span>
+                </div>
+                <div class="col-md-4 text-end">
+                    <a href="admission.html" class="online-admission-btn">
+                        <i class="fas fa-user-graduate me-2"></i>অনলাইন আবেদন
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <div class="logo-section">
+                        <img src="https://scontent.fdac202-1.fna.fbcdn.net/v/t39.30808-1/465864294_3887613201505139_5546741385621062236_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=104&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeEISxw_14mdWAa5JvgouYvn9BsHlc6WOBr0GweVzpY4GpIezgTB_LL3jkdxc9vAH74Q44jkVC_heL1tw20iec6I&_nc_ohc=dQiqPWHTA6UQ7kNvwFS5nyS&_nc_oc=AdkutGlH9Yl7CxhgWBWmWXlk-TTOTDPBJ3d30VIQ7LyokX26pn2dLb3vjdDkSatgbmc&_nc_zt=24&_nc_ht=scontent.fdac202-1.fna&_nc_gid=5yA3FXf-DoEFpvaLyBg5hg&oh=00_AfvlMQjbnPxnbX6MhrTNHJVV3mwNcx35CN3GmgGTa6O7QA&oe=6985EEAA" alt="দারুল হিকমাহ মডেল মাদ্রাসার লোগো" class="logo-img">
+                        <div class="logo-text">
+                            <h1>দারুল হিকমাহ মডেল মাদ্রাসা</h1>
+                            <p>ফুলপুর, ময়মনসিংহ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="text-center">
+                        <h3 class="text-primary fw-bold mb-1">ইসলামী ব্যাংকের বিপরীত পার্শ্বে, ফুলপুর, ময়মনসিংহ</h3>
+                        <p class="text-muted mb-0">আধুনিক শিক্ষা ও ইসলামী মূল্যবোধের সমন্বয়ে গড়ে উঠেছে একটি আদর্শ শিক্ষাপ্রতিষ্ঠান</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Notice Section -->
+    <section class="notice-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-2 col-lg-1">
+                    <div class="notice-label">নোটিশঃ</div>
+                </div>
+                <div class="col-md-10 col-lg-11">
+                    <div class="notice-marquee">
+                        <div class="notice-content">
+                            <span class="notice-item"><a href="#"><i class="fas fa-camera me-1"></i></a></span>
+                            <span class="notice-separator">||</span>
+                            <span class="notice-item"><a href="#"><i class="fas fa-video me-1"></i></a></span>
+                            <span class="notice-separator">||</span>
+                            <span class="notice-item"><a href="#"><i class="fas fa-images me-1"></i></a></span>
+                            <span class="notice-separator">||</span>
+                            <span class="notice-item"><a href="#"><i class="fas fa-camera me-1"></i></a></span>
+                            <span class="notice-separator">||</span>
+                            <span class="notice-item"><a href="#"><i class="fas fa-video me-1"></i></a></span>
+                            <span class="notice-separator">||</span>
+                            <span class="notice-item"><a href="#"><i class="fas fa-images me-1"></i></a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark main-nav">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> হোম</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-info-circle me-1"></i> পরিচিতি
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="about.html"><i class="fas fa-eye me-2"></i>এক নজরে মাদ্রাসা</a></li>
+                            <li><a class="dropdown-item" href="about.html#principal"><i class="fas fa-quote-left me-2"></i>প্রধান শিক্ষকের বাণী</a></li>
+                            <li><a class="dropdown-item" href="about.html#history"><i class="fas fa-history me-2"></i>প্রতিষ্ঠার ইতিহাস</a></li>
+                            <li><a class="dropdown-item" href="about.html#mission"><i class="fas fa-bullseye me-2"></i>লক্ষ্য ও উদ্দেশ্য</a></li>
+                            <li><a class="dropdown-item" href="about.html#teachers"><i class="fas fa-chalkboard-teacher me-2"></i>শিক্ষকমণ্ডলী</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-graduation-cap me-1"></i> একাডেমিক
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="departments.html"><i class="fas fa-school me-2"></i>বিভাগসমূহ</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-book me-2"></i>পাঠ্যক্রম</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-calendar-alt me-2"></i>ক্লাস রুটিন</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-file-alt me-2"></i>পরীক্ষা ব্যবস্থা</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line me-2"></i>ফলাফল</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admission.html"><i class="fas fa-user-graduate me-1"></i> ভর্তি তথ্য</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="fee.html"><i class="fas fa-money-bill-wave me-1"></i> ফি কাঠামো</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="facilities.html"><i class="fas fa-tools me-1"></i> সুবিধাসমূহ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="gallery.html"><i class="fas fa-images me-1"></i> গ্যালারি</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html"><i class="fas fa-phone-alt me-1"></i> যোগাযোগ</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="facilities.html" class="btn btn-outline-light btn-sm">
+                        <i class="fas fa-tools me-1"></i>সুবিধা দেখুন
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h2 class="page-title">ফটো ও ভিডিও গ্যালারি</h2>
+                    <p class="lead">দারুল হিকমাহ মডেল মাদ্রাসার বিভিন্ন কার্যক্রম, অনুষ্ঠান, অবকাঠামো ও স্মরণীয় মুহূর্তের ছবি ও ভিডিওর সংগ্রহশালা।</p>
+                    
+                    <!-- Photo Counter -->
+                    <div class="photo-counter">
+                        <span class="counter-number">৫০০+</span>
+                        <span class="stat-label">ছবি ও ভিডিও সংগ্রহ</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slideshow -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="slideshow-container">
+                        <div class="slideshow-img active" data-index="0">
+                            <img src="https://scontent.fdac202-1.fna.fbcdn.net/v/t39.30808-6/584718710_122166933620603730_8359370269662497281_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEV0r6LmrURuztVVZjQXbif4dctgSpR-njh1y2BKlH6eGK4IzPiUr1BXCfvYbx75J3cnrbWBHd2GAKaWyAUxx1-&_nc_ohc=pDqeNG8A_BcQ7kNvwE9q-EY&_nc_oc=AdnjedVWpqLqLH6qnUWhErdLmsKboaY8daP2VejvJ9dWSXrPJ8DBx17tWjgBISNrAS4&_nc_zt=23&_nc_ht=scontent.fdac202-1.fna&_nc_gid=i2iCAOu4XfIdqmwPrn96uw&oh=00_AfugBVIlR9MKhw0Kc17O9k3v1n59zAd5fYaaHaqbv1Ph1g&oe=6985DDEC" 
+                                 alt="মাদ্রাসা ভবন" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="slideshow-caption">
+                                <h4>দারুল হিকমাহ মডেল মাদ্রাসা হিফযুল কুরআন বিভাগ</h4>
+                                <p>আমাদের হিফফ বিভাগের ক্লাস</p>
+                            </div>
+                        </div>
+                        <div class="slideshow-img" data-index="1">
+                            <img src="https://scontent.fdac202-1.fna.fbcdn.net/v/t39.30808-6/591519740_122156063534631183_2395274556883743003_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHTNkvPafBs8jxmWXc-yBkbKk9Wkyc_viMqT1aTJz--I3G4zdjAXjnKldKCDqHg8D7mldLCVeIhMMf-Q-MotYCG&_nc_ohc=eEh3OsoVY94Q7kNvwGarb7e&_nc_oc=Adn4ayEIfQS54oKenYvvIUzCFxDt7VygtKtwhLmDBYryiRV9avpSIYSnzTyyYmbRbj4&_nc_zt=23&_nc_ht=scontent.fdac202-1.fna&_nc_gid=8rY-KUt08u54nZ_s2o26Nw&oh=00_AfuZlzEyve4wdCA4jmy2TclhxxqhQdMCpFzkIu4prE6h5g&oe=6985D102" 
+                                 alt="শিক্ষার্থীরা পাঠরত" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="slideshow-caption">
+                                <h4>শ্রেণিকক্ষে পাঠদান</h4>
+                                <p>শিক্ষার্থীরা শ্রেণিকক্ষে পাঠরত</p>
+                            </div>
+                        </div>
+                        <div class="slideshow-img" data-index="2">
+                            <img src="https://scontent.fdac202-1.fna.fbcdn.net/v/t39.30808-6/573599471_122164765304603730_5457382259059717252_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeF10dY2QAozgNuuNSEnJ0iu2LFE4RzX5JnYsUThHNfkmXVkfPFjpVDjFt21_m39LUhviniPZcvLR8Kg7KvYl07Q&_nc_ohc=pmkRcztK4roQ7kNvwGtdOwT&_nc_oc=AdlyS-CmXEgXR60zwDQj0Fsp_W3_apZI6URhArNvHsB5WRmD9zPQZ6YXjdzBY3td-hE&_nc_zt=23&_nc_ht=scontent.fdac202-1.fna&_nc_gid=NUSkk_qCNxHiGUkSXGsjzw&oh=00_Afs6A3XLrGChQQWokI-5veVn3wlgqawA237LqA7vhho0mQ&oe=6985C39A" 
+                                 alt="পুরস্কার বিতরণী" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="slideshow-caption">
+                                <h4> পুরস্কার বিতরণী</h4>
+                                <p>মেধাবী শিক্ষার্থীদের পুরস্কৃত করা হচ্ছে</p>
+                            </div>
+                        </div>
+                        <div class="slideshow-controls">
+                            <button class="slideshow-btn" id="prevBtn">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="slideshow-btn" id="nextBtn">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery Filter -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="gallery-filter text-center">
+                        <button class="filter-btn active" data-filter="all">সকল ছবি</button>
+                        <button class="filter-btn" data-filter="campus">ক্যাম্পাস</button>
+                        <button class="filter-btn" data-filter="events">অনুষ্ঠান</button>
+                        <button class="filter-btn" data-filter="classes">ক্লাসরুম</button>
+                        <button class="filter-btn" data-filter="sports">খেলাধুলা</button>
+                        <button class="filter-btn" data-filter="cultural">সাংস্কৃতিক</button>
+                        <button class="filter-btn" data-filter="facilities">সুবিধা</button>
+                        <button class="filter-btn" data-filter="hifz">হিফয বিভাগ</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Photo Albums -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h3 class="page-title">ফটো অ্যালবাম</h3>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="album-card">
+                        <img src="https://scontent.fdac202-1.fna.fbcdn.net/v/t39.30808-6/591583048_122155996364631183_3041564984464867737_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHaOKAAp2lNKjlqt7dSaICcgxkUVOYwQRaDGRRU5jBBFkuV0F-j8GAhAJIqbWHCJecsrUbHxrcHV6pdgyv1aOzg&_nc_ohc=_UCn83hm8bUQ7kNvwEWCLoQ&_nc_oc=AdmTZm2vxFiWab1ea9GLXYw-ovzoiBbOEG-wlbeYO-yrNj4Pqy9_oiJ439iQdBCqyHg&_nc_zt=23&_nc_ht=scontent.fdac202-1.fna&_nc_gid=tVwOeQDErJbgKWwzr0hJdw&oh=00_AftgE0DUiW0EPJlhy9AdPgPy5zp_wK7fCCJw4hWXP0JtLQ&oe=6985F716" 
+                             class="album-cover" alt="ক্যাম্পাস">
+                        <div class="album-info">
+                            <span class="album-count"></span>
+                            <h4 class="album-title">ক্যাম্পাস ভবন ও প্রাঙ্গণ</h4>
+                            <p class="mb-0">আমাদের মাদ্রাসার বিভিন্ন ভবন, প্রাঙ্গণ ও সুন্দর পরিবেশের ছবি</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="album-card">
+                        <img src="https://i.ibb.co/vxv4Z6GF/604527198-122148327776900161-3644871227543424229-n.jpg" 
+                             class="album-cover" alt="অনুষ্ঠান">
+                        <div class="album-info">
+                            <span class="album-count"></span>
+                            <h4 class="album-title">বার্ষিক অনুষ্ঠানসমূহ</h4>
+                            <p class="mb-0">মেধাবী শিক্ষার্থীদের পুরস্কৃত করা হচ্ছে</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="album-card">
+                        <img src="https://scontent.fdac202-1.fna.fbcdn.net/v/t39.30808-6/529248905_122152522172603730_1843360172138035529_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHJnqsa-VEu8uBITImRI4PBdNBAwOt1FYt00EDA63UVizjB_bFrfdNjmJaAVCb3DZreys_N_E_bDYNbqy7faK2b&_nc_ohc=sdq2os-oJ9EQ7kNvwFEPYZj&_nc_oc=AdlK8-VugieKs1qx8WNHNrJ0s6am7g1Z-UM7JEp1VrIQAfdH0LxX8YfeST28AkN7uXw&_nc_zt=23&_nc_ht=scontent.fdac202-1.fna&_nc_gid=Bz3pCKMunGBbnD4fJJ1DGQ&oh=00_Afs1Ki60kbN0on9WWFGpFp68CViOCHQntsoAyF27j5_gXw&oe=6985F112" 
+                             class="album-cover" alt="খেলাধুলা">
+                        <div class="album-info">
+                            <span class="album-count"></span>
+                            <h4 class="album-title">বার্ষিক অনুষ্ঠানসমূহ</h4>
+                            <p class="mb-0">মেধাবী শিক্ষার্থীদের পুরস্কৃত করা হচ্ছে</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Photo Gallery -->
+            <div class="row gallery-container">
+                <!-- Campus Images -->
+                <div class="col-lg-4 col-md-6 mb-4 gallery-item" data-category="campus">
+                    <div class="gallery-category">ক্যাম্পাস</div>
+                    <a href="https://scontent.fdac202-1.fna.fbcdn.net/v/t39.30808-6/531140700_122152522286603730_5238070215609404256_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeF4PUT2cneI--4IRQjJRbwWIJbfeqiDj3Uglt96qIOPdSCz-8XRkO6Re6K872cB-ajT0fTAa3DUkmVB8Qdrg0KP&_nc_ohc=CZXC28k9TVcQ7kNvwH3d7sx&_nc_oc=AdldS2dxffAfDXZCY_nYE6WaIHMk7Xjk9j64cx9tUrc-2bfB4yPtwVv5qBIaRUQUA5E&_nc_zt=23&_nc_ht=scontent.fdac202-1.fna&_nc_gid=Hz0BZR2bqTKCcgpvq32syg&oh=00_AftZ7lJ3vX7Plxq_gailTCcHClWmLcaDGDDLhWCy8QAs7w&oe=6985E3A3" 
+                       data-lightbox="gallery" data-title="মাদ্রাসা প্রধান ভবন">
+                        <img src="https://scontent.fdac202-1.fna.fbcdn.net/v/t39.30808-6/531140700_122152522286603730_5238070215609404256_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeF4PUT2cneI--4IRQjJRbwWIJbfeqiDj3Uglt96qIOPdSCz-8XRkO6Re6K872cB-ajT0fTAa3DUkmVB8Qdrg0KP&_nc_ohc=CZXC28k9TVcQ7kNvwH3d7sx&_nc_oc=AdldS2dxffAfDXZCY_nYE6WaIHMk7Xjk9j64cx9tUrc-2bfB4yPtwVv5qBIaRUQUA5E&_nc_zt=23&_nc_ht=scontent.fdac202-1.fna&_nc_gid=Hz0BZR2bqTKCcgpvq32syg&oh=00_AftZ7lJ3vX7Plxq_gailTCcHClWmLcaDGDDLhWCy8QAs7w&oe=6985E3A3" 
+                             class="gallery-img lightbox-image" alt="মাদ্রাসা ভবন">
+                    </a>
+                    <div class="gallery-caption">
+                        <h5>মাদ্রাসা প্রধান ভবন</h5>
+                        <p>আমাদের দুইতলা বিশিষ্ট প্রধান ভবন। আধুনিক স্থাপত্যে নির্মিত এই ভবনে সকল শ্রেণির কক্ষ রয়েছে।</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4 gallery-item" data-category="campus">
+                    <div class="gallery-category">ক্যাম্পাস</div>
+                    <a href="https://scontent.fdac202-1.fna.fbcdn.net/v/t39.30808-6/593989676_122155990916631183_8559205232389131824_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeF2HuC2D9KIRsQjJyGqBL_aXMr3uBSYmEtcyve4FJiYSyaJH7rntsBcET80947ebhdirK0Ige5rlOJosiI7xcr2&_nc_ohc=LX0NVBnzJB8Q7kNvwEqzGNp&_nc_oc=Adm8DTstx0TCuzoxizm0HOMwGylYXS3Lq81kWXSTPglXggXtnv_W1HOAWATV3p3b6ps&_nc_zt=23&_nc_ht=scontent.fdac202-1.fna&_nc_gid=7M9HRKboTldaUnpvsy2b-A&oh=00_AfvZo5f6jDOpYwGu9lNbq7yrL6k5j7_SFu3ltCxGcOiDSQ&oe=6985D691" 
+                       data-lightbox="gallery" data-title="মাদ্রাসা প্রাঙ্গণ">
+                        <img src="https://scontent.fdac202-1.fna.fbcdn.net/v/t39.30808-6/621817364_122151914078952609_3756101201424653861_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFeXd3Xq7z6ivjg9CiqpKTykYMZ-6ElRz2Rgxn7oSVHPcnHvnneHo0JLZwQ4JEY1q7tt6vmYU9QsOjCH7xHg_Xv&_nc_ohc=AdEQCZZJ-XQQ7kNvwE-XLL2&_nc_oc=AdnS2_PS6yy3df8Dk7CrpOyhnEkD8abzcJa_2mP0Rv6M8sqUJaanBT34irfJmhLbrCs&_nc_zt=23&_nc_ht=scontent.fdac202-1.fna&_nc_gid=rTrXJMO8OcgTYr4yOtqWjQ&oh=00_Aftf9xge2SW9cBxVp_4ENT-ZEFnFnLcGSNcAUYzbCW2rCw&oe=6985E988" 
+                             class="gallery-img lightbox-image" alt="মাদ্রাসা প্রাঙ্গণ">
+                    </a>
+                    <div class="gallery-caption">
+                        <h5>মাদ্রাসা প্রাঙ্গণ</h5>
+                        <p>সবুজ ঘাসে আবৃত বিশাল প্রাঙ্গণ। শিক্ষার্থীদের খেলাধুলা ও বিভিন্ন অনুষ্ঠানের জন্য ব্যবহৃত হয়।</p>
+                    </div>
+                </div>
+                
+                <!-- Events Images -->
+                <div class="col-lg-4 col-md-6 mb-4 gallery-item" data-category="events">
+                    <div class="gallery-category">অনুষ্ঠান</div>
+                    <a href="https://scontent.fdac202-1.fna.fbcdn.net/v/t39.30808-6/576979323_122164764812603730_3410349399282923177_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=CoQyNp5EFHAQ7kNvwFoGbuJ&_nc_oc=AdmTEKi-YL77TZyonSdeSg0rOR3m7OjehsYZC2vlgeLWFzO3sBrgUoBnFEaVj05jhiw&_nc_zt=23&_nc_ht=scontent.fdac202-1.fna&_nc_gid=a-pBFeWMrvRFaHM0CdIuAQ&oh=00_AfnXG2vGqqheUzRdq55OqZW8XXAlWXcs8AMYNfQcjSMUgw&oe=69345B1F" 
+                       data-lightbox="gallery" data-title="বার্ষিক পুরস্কার বিতরণী ২০২৩">
+                        <img src="https://scontent.fdac202-1.fna.fbcdn.net/v/t39.30808-6/529741209_122152522238603730_5012083553119785628_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=FrawoRvhI8sQ7kNvwG26Wkg&_nc_oc=AdnvPPTRhPjPV8Yo2_nO6vCHPmawe0PWIwlXsyf73LkdMSaEYZYZHxcyjEPYQZnicDM&_nc_zt=23&_nc_ht=scontent.fdac202-1.fna&_nc_gid=e3sHBoZ2Q_z7KXiDJVyrVQ&oh=00_AflaSqAlEDWx9u5Bk5tdyCu3h_gm30WEht4wGqwamr0Oxw&oe=69344B41" 
+                             class="gallery-img lightbox-image" alt="বার্ষিক পুরস্কার বিতরণী">
+                    </a>
+                    <div class="gallery-caption">
+                        <h5>বার্ষিক পুরস্কার বিতরণী ২০২৩</h5>
+                        <p>২০২৩ শিক্ষাবর্ষের বার্ষিক পুরস্কার বিতরণী অনুষ্ঠানে মেধাবী শিক্ষার্থীদের পুরস্কৃত করা হচ্ছে।</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4 gallery-item" data-category="events">
+                    <div class="gallery-category">অনুষ্ঠান</div>
+                    <a href="https://scontent.fdac202-1.fna.fbcdn.net/v/t39.30808-6/576927170_122164765142603730_4011606322782320788_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=o6YoKce06_gQ7kNvwHCaLca&_nc_oc=AdkEwkS_JVUvTES7RSuel0MTkI0OWb8ceRGMNRPETyYmkw3H8rRpiXeHqi0N_iJ-3yk&_nc_zt=23&_nc_ht=scontent.fdac202-1.fna&_nc_gid=Ad7U4AjY3tiUNu-YP-Xnkw&oh=00_AfnEjbwOAFwOksgNhL1FD4JYgPFoSao7hTeybcQq4ks5zw&oe=69346D52" 
+                       data-lightbox="gallery" data-title="স্বাধীনতা দিবস উদ্যাপন">
+                        <img src="https://scontent.fdac202-1.fna.fbcdn.net/v/t39.30808-6/529359172_122152522532603730_1281241395596545358_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=el-DTMLaLIoQ7kNvwGmjLuU&_nc_oc=AdnEqebeGThkDCJYBIjyMfVM5b7pQD145Dbl7Giya8IJs7X3JS3G8XqgI-0mJpk_-BE&_nc_zt=23&_nc_ht=scontent.fdac202-1.fna&_nc_gid=1st-5AV12VsBnHEpcAMdRg&oh=00_AfnaR96ZmVqOTB3eG1lMJttrG0Jbl9aowTFccaz2hgrnjQ&oe=69345FEC" 
+                             class="gallery-img lightbox-image" alt="স্বাধীনতা দিবস">
+                    </a>
+                    <div class="gallery-caption">
+                        <h5>স্বাধীনতা দিবস উদ্যাপন</h5>
+                        <p>২৬ মার্চ মহান স্বাধীনতা দিবসে শিক্ষার্থীদের অংশগ্রহণে র্যালি ও সাংস্কৃতিক অনুষ্ঠান আয়োজিত হয়।</p>
+                    </div>
+                </div>
+                
+                <!-- Classes Images -->
+                <div class="col-lg-4 col-md-6 mb-4 gallery-item" data-category="classes">
+                    <div class="gallery-category">ক্লাসরুম</div>
+                    <a href="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" 
+                       data-lightbox="gallery" data-title="স্মার্ট ক্লাসরুমে পাঠদান">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400&q=80" 
+                             class="gallery-img lightbox-image" alt="ক্লাসরুম শিক্ষাদান">
+                    </a>
+                    <div class="gallery-caption">
+                        <h5></h5>
+                        <p></p>
+                    </div>
+                </div>
+                
+            
+            <!-- Video Gallery -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h3 class="page-title mb-4">ভিডিও গ্যালারি</h3>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <div class="gallery-category">ভিডিও(পরবর্তি সময়ে যোগ করা হবে)</div>
+                        <div class="video-thumbnail">
+                            <img src="  " alt="মাদ্রাসা ভ্রমন ভিডিও">
+                            <div class="video-play-btn" data-video-id="XJp1rO5hRds">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-caption">
+                            <h5>দারুল হিকমাহ মডেল মাদ্রাসা ভ্রমন ভিডিও(পরবর্তি সময়ে যোগ করা হবে)</h5>
+                            <p>আমাদের মাদ্রাসার সম্পূর্ণ ক্যাম্পাসের ভ্রমন ভিডিও। দেখুন সুবিধা ও পরিবেশ।</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <div class="gallery-category">ভিডিও(পরবর্তি সময়ে যোগ করা হবে)</div>
+                        <div class="video-thumbnail">
+                            <img src="" alt="বার্ষিক পুরস্কার বিতরণী">
+                            <div class="video-play-btn" data-video-id="7G0LQjQKPwc">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-caption">
+                            <h5>বার্ষিক পুরস্কার বিতরণী অনুষ্ঠান ২০২৩(পরবর্তি সময়ে যোগ করা হবে)</h5>
+                            <p>২০২৩ শিক্ষাবর্ষের বার্ষিক পুরস্কার বিতরণী অনুষ্ঠানের সম্পূর্ণ ভিডিও।(পরবর্তি সময়ে যোগ করা হবে)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <div class="gallery-category">ভিডিও(পরবর্তি সময়ে যোগ করা হবে)</div>
+                        <div class="video-thumbnail">
+                            <img src="  " alt="সাংস্কৃতিক অনুষ্ঠান">
+                            <div class="video-play-btn" data-video-id="EW0h7bwk3-o">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-caption">
+                            <h5>বার্ষিক সাংস্কৃতিক অনুষ্ঠান(পরবর্তি সময়ে যোগ করা হবে)</h5>
+                            <p>শিক্ষার্থীদের অংশগ্রহণে অনুষ্ঠিত সাংস্কৃতিক অনুষ্ঠানের হাইলাইটস।(পরবর্তি সময়ে যোগ করা হবে)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Upload Section -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="upload-section text-center">
+                        <h3 class="page-title mb-3">আপনার ছবি আপলোড করুন</h3>
+                        <p class="mb-4">আপনার কাছে যদি আমাদের মাদ্রাসার কোন স্মরণীয় মুহূর্তের ছবি থাকে, তাহলে সেটি আমাদের সাথে শেয়ার করুন। আমরা আপনার ছবি আমাদের গ্যালারিতে যোগ করব।</p>
+                        <button class="upload-btn">
+                            <i class="fas fa-cloud-upload-alt me-2"></i>ছবি আপলোড করুন
+                        </button>
+                        <p class="mt-3 small text-muted">ছবি আপলোডের জন্য আপনাকে লগইন করতে হতে পারে</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-widget">
+                        <div class="footer-logo">
+                            <img src="https://scontent.fdac202-1.fna.fbcdn.net/v/t39.30808-6/465864294_3887613201505139_5546741385621062236_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=t1pQGu9xWeIQ7kNvwHCc3KG&_nc_oc=Adk92EfvodvRs5AeqXJ9afcg7LbO6y8sf_n-WbLhextwSbFl_OJA77s9_w6zEpQG9C0&_nc_zt=23&_nc_ht=scontent.fdac202-1.fna&_nc_gid=Zv-Rkya9G5ngj8qlsoqNfA&oh=00_Afnb2JEwb4Ad6Kvq-I1ruGz9V4hf6vO9-T8O5NvY1NE3MQ&oe=6934786C" alt="লোগো">
+                            <div class="footer-logo-text">
+                                <h4>দারুল হিকমাহ মডেল মাদ্রাসা</h4>
+                                <p>ফুলপুর, ময়মনসিংহ</p>
+                            </div>
+                        </div>
+                        <p class="footer-about">আধুনিক শিক্ষা ও ইসলামী মূল্যবোধের সমন্বয়ে গড়ে উঠেছে একটি আদর্শ শিক্ষাপ্রতিষ্ঠান। ১৯৯৫ সাল থেকে অত্যন্ত সফলতার সাথে শিক্ষাদান করে আসছে।</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-widget">
+                        <h5 class="footer-title">গুরুত্বপূর্ণ লিঙ্ক</h5>
+                        <ul class="footer-links">
+                            <li><a href="index.html"><i class="fas fa-chevron-right me-2"></i>হোম</a></li>
+                            <li><a href="about.html"><i class="fas fa-chevron-right me-2"></i>পরিচিতি</a></li>
+                            <li><a href="admission.html"><i class="fas fa-chevron-right me-2"></i>ভর্তি তথ্য</a></li>
+                            <li><a href="fee.html"><i class="fas fa-chevron-right me-2"></i>ফি কাঠামো</a></li>
+                            <li><a href="gallery.html"><i class="fas fa-chevron-right me-2"></i>গ্যালারি</a></li>
+                            <li><a href="contact.html"><i class="fas fa-chevron-right me-2"></i>যোগাযোগ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-widget">
+                        <h5 class="footer-title">যোগাযোগ তথ্য</h5>
+                        <div class="contact-info">
+                            <p><i class="fas fa-map-marker-alt me-2"></i>ইসলামী ব্যাংকের বিপরীত পার্শ্বে, ফুলপুর, ময়মনসিংহ</p>
+                            <p><i class="fas fa-phone me-2"></i>০১৭১২-৩৪৫৬৭৮, ০১৯১২-৩৪৫৬৭৯</p>
+                            <p><i class="fas fa-envelope me-2"></i>info@darulhikmah.edu.bd</p>
+                            <p><i class="fas fa-globe me-2"></i>www.darulhikmah.edu.bd</p>
+                        </div>
+                        <div class="map-btn">
+                            <a href="contact.html#map" class="btn btn-outline-light btn-sm">
+                                <i class="fas fa-map-marked-alt me-2"></i>লোকেশন দেখুন
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="copyright">&copy; ২০২৪ দারুল হিকমাহ মডেল মাদ্রাসা, ফুলপুর, ময়মনসিংহ। সর্বস্বত্ব সংরক্ষিত।</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p class="developer">ডিজাইন ও ডেভেলপমেন্ট: আব্দুল্লাহ্ ফাহিম</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabel">ভিডিও(পরবর্তি সময়ে যোগ করা হবে)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center p-0">
+                    <div id="videoPlayer" style="width: 100%; height: 400px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Lightbox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <script>
+        // Set up Lightbox
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'albumLabel': 'ছবি %1 এর %2'
+        });
+        
+        // Gallery Filtering
+        $(document).ready(function() {
+            $('.filter-btn').on('click', function() {
+                $('.filter-btn').removeClass('active');
+                $(this).addClass('active');
+                
+                var filter = $(this).data('filter');
+                
+                if (filter === 'all') {
+                    $('.gallery-item').fadeIn(500);
+                } else {
+                    $('.gallery-item').each(function() {
+                        if ($(this).data('category') === filter) {
+                            $(this).fadeIn(500);
+                        } else {
+                            $(this).fadeOut(300);
+                        }
+                    });
+                }
+            });
+            
+            // Video Modal
+            $('.video-play-btn').on('click', function() {
+                var videoId = $(this).data('video-id');
+                var videoUrl = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+                
+                $('#videoPlayer').html('<iframe width="100%" height="400" src="' + videoUrl + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+                
+                var videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
+                videoModal.show();
+            });
+            
+            // Close video modal on hide
+            $('#videoModal').on('hidden.bs.modal', function () {
+                $('#videoPlayer').html('');
+            });
+            
+            // Slideshow functionality
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.slideshow-img');
+            const totalSlides = slides.length;
+            
+            function showSlide(index) {
+                // Remove active class from all slides
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                
+                // Add active class to current slide
+                if (index >= totalSlides) currentSlide = 0;
+                if (index < 0) currentSlide = totalSlides - 1;
+                
+                slides[currentSlide].classList.add('active');
+            }
+            
+            // Next slide
+            document.getElementById('nextBtn').addEventListener('click', function() {
+                currentSlide++;
+                showSlide(currentSlide);
+            });
+            
+            // Previous slide
+            document.getElementById('prevBtn').addEventListener('click', function() {
+                currentSlide--;
+                showSlide(currentSlide);
+            });
+            
+            // Auto slide change every 5 seconds
+            setInterval(function() {
+                currentSlide++;
+                showSlide(currentSlide);
+            }, 5000);
+            
+            // Update date and time
+            function updateDateTime() {
+                const now = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                const dateStr = now.toLocaleDateString('bn-BD', options);
+                const timeStr = now.toLocaleTimeString('bn-BD');
+                
+                document.getElementById('currentDate').textContent = dateStr;
+                document.getElementById('currentTime').textContent = timeStr;
+            }
+            
+            // Update time every second
+            setInterval(updateDateTime, 1000);
+            updateDateTime(); // Initial call
+            
+            // Upload button click event
+            $('.upload-btn').on('click', function() {
+                alert('ছবি আপলোডের জন্য আপনাকে লগইন করতে হবে। লগইন পৃষ্ঠায় রিডাইরেক্ট করা হচ্ছে...');
+                // In a real application, you would redirect to login page
+                // window.location.href = 'login.html';
+            });
+        });
+    </script>
+</body>
+</html>

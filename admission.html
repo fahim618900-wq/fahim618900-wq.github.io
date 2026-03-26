@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ভর্তি তথ্য - দারুল হিকমাহ মডেল মাদ্রাসা, ফুলপুর, ময়মনসিংহ</title>
+    <meta name="description" content="দারুল হিকমাহ মডেল মাদ্রাসায় ২০২৬ শিক্ষাবর্ষের ভর্তি চলছে। অনলাইন ও অফলাইন উভয় পদ্ধতিতে ভর্তি করা যাবে।">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- মেইন স্টাইলশীট -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://via.placeholder.com/32x32/1a237e/ffffff?text=DH">
+    
+    <style>
+        /* Admission page specific styles */
+        .admission-process {
+            counter-reset: step;
+        }
+        
+        .process-step {
+            position: relative;
+            padding-left: 70px;
+            margin-bottom: 30px;
+        }
+        
+        .process-step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .process-step.success::before {
+            background: var(--success-color);
+        }
+        
+        .process-step.warning::before {
+            background: var(--warning-color);
+        }
+        
+        .process-step.info::before {
+            background: var(--info-color);
+        }
+        
+        .admission-card {
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .admission-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .form-check-input:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .age-calculator {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: var(--border-radius-lg);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .eligibility-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin: 5px;
+        }
+        
+        .eligibility-eligible {
+            background-color: rgba(46, 125, 50, 0.1);
+            color: var(--success-color);
+            border: 1px solid var(--success-color);
+        }
+        
+        .eligibility-not-eligible {
+            background-color: rgba(211, 47, 47, 0.1);
+            color: var(--danger-color);
+            border: 1px solid var(--danger-color);
+        }
+        
+        .countdown-timer {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: var(--border-radius-lg);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .countdown-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .document-checklist {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .document-checklist li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .document-checklist li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+        
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            .print-btn {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Top -->
+    <div class="header-top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <div class="madrasah-info">
+                        <i class="fas fa-school me-1"></i>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center datetime-info">
+                    <i class="fas fa-clock me-2"></i>
+                    <span id="currentTime"></span> | 
+                    <i class="fas fa-calendar ms-3 me-2"></i>
+                    <span id="currentDate"></span>
+                </div>
+                <div class="col-md-4 text-end">
+                    <a href="#" class="online-admission-btn" onclick="scrollToForm()">
+                        <i class="fas fa-user-graduate me-2"></i>অনলাইন আবেদন
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <div class="logo-section">
+                        <img src="https://i.ibb.co/9HydQGR4/logo.jpg" alt="দারুল হিকমাহ মডেল মাদ্রাসার লোগো" class="logo-img">
+                        <div class="logo-text">
+                            <h1>দারুল হিকমাহ মডেল মাদ্রাসা</h1>
+                            <p>ফুলপুর, ময়মনসিংহ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="text-center">
+                        <h3 class="text-primary fw-bold mb-1">ইসলামী ব্যাংকের বিপরীত পার্শ্বে, ফুলপুর, ময়মনসিংহ</h3>
+                        <p class="text-muted mb-0">আধুনিক শিক্ষা ও ইসলামী মূল্যবোধের সমন্বয়ে গড়ে উঠেছে একটি আদর্শ শিক্ষাপ্রতিষ্ঠান</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Notice Section -->
+    <section class="notice-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-2 col-lg-1">
+                    <div class="notice-label">নোটিশঃ</div>
+                </div>
+                <div class="col-md-10 col-lg-11">
+                    <div class="notice-marquee">
+                        <div class="notice-content">
+                            <span class="notice-item"><a href="#"><i class="fas fa-exclamation-circle me-1"></i>ভর্তি চলছে ২০২৬ শিক্ষাবর্ষের জন্য</a></span>
+                            <span class="notice-separator">||</span>
+                            <span class="notice-item"><a href="#"><i class="fas fa-file-alt me-1"></i>ভর্তি ফরম সংগ্রহ করুন এখনই!</a></span>
+                            <span class="notice-separator">||</span>
+                            <span class="notice-item"><a href="#"><i class="fas fa-clock me-1"></i>></span>
+                            <span class="notice-separator">||</span>
+                            <span class="notice-item"><a href="#"><i class="fas fa-graduation-cap me-1"></i>হিফয বিভাগে বিশেষ সুযোগ</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark main-nav">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> হোম</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-info-circle me-1"></i> পরিচিতি
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="about.html"><i class="fas fa-eye me-2"></i>এক নজরে মাদ্রাসা</a></li>
+                            <li><a class="dropdown-item" href="about.html#principal"><i class="fas fa-quote-left me-2"></i>প্রধান শিক্ষকের বাণী</a></li>
+                            <li><a class="dropdown-item" href="about.html#history"><i class="fas fa-history me-2"></i>প্রতিষ্ঠার ইতিহাস</a></li>
+                            <li><a class="dropdown-item" href="about.html#mission"><i class="fas fa-bullseye me-2"></i>লক্ষ্য ও উদ্দেশ্য</a></li>
+                            <li><a class="dropdown-item" href="about.html#teachers"><i class="fas fa-chalkboard-teacher me-2"></i>শিক্ষকমণ্ডলী</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-graduation-cap me-1"></i> একাডেমিক
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="departments.html"><i class="fas fa-school me-2"></i>বিভাগসমূহ</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-book me-2"></i>পাঠ্যক্রম</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-calendar-alt me-2"></i>ক্লাস রুটিন</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-file-alt me-2"></i>পরীক্ষা ব্যবস্থা</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line me-2"></i>ফলাফল</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="admission.html"><i class="fas fa-user-graduate me-1"></i> ভর্তি তথ্য</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="fee.html"><i class="fas fa-money-bill-wave me-1"></i> ফি কাঠামো</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="facilities.html"><i class="fas fa-tools me-1"></i> সুবিধাসমূহ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html"><i class="fas fa-images me-1"></i> গ্যালারি</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html"><i class="fas fa-phone-alt me-1"></i> যোগাযোগ</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="fee.html" class="btn btn-outline-light btn-sm me-2">
+                        <i class="fas fa-money-bill-wave me-1"></i>ফি কাঠামো
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h2 class="page-title">ভর্তি তথ্য ২০২৬</h2>
+                    <p class="lead">দারুল হিকমাহ মডেল মাদ্রাসায় ২০২৬ শিক্ষাবর্ষের জন্য ভর্তি চলছে। সকল বিভাগে যোগ্য শিক্ষার্থীদের ভর্তি করা হবে। অনলাইন ও অফলাইন উভয় পদ্ধতিতে ভর্তি করা যাবে।</p>
+                    
+                    <!-- Countdown Timer -->
+                    <div class="countdown-timer">
+                        <h4 class="mb-3"><i class="far fa-clock me-2"></i>ভর্তি শেষ হতে বাকি</h4>
+                        <div class="row">
+                            <div class="col-3">
+                                <span class="countdown-number" id="days">00</span>
+                                <span class="countdown-label">দিন</span>
+                            </div>
+                            <div class="col-3">
+                                <span class="countdown-number" id="hours">00</span>
+                                <span class="countdown-label">ঘন্টা</span>
+                            </div>
+                            <div class="col-3">
+                                <span class="countdown-number" id="minutes">00</span>
+                                <span class="countdown-label">মিনিট</span>
+                            </div>
+                            <div class="col-3">
+                                <span class="countdown-number" id="seconds">00</span>
+                                <span class="countdown-label">সেকেন্ড</span>
+                            </div>
+                        </div>
+                        <p class="mt-3 mb-0">ভর্তি চলছে</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Admission Schedule -->
+            <div class="card border-primary mb-5">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0"><i class="fas fa-calendar-alt me-2"></i>ভর্তি সময়সূচী ২০২৬</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>ক্র. নং</th>
+                                    <th>কার্যক্রম</th>
+                                    <th>শুরুর তারিখ</th>
+                                    <th>শেষ তারিখ</th>
+                                    <th>মন্তব্য</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>০১</td>
+                                    <td>ভর্তি বিজ্ঞপ্তি প্রকাশ</td>
+                                    <td>০১ ডিসেম্বর ২০২৫</td>
+                                    <td>-</td>
+                                    <td><span class="badge bg-success">প্রকাশিত</span></td>
+                                </tr>
+                                <tr>
+                                    <td>০২</td>
+                                    <td>সাধারণ বিভাগে ভর্তি পরীক্ষা</td>
+                                    <td>০১ ডিসেম্বর ২০২৫</td>
+                                    <td> ২০২৬</td>
+                                    <td><span class="badge bg-warning">আসন্ন</span></td>
+                                </tr>
+                                <tr>
+                                    <td>০৭</td>
+                                    <td>ক্লাস শুরুর তারিখ</td>
+                                    <td>০১ জানুয়ারি ২০২৬</td>
+                                    <td>-</td>
+                                    <td><span class="badge bg-info">নতুন শিক্ষাবর্ষ</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mb-5">
+                <!-- Online Admission -->
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 border-success admission-card">
+                        <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0"><i class="fas fa-laptop me-2"></i>অনলাইন ভর্তি</h5>
+                            <span class="badge bg-light text-success">প্রস্তাবিত</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">আমাদের মাদ্রাসার অফিশিয়াল ওয়েবসাইটের মাধ্যমে অনলাইনে ভর্তি ফরম পূরণ করতে পারবেন। নিচের ধাপগুলো অনুসরণ করুন:</p>
+                            
+                            <div class="admission-process mt-4">
+                                <div class="process-step success">
+                                    <h6>ধাপ ১: অনলাইন ফরম পূরণ</h6>
+                                    <p class="mb-0">ওয়েবসাইটের "অনলাইন আবেদন" বাটনে ক্লিক করুন এবং অনলাইন ফরমটি পূরণ করুন।</p>
+                                </div>
+                                
+                                <div class="process-step success">
+                                    <h6>ধাপ ২: ছবি ও কাগজপত্র আপলোড</h6>
+                                    <p class="mb-0">শিক্ষার্থীর দু'কপি পাসপোর্ট সাইজের ছবি, জন্মনিবন্ধন সনদ ও প্রয়োজনীয় কাগজপত্র আপলোড করুন।</p>
+                                </div>
+                                
+                                <div class="process-step warning">
+                                    <h6>ধাপ ৩: ভর্তি ফি প্রদান</h6>
+                                    <p class="mb-0">ভর্তি ফি অনলাইন পেমেন্ট (bKash, Nagad, Rocket) বা ব্যাংক ডিপোজিটের মাধ্যমে প্রদান করুন।</p>
+                                </div>
+                                
+                                <div class="process-step info">
+                                    <h6>ধাপ ৪: আবেদন নিশ্চিতকরণ</h6>
+                                    <p class="mb-0">আবেদন নিশ্চিতকরণের জন্য আমাদের থেকে কনফার্মেশন ইমেইল বা এসএমএস পাবেন।</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <button class="btn btn-success w-100" onclick="scrollToForm()">
+                                    <i class="fas fa-user-graduate me-2"></i>অনলাইনে ভর্তি ফরম পূরণ করুন
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Offline Admission -->
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 border-primary admission-card">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0"><i class="fas fa-school me-2"></i>অফলাইন ভর্তি</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">সরাসরি মাদ্রাসা ক্যাম্পাসে এসে অফলাইনেও ভর্তি ফরম সংগ্রহ ও জমা দিতে পারবেন। নিচের ধাপগুলো অনুসরণ করুন:</p>
+                            
+                            <div class="admission-process mt-4">
+                                <div class="process-step success">
+                                    <h6>ধাপ ১: মাদ্রাসা পরিদর্শন</h6>
+                                    <p class="mb-0">মাদ্রাসা অফিস থেকে ভর্তি ফরম সংগ্রহ করুন এবং প্রয়োজনীয় তথ্য জেনে নিন।</p>
+                                </div>
+                                
+                                <div class="process-step success">
+                                    <h6>ধাপ ২: ফরম পূরণ ও কাগজপত্র সংযুক্ত</h6>
+                                    <p class="mb-0">ফরমটি সঠিকভাবে পূরণ করুন এবং প্রয়োজনীয় সকল কাগজপত্র সংযুক্ত করুন।</p>
+                                </div>
+                                
+                                <div class="process-step warning">
+                                    <h6>ধাপ ৩: ভর্তি ফি জমা</h6>
+                                    <p class="mb-0">প্রয়োজনীয় ভর্তি ফি নগদ বা ব্যাংক ড্রাফটের মাধ্যমে জমা দিন এবং রসিদ সংগ্রহ করুন।</p>
+                                </div>
+                                
+                                <div class="process-step info">
+                                    <h6>ধাপ ৪: ভর্তি নিশ্চিতকরণ</h6>
+                                    <p class="mb-0">ভর্তি নিশ্চিতকরণের জন্য অফিস থেকে রসিদ ও ভর্তি কার্ড সংগ্রহ করুন।</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <a href="contact.html" class="btn btn-primary w-100">
+                                    <i class="fas fa-map-marker-alt me-2"></i>মাদ্রাসার ঠিকানা দেখুন
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Required Documents -->
+            <div class="card border-info mb-5">
+                <div class="card-header bg-info text-white">
+                    <h4 class="mb-0"><i class="fas fa-file-alt me-2"></i>প্রয়োজনীয় কাগজপত্র</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-primary mb-3">সকল শিক্ষার্থীর জন্য আবশ্যক:</h6>
+                            <ul class="document-checklist">
+                                <li>ভর্তি ফরম (মাদ্রাসা থেকে সংগ্রহীত)</li>
+                                <li>জন্ম নিবন্ধন সনদপত্রের ফটোকপি (২ কপি)</li>
+                                <li>শিক্ষার্থীর পাসপোর্ট সাইজের রঙিন ছবি (৩ কপি)</li>
+                                <li>পিতার জাতীয় পরিচয়পত্রের ফটোকপি (২ কপি)</li>
+                                <li>মাতার জাতীয় পরিচয়পত্রের ফটোকপি (২ কপি)</li>
+                                <li>পিতামাতার ২ কপি পাসপোর্ট সাইজ ছবি</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-primary mb-3">অতিরিক্ত কাগজপত্র (প্রযোজ্য ক্ষেত্রে):</h6>
+                            <ul class="document-checklist">
+                                <li>পূর্ববর্তী শিক্ষাপ্রতিষ্ঠানের ট্রান্সফার সার্টিফিকেট</li>
+                                <li>শিক্ষাগত যোগ্যতার সনদপত্রের ফটোকপি</li>
+                                <li>স্বাস্থ্য সনদপত্র (হিফয বিভাগের জন্য)</li>
+                                <li>সনাতন ধর্মাবলম্বী হলে ধর্মীয় প্রধান কর্তৃক প্রত্যয়নপত্র</li>
+                                <li>বিশেষ চাহিদা থাকলে চিকিৎসক কর্তৃক সার্টিফিকেট</li>
+                                <li>এতিম শিশু হলে মৃত্যু সনদ/আদালতের রায়ের কপি</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-warning mt-3">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <strong>সতর্কতা:</strong> সকল কাগজপত্রের মূল ও ফটোকপি সঙ্গে আনতে হবে। ভুয়া কাগজপত্র জমা দিলে ভর্তি বাতিল করা হবে।
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <button class="btn btn-outline-info print-btn" onclick="window.print()">
+                            <i class="fas fa-print me-2"></i>কাগজপত্রের তালিকা প্রিন্ট করুন
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Online Admission Form -->
+            <div class="card border-success mb-5" id="admissionForm">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0"><i class="fas fa-edit me-2"></i>অনলাইন ভর্তি ফরম</h4>
+                </div>
+                <div class="card-body">
+                    <form id="onlineAdmissionForm" novalidate>
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <h5 class="text-primary border-bottom pb-2">শিক্ষার্থীর তথ্য</h5>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="studentName" class="form-label">শিক্ষার্থীর নাম (বাংলায়) <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="studentName" required>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="studentNameEnglish" class="form-label">শিক্ষার্থীর নাম (ইংরেজিতে) <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="studentNameEnglish" required>
+                            </div>
+                            
+                            <div class="col-md-4 mb-3">
+                                <label for="birthDateForm" class="form-label">জন্ম তারিখ <span class="text-danger">*</span></label>
+                                <input type="date" class="form-control" id="birthDateForm" required>
+                            </div>
+                            
+                            <div class="col-md-4 mb-3">
+                                <label for="birthRegNo" class="form-label">জন্ম নিবন্ধন নম্বর <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="birthRegNo" required>
+                            </div>
+                            
+                            <div class="col-md-4 mb-3">
+                                <label for="gender" class="form-label">লিঙ্গ <span class="text-danger">*</span></label>
+                                <select class="form-select" id="gender" required>
+                                    <option value="" selected disabled>নির্বাচন করুন</option>
+                                    <option value="male">ছেলে</option>
+                                    <option value="female">মেয়ে</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="admissionFor" class="form-label">ভর্তি হতে চান <span class="text-danger">*</span></label>
+                                <select class="form-select" id="admissionFor" required>
+                                    <option value="" selected disabled>নির্বাচন করুন</option>
+                                    <option value="play">প্লে শ্রেণি</option>
+                                    <option value="nursery">নার্সারি শ্রেণি</option>
+                                    <option value="class1">প্রথম শ্রেণি</option>
+                                    <option value="class2">দ্বিতীয় শ্রেণি</option>
+                                    <option value="class3">তৃতীয় শ্রেণি</option>
+                                    <option value="class4">চতুর্থ শ্রেণি</option>
+                                    <option value="class5">পঞ্চম শ্রেণি</option>
+                                    <option value="class6">ষষ্ঠ শ্রেণি</option>
+                                    <option value="noorani">নূরানী বিভাগ</option>
+                                    <option value="nazera">নাযেরা বিভাগ</option>
+                                    <option value="hifz_nonres">হিফয বিভাগ (অনাবাসিক)</option>
+                                    <option value="hifz_res">হিফয বিভাগ (আবাসিক)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="previousSchool" class="form-label">পূর্ববর্তী শিক্ষাপ্রতিষ্ঠান</label>
+                                <input type="text" class="form-control" id="previousSchool">
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <h5 class="text-primary border-bottom pb-2">পিতার তথ্য</h5>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="fatherName" class="form-label">পিতার নাম (বাংলায়) <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="fatherName" required>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="fatherNID" class="form-label">জাতীয় পরিচয়পত্র নম্বর <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="fatherNID" required>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="fatherOccupation" class="form-label">পেশা <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="fatherOccupation" required>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="fatherPhone" class="form-label">মোবাইল নম্বর <span class="text-danger">*</span></label>
+                                <input type="tel" class="form-control" id="fatherPhone" required>
+                            </div>
+                            
+                            <div class="col-12 mb-3">
+                                <label for="fatherAddress" class="form-label">স্থায়ী ঠিকানা <span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="fatherAddress" rows="2" required></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <h5 class="text-primary border-bottom pb-2">মাতার তথ্য</h5>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="motherName" class="form-label">মাতার নাম (বাংলায়) <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="motherName" required>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="motherNID" class="form-label">জাতীয় পরিচয়পত্র নম্বর</label>
+                                <input type="text" class="form-control" id="motherNID">
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="motherOccupation" class="form-label">পেশা</label>
+                                <input type="text" class="form-control" id="motherOccupation">
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="motherPhone" class="form-label">মোবাইল নম্বর</label>
+                                <input type="tel" class="form-control" id="motherPhone">
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <h5 class="text-primary border-bottom pb-2">জরুরি যোগাযোগ</h5>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="emergencyName" class="form-label">জরুরি যোগাযোগের ব্যক্তি <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="emergencyName" required>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="emergencyRelation" class="form-label">সম্পর্ক <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="emergencyRelation" required>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="emergencyPhone1" class="form-label">মোবাইল নম্বর ১ <span class="text-danger">*</span></label>
+                                <input type="tel" class="form-control" id="emergencyPhone1" required>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="emergencyPhone2" class="form-label">মোবাইল নম্বর ২</label>
+                                <input type="tel" class="form-control" id="emergencyPhone2">
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <h5 class="text-primary border-bottom pb-2">অতিরিক্ত তথ্য</h5>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="transport" class="form-label">পরিবহন সেবা প্রয়োজন?</label>
+                                <select class="form-select" id="transport">
+                                    <option value="no">না</option>
+                                    <option value="yes">হ্যাঁ</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label for="transportRoute" class="form-label">পরিবহন রুট (প্রয়োজন হলে)</label>
+                                <select class="form-select" id="transportRoute" disabled>
+                                    <option value="">নির্বাচন করুন</option>
+                                    <option value="mymensingh">ময়মনসিংহ</option>
+                                    <option value="phulpur">ফুলপুর</option>
+                                    <option value="valuka">ভালুকা</option>
+                                    <option value="haluaghat">হালুয়াঘাট</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-12 mb-3">
+                                <label for="specialNeeds" class="form-label">বিশেষ প্রয়োজনীয়তা/মেডিকেল কন্ডিশন (যদি থাকে)</label>
+                                <textarea class="form-control" id="specialNeeds" rows="2"></textarea>
+                            </div>
+                            
+                            <div class="col-12 mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                    <label class="form-check-label" for="agreeTerms">
+                                        আমি স্বীকার করছি যে প্রদত্ত সকল তথ্য সঠিক এবং ভর্তি নিয়মাবলী পড়ে সম্মত হয়েছি। <span class="text-danger">*</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <i class="fas fa-paper-plane me-2"></i>আবেদন জমা দিন
+                            </button>
+                            <button type="reset" class="btn btn-outline-secondary">
+                                <i class="fas fa-redo me-2"></i>ফরম রিসেট করুন
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="alert alert-info mt-4">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong>দ্রষ্টব্য:</strong> ফরম জমা দেওয়ার পর আপনি একটি কনফার্মেশন ইমেইল পাবেন। কাগজপত্রের হার্ড কপি ও ভর্তি ফি জমা দেওয়ার পর ভর্তি প্রক্রিয়া সম্পন্ন হবে।
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact for Admission -->
+            <div class="text-center py-5 bg-light rounded">
+                <h4 class="text-primary mb-3">ভর্তি সংক্রান্ত যেকোনো তথ্যের জন্য যোগাযোগ করুন</h4>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 border rounded">
+                            <i class="fas fa-phone-alt fa-2x text-primary mb-3"></i>
+                            <h6>ফোন নম্বর</h6>
+                            <p class="mb-0">০১৯৭০-৫১৭৫৬৬ (ভর্তি শাখা)</p>
+                            <p class="mb-0">০১৯৭০-৫১৭৫৬৭ (অফিস সহকারী)</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 border rounded">
+                            <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
+                            <h6>ইমেইল ঠিকানা</h6>
+                            <p class="mb-0">darulhikmahphulpur2025@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 border rounded">
+                            <i class="fas fa-clock fa-2x text-primary mb-3"></i>
+                            <h6>যোগাযোগের সময়</h6>
+                            <p class="mb-0">শনি-বৃহস্পতিবার: সকাল ৯টা - রাত ৯টা</p>
+                            <p class="mb-0">শুক্রবার: সন্ধার পর</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <a href="contact.html" class="btn btn-primary btn-lg me-3">
+                        <i class="fas fa-address-book me-2"></i>যোগাযোগের তথ্য দেখুন
+                    </a>
+                    <a href="fee.html" class="btn btn-warning btn-lg">
+                        <i class="fas fa-money-bill-wave me-2"></i>ফি কাঠামো দেখুন
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <h4>দারুল হিকমাহ মডেল মাদ্রাসা</h4>
+                    <p class="mt-3">আধুনিক শিক্ষা ও ইসলামী মূল্যবোধের সমন্বয়ে গড়ে উঠেছে একটি আদর্শ শিক্ষাপ্রতিষ্ঠান। ২০২৫ সাল থেকে ফুলপুর, ময়মনসিংহে শিক্ষার আলো ছড়িয়ে দিচ্ছি।</p>
+                    <div class="social-links mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-youtube fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>গুরুত্বপূর্ণ লিংক</h4>
+                    <div class="footer-links mt-3">
+                        <a href="index.html"><i class="fas fa-chevron-right me-2"></i>হোম</a>
+                        <a href="about.html"><i class="fas fa-chevron-right me-2"></i>আমাদের সম্পর্কে</a>
+                        <a href="departments.html"><i class="fas fa-chevron-right me-2"></i>বিভাগসমূহ</a>
+                        <a href="admission.html"><i class="fas fa-chevron-right me-2"></i>ভর্তি তথ্য</a>
+                        <a href="fee.html"><i class="fas fa-chevron-right me-2"></i>ফি কাঠামো</a>
+                        <a href="facilities.html"><i class="fas fa-chevron-right me-2"></i>সুবিধাসমূহ</a>
+                        <a href="gallery.html"><i class="fas fa-chevron-right me-2"></i>গ্যালারি</a>
+                        <a href="contact.html"><i class="fas fa-chevron-right me-2"></i>যোগাযোগ</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>যোগাযোগ</h4>
+                    <div class="mt-3">
+                        <p><i class="fas fa-map-marker-alt me-2"></i>ইসলামী ব্যাংকের বিপরীত পার্শ্বে, ফুলপুর, ময়মনসিংহ</p>
+                        <p><i class="fas fa-phone me-2"></i>০১৯৭০-৫১৭৫৬৬ (প্রধান শিক্ষক)</p>
+                        <p><i class="fas fa-phone me-2"></i>০১৯৭০-৫১৭৫৬৭ (অফিস সহকারী)</p>
+                        <p><i class="fas fa-envelope me-2"></i>darulhikmahphulpur2025@gmail.com</p>
+                        <p><i class="fas fa-clock me-2"></i>অফিস সময়: রবি-বৃহঃ সকাল ৯টা - রাত ৯টা</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; © ২০২৪ দারুল হিকমাহ মডেল মাদ্রাসা, ফুলপুর, ময়মনসিংহ। সকল অধিকার সংরক্ষিত।</p>
+                <p class="mb-0">ডিজাইন ও ডেভেলপমেন্ট: আব্দুল্লাহ্ ফাহিম</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="tel:01970517566" class="floating-btn call">
+            <i class="fas fa-phone"></i>
+            <span class="floating-btn-tooltip">কল করুন</span>
+        </a>
+        <a href="https://wa.me/8801970517566" class="floating-btn whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="floating-btn-tooltip">WhatsApp</span>
+        </a>
+        <a href="#admissionForm" class="floating-btn email" onclick="scrollToForm()">
+            <i class="fas fa-edit"></i>
+            <span class="floating-btn-tooltip">ফরম পূরণ</span>
+        </a>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn btn-primary" style="position: fixed; bottom: 100px; right: 30px; z-index: 1000; display: none;">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Current Date and Time in Bengali
+        function updateDateTime() {
+            const now = new Date();
+            
+            // Custom Bengali date formatting
+            const weekdays = ['রবিবার', 'সোমবার', 'মঙ্গলবার', 'বুধবার', 'বৃহস্পতিবার', 'শুক্রবার', 'শনিবার'];
+            const months = ['জানুয়ারি', 'ফেব্রুয়ারি', 'মার্চ', 'এপ্রিল', 'মে', 'জুন', 'জুলাই', 'আগস্ট', 'সেপ্টেম্বর', 'অক্টোবর', 'নভেম্বর', 'ডিসেম্বর'];
+            
+            const weekday = weekdays[now.getDay()];
+            const day = now.getDate();
+            const month = months[now.getMonth()];
+            const year = now.getFullYear();
+            
+            // Time formatting
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            let ampm = hours >= 12 ? 'PM' : 'AM';
+            
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            
+            const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+            const dateString = `${weekday}, ${day} ${month} ${year}`;
+            
+            document.getElementById('currentTime').textContent = timeString;
+            document.getElementById('currentDate').textContent = dateString;
+        }
+        
+        // Update every second
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+        
+        // Countdown Timer for Admission Deadline
+        function updateCountdown() {
+            const deadline = new Date('December 31, 2023 23:59:59').getTime();
+            const now = new Date().getTime();
+            const timeLeft = deadline - now;
+            
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            } else {
+                document.querySelector('.countdown-timer').innerHTML = '<h4 class="mb-0">ভর্তি শেষ হয়েছে</h4>';
+            }
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Age Calculator and Eligibility Check
+        function calculateEligibility() {
+            const birthDate = new Date(document.getElementById('birthDate').value);
+            const admissionClass = document.getElementById('admissionClass').value;
+            const today = new Date();
+            
+            if (!birthDate || isNaN(birthDate)) {
+                alert('দয়া করে সঠিক জন্ম তারিখ দিন');
+                return;
+            }
+            
+            // Calculate age in years
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            
+            let isEligible = false;
+            let message = '';
+            let details = '';
+            
+            // Check eligibility based on class
+            switch(admissionClass) {
+                case 'play':
+                    isEligible = age >= 4;
+                    message = isEligible ? 'যোগ্য' : 'অযোগ্য';
+                    details = `প্লে শ্রেণিতে ভর্তির জন্য বয়স কমপক্ষে ৪ বছর হতে হবে। আপনার শিশুর বয়স: ${age} বছর।`;
+                    break;
+                    
+                case 'nursery':
+                    isEligible = age >= 5;
+                    message = isEligible ? 'যোগ্য' : 'অযোগ্য';
+                    details = `নার্সারি শ্রেণিতে ভর্তির জন্য বয়স কমপক্ষে ৫ বছর হতে হবে। আপনার শিশুর বয়স: ${age} বছর।`;
+                    break;
+                    
+                case 'class1':
+                    isEligible = age >= 6;
+                    message = isEligible ? 'যোগ্য' : 'অযোগ্য';
+                    details = `প্রথম শ্রেণিতে ভর্তির জন্য বয়স কমপক্ষে ৬ বছর হতে হবে। আপনার শিশুর বয়স: ${age} বছর।`;
+                    break;
+                    
+                case 'hifz':
+                    isEligible = age >= 6 && age <= 12;
+                    message = isEligible ? 'যোগ্য' : 'অযোগ্য';
+                    details = `হিফয বিভাগে ভর্তির জন্য বয়স ৬ থেকে ১২ বছরের মধ্যে হতে হবে। আপনার শিশুর বয়স: ${age} বছর।`;
+                    break;
+                    
+                default:
+                    isEligible = age >= 6;
+                    message = 'যোগ্যতা যাচাই করুন';
+                    details = `আপনার শিশুর বয়স: ${age} বছর। বিস্তারিত জানতে অফিসে যোগাযোগ করুন।`;
+            }
+            
+            // Display result
+            const resultDiv = document.getElementById('eligibilityResult');
+            const title = document.getElementById('resultTitle');
+            const resultDetails = document.getElementById('resultDetails');
+            const badgeDiv = document.getElementById('eligibilityBadge');
+            
+            title.textContent = message;
+            resultDetails.textContent = details;
+            
+            if (isEligible) {
+                title.className = 'text-success';
+                badgeDiv.innerHTML = '<span class="eligibility-badge eligibility-eligible">ভর্তির জন্য যোগ্য</span>';
+            } else {
+                title.className = 'text-danger';
+                badgeDiv.innerHTML = '<span class="eligibility-badge eligibility-not-eligible">ভর্তির জন্য অযোগ্য</span>';
+            }
+            
+            resultDiv.style.display = 'block';
+        }
+        
+        // Online Admission Form Handling
+        document.getElementById('onlineAdmissionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            let isValid = true;
+            const requiredFields = this.querySelectorAll('[required]');
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.classList.add('is-invalid');
+                } else {
+                    field.classList.remove('is-invalid');
+                }
+            });
+            
+            if (!isValid) {
+                alert('দয়া করে সকল প্রয়োজনীয় তথ্য পূরণ করুন।');
+                return;
+            }
+            
+            if (!document.getElementById('agreeTerms').checked) {
+                alert('আপনাকে শর্তাবলী মেনে নিতে হবে।');
+                return;
+            }
+            
+            // In a real application, you would send this data to a server
+            // For now, we'll show a success message
+            alert('আপনার ভর্তি আবেদন সফলভাবে জমা দেওয়া হয়েছে! আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব।');
+            this.reset();
+            
+            // Reset transport route dropdown
+            document.getElementById('transportRoute').disabled = true;
+        });
+        
+        // Transport service toggle
+        document.getElementById('transport').addEventListener('change', function() {
+            const transportRoute = document.getElementById('transportRoute');
+            transportRoute.disabled = this.value !== 'yes';
+            if (this.value !== 'yes') {
+                transportRoute.value = '';
+            }
+        });
+        
+        // Scroll to form function
+        function scrollToForm() {
+            document.getElementById('admissionForm').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Active navigation highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            
+            navLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                
+                if (currentPage === 'admission.html') {
+                    if (linkHref === 'admission.html') {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                }
+            });
+        });
+        
+        // Pause notice marquee on hover
+        const noticeMarquee = document.querySelector('.notice-content');
+        if (noticeMarquee) {
+            noticeMarquee.addEventListener('mouseenter', function() {
+                this.style.animationPlayState = 'paused';
+            });
+            
+            noticeMarquee.addEventListener('mouseleave', function() {
+                this.style.animationPlayState = 'running';
+            });
+        }
+    </script>
+</body>
+</html>
