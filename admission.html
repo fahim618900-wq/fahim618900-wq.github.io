@@ -271,54 +271,97 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     font-size: 0.85rem;
 }
 
-/* ==================== SMART STICKY NAV ==================== */
-.smart-nav {
-    position: fixed;
+/* ==================== NAV BAR (Sticky - Mobile Style Always) ==================== */
+.modern-nav {
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
+    z-index: 1030;
     background: var(--primary-dark);
-    z-index: 1029;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.22);
     border-bottom: 3px solid var(--accent);
-    transform: translateY(-100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: transform 0.4s var(--ease), opacity 0.3s var(--ease), visibility 0.3s;
-}
-
-.smart-nav.visible {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
+    padding: 6px 0;
 }
 
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
+    padding: 0;
 }
+
+.nav-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--bg-white);
+    padding: 8px 14px;
+    border-radius: var(--radius-xs);
+    font-size: 1.15rem;
+    margin: 4px 0;
+    transition: var(--transition);
+}
+
+.nav-toggle-btn:hover { background: var(--accent); color: var(--primary-deep); }
+
+.nav-brand-mobile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--bg-white);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.nav-brand-mobile img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+}
+
+.nav-menu-modern {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: var(--primary-deep);
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    max-height: 75vh;
+    overflow-y: auto;
+    margin-top: 8px;
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+.nav-menu-modern.open { display: flex; }
+
+.nav-menu-modern .nav-item-modern { width: 100%; }
 
 .nav-item-modern { position: relative; }
 
 .nav-link-modern {
     display: flex;
     align-items: center;
-    gap: 6px;
-    color: rgba(255, 255, 255, 0.82);
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.85);
     font-weight: 600;
-    font-size: 0.88rem;
-    padding: 13px 15px;
-    white-space: nowrap;
+    font-size: 0.95rem;
+    padding: 14px 22px;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     transition: var(--transition);
     cursor: pointer;
     font-family: var(--font-main);
     background: transparent;
-    border: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    justify-content: flex-start;
 }
 
-.nav-link-modern i { font-size: 0.78rem; color: var(--accent-light); transition: var(--transition); }
+.nav-link-modern i { font-size: 0.85rem; color: var(--accent-light); transition: var(--transition); }
 
 .nav-link-modern:hover,
 .nav-link-modern.active {
@@ -329,105 +372,93 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .nav-link-modern:hover i,
 .nav-link-modern.active i { color: var(--accent-light); }
 
-.nav-link-modern::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%) scaleX(0);
-    width: 80%;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent), var(--accent-light));
-    border-radius: 3px 3px 0 0;
+.nav-dropdown { position: relative; }
+
+.dropdown-toggle-modern .caret {
+    font-size: 0.65rem;
+    margin-left: auto;
     transition: transform 0.3s var(--ease);
 }
 
-.nav-link-modern:hover::after,
-.nav-link-modern.active::after { transform: translateX(-50%) scaleX(1); }
-
-.nav-dropdown { position: relative; }
-
-.dropdown-toggle-modern .caret { font-size: 0.6rem; margin-left: 2px; transition: transform 0.3s var(--ease); }
-
-.nav-dropdown:hover .caret { transform: rotate(180deg); }
+.nav-dropdown.open .caret { transform: rotate(180deg); }
 
 .dropdown-panel {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 260px;
-    background: var(--bg-white);
-    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
-    box-shadow: var(--shadow-lg);
-    padding: 10px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s var(--ease);
-    border-top: 3px solid var(--accent);
-    z-index: 100;
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    background: rgba(0, 0, 0, 0.25);
+    border-top: none;
+    border-radius: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s var(--ease), padding 0.35s var(--ease);
+    min-width: 100%;
 }
 
-.nav-dropdown:hover .dropdown-panel { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-dropdown.open .dropdown-panel {
+    max-height: 500px;
+    padding: 6px 0 6px 20px;
+}
 
 .dropdown-panel a {
     display: flex;
     align-items: center;
     gap: 11px;
-    padding: 10px 14px;
-    color: var(--text-main);
-    font-size: 0.88rem;
+    padding: 11px 14px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.9rem;
     font-weight: 500;
-    border-radius: var(--radius-xs);
     transition: var(--transition);
 }
 
-.dropdown-panel a i { color: var(--accent); font-size: 0.82rem; width: 18px; text-align: center; }
+.dropdown-panel a i {
+    color: var(--accent);
+    font-size: 0.82rem;
+    width: 18px;
+    text-align: center;
+}
 
 .dropdown-panel a:hover {
-    background: var(--primary-soft);
-    color: var(--primary);
-    padding-left: 20px;
+    background: rgba(200, 151, 26, 0.15);
+    color: var(--accent-light);
+    padding-left: 18px;
 }
 
-.nav-toggle-btn {
-    display: none;
-    background: transparent;
-    border: 2px solid var(--accent);
-    color: var(--bg-white);
-    padding: 7px 12px;
-    border-radius: var(--radius-xs);
-    font-size: 1.1rem;
-    margin: 6px 0;
+.nav-search {
+    display: flex;
+    align-items: center;
+    margin: 12px 20px;
+    width: calc(100% - 40px);
 }
-
-.nav-toggle-btn:hover { background: var(--accent); color: var(--primary-deep); }
-
-.nav-search { display: flex; align-items: center; margin-left: 8px; }
 
 .nav-search input {
     border: 2px solid rgba(255, 255, 255, 0.15);
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 50px 0 0 50px;
-    padding: 6px 16px;
-    font-size: 0.85rem;
+    padding: 10px 18px;
+    font-size: 0.92rem;
     color: var(--bg-white);
     font-family: var(--font-main);
-    width: 160px;
+    width: 100%;
+    flex: 1;
     transition: var(--transition);
     outline: none;
 }
 
 .nav-search input::placeholder { color: rgba(255, 255, 255, 0.5); }
-.nav-search input:focus { background: rgba(255, 255, 255, 0.12); border-color: var(--accent); width: 200px; }
+.nav-search input:focus { background: rgba(255, 255, 255, 0.14); border-color: var(--accent); }
 
 .nav-search button {
     background: var(--accent);
     border: none;
     border-radius: 0 50px 50px 0;
-    padding: 6px 16px;
+    padding: 10px 20px;
     color: var(--primary-deep);
-    font-size: 0.85rem;
+    font-size: 0.95rem;
+    cursor: pointer;
 }
 
 /* ==================== MAIN CONTENT ==================== */
@@ -1338,7 +1369,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         display: none !important;
     }
 
-    /* Print form styles */
     .pf-header {
         text-align: center;
         border-bottom: 3px double #000;
@@ -1514,69 +1544,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 /* ==================== RESPONSIVE ==================== */
-@media (max-width: 1199px) {
-    .nav-link-modern { padding: 12px 11px; font-size: 0.85rem; }
-}
-
 @media (max-width: 991px) {
     .hero-header { padding: 26px 0 30px; }
     .hero-logo { width: 105px; height: 105px; }
     .hero-logo-wrap::before { inset: -8px; }
     .hero-title { font-size: 2.35rem; }
     .hero-location { font-size: 1rem; }
-
-    .nav-container { justify-content: space-between; padding-top: 4px; padding-bottom: 4px; }
-    .nav-toggle-btn { display: flex; align-items: center; justify-content: center; }
-
-    .nav-menu-modern {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: var(--primary-deep);
-        padding: 10px 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        max-height: 75vh;
-        overflow-y: auto;
-        margin-top: 4px;
-    }
-
-    .nav-menu-modern.open { display: flex; }
-
-    .nav-menu-modern .nav-item-modern { width: 100%; }
-
-    .nav-link-modern {
-        padding: 13px 20px;
-        width: 100%;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        justify-content: flex-start;
-        font-size: 0.92rem;
-    }
-
-    .nav-link-modern::after { display: none; }
-
-    .dropdown-panel {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        background: rgba(0, 0, 0, 0.25);
-        border-top: none;
-        border-radius: 0;
-        padding: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s var(--ease), padding 0.35s var(--ease);
-        min-width: 100%;
-    }
-
-    .nav-dropdown.open .dropdown-panel { max-height: 500px; padding: 6px 0 6px 20px; }
-    .dropdown-panel a { color: rgba(255, 255, 255, 0.75); padding: 10px 14px; font-size: 0.88rem; }
-    .dropdown-panel a:hover { background: rgba(200, 151, 26, 0.15); color: var(--accent-light); }
-
-    .nav-search { margin: 10px 20px; width: calc(100% - 40px); }
-    .nav-search input { width: 100%; flex: 1; }
-    .nav-search input:focus { width: 100%; }
 
     .page-title { font-size: 1.6rem; }
     .hero-cta-banner { padding: 28px 22px; }
@@ -1598,7 +1571,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     .notice-track { padding: 0 5px; min-height: 46px; }
     .notice-link { font-size: 0.85rem; padding: 0 8px; }
 
-    .nav-link-modern { font-size: 0.9rem; padding: 12px 18px; }
+    .nav-brand-mobile { font-size: 0.95rem; }
+    .nav-brand-mobile img { width: 32px; height: 32px; }
 
     .main-content { padding: 24px 0; }
 
@@ -1673,6 +1647,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     .table-modern thead th,
     .table-modern tbody td { padding: 8px 7px; font-size: 0.76rem; }
     .hero-cta-text h3 { font-size: 1.05rem; }
+    .nav-brand-mobile span { display: none; }
 }
 
 /* ==================== SCROLLBAR ==================== */
@@ -1694,7 +1669,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <body>
 
 <!-- ==================== HERO HEADER ==================== -->
-<header class="hero-header" id="heroHeader">
+<header class="hero-header">
     <div class="container">
         <div class="hero-inner">
             <div class="hero-logo-wrap">
@@ -1749,61 +1724,65 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     </div>
 </section>
 
-<!-- ==================== SMART STICKY NAV ==================== -->
-<nav class="smart-nav" id="smartNav">
+<!-- ==================== NAV BAR (Sticky - Always Visible) ==================== -->
+<nav class="modern-nav" id="modernNav">
     <div class="container">
         <div class="nav-container">
             <button class="nav-toggle-btn" id="navToggle" aria-label="মেনু">
                 <i class="fas fa-bars"></i>
             </button>
-            <div class="nav-menu-modern" id="navMenu">
-                <div class="nav-item-modern">
-                    <a href="index.html" class="nav-link-modern"><i class="fas fa-home"></i> হোম</a>
-                </div>
-                <div class="nav-item-modern nav-dropdown" id="ddAbout">
-                    <a href="#" class="nav-link-modern" onclick="toggleDropdown(event,'ddAbout')">
-                        <i class="fas fa-info-circle"></i> পরিচিতি <i class="fas fa-chevron-down caret"></i>
-                    </a>
-                    <div class="dropdown-panel">
-                        <a href="about.html"><i class="fas fa-eye"></i>এক নজরে মাদ্রাসা</a>
-                        <a href="about.html#principal"><i class="fas fa-quote-left"></i>প্রধান শিক্ষকের বাণী</a>
-                        <a href="about.html#history"><i class="fas fa-history"></i>প্রতিষ্ঠার ইতিহাস</a>
-                        <a href="about.html#mission"><i class="fas fa-bullseye"></i>লক্ষ্য ও উদ্দেশ্য</a>
-                        <a href="about.html#teachers"><i class="fas fa-chalkboard-teacher"></i>শিক্ষকমণ্ডলী</a>
-                    </div>
-                </div>
-                <div class="nav-item-modern nav-dropdown" id="ddAcademic">
-                    <a href="#" class="nav-link-modern" onclick="toggleDropdown(event,'ddAcademic')">
-                        <i class="fas fa-graduation-cap"></i> একাডেমিক <i class="fas fa-chevron-down caret"></i>
-                    </a>
-                    <div class="dropdown-panel">
-                        <a href="departments.html"><i class="fas fa-school"></i>বিভাগসমূহ</a>
-                        <a href="#"><i class="fas fa-book"></i>পাঠ্যক্রম</a>
-                        <a href="#"><i class="fas fa-calendar-alt"></i>ক্লাস রুটিন</a>
-                        <a href="#"><i class="fas fa-file-alt"></i>পরীক্ষা ব্যবস্থা</a>
-                        <a href="#"><i class="fas fa-chart-line"></i>ফলাফল</a>
-                    </div>
-                </div>
-                <div class="nav-item-modern">
-                    <a href="admission.html" class="nav-link-modern active"><i class="fas fa-user-graduate"></i> ভর্তি তথ্য</a>
-                </div>
-                <div class="nav-item-modern">
-                    <a href="fee.html" class="nav-link-modern"><i class="fas fa-money-bill-wave"></i> ফি কাঠামো</a>
-                </div>
-                <div class="nav-item-modern">
-                    <a href="facilities.html" class="nav-link-modern"><i class="fas fa-tools"></i> সুবিধাসমূহ</a>
-                </div>
-                <div class="nav-item-modern">
-                    <a href="gallery.html" class="nav-link-modern"><i class="fas fa-images"></i> গ্যালারি</a>
-                </div>
-                <div class="nav-item-modern">
-                    <a href="contact.html" class="nav-link-modern"><i class="fas fa-phone-alt"></i> যোগাযোগ</a>
-                </div>
-                <form class="nav-search" onsubmit="return checkSearch(event)">
-                    <input type="search" placeholder="খুঁজুন..." aria-label="Search">
-                    <button type="submit"><i class="fas fa-search"></i></button>
-                </form>
+            <a href="index.html" class="nav-brand-mobile">
+                <img src="https://i.ibb.co/9HydQGR4/logo.jpg" alt="লোগো">
+                <span>দারুল হিকমাহ</span>
+            </a>
+        </div>
+        <div class="nav-menu-modern" id="navMenu">
+            <div class="nav-item-modern">
+                <a href="index.html" class="nav-link-modern"><i class="fas fa-home"></i> হোম</a>
             </div>
+            <div class="nav-item-modern nav-dropdown" id="ddAbout">
+                <a href="#" class="nav-link-modern" onclick="toggleDropdown(event,'ddAbout')">
+                    <i class="fas fa-info-circle"></i> পরিচিতি <i class="fas fa-chevron-down caret"></i>
+                </a>
+                <div class="dropdown-panel">
+                    <a href="about.html"><i class="fas fa-eye"></i>এক নজরে মাদ্রাসা</a>
+                    <a href="about.html#principal"><i class="fas fa-quote-left"></i>প্রধান শিক্ষকের বাণী</a>
+                    <a href="about.html#history"><i class="fas fa-history"></i>প্রতিষ্ঠার ইতিহাস</a>
+                    <a href="about.html#mission"><i class="fas fa-bullseye"></i>লক্ষ্য ও উদ্দেশ্য</a>
+                    <a href="about.html#teachers"><i class="fas fa-chalkboard-teacher"></i>শিক্ষকমণ্ডলী</a>
+                </div>
+            </div>
+            <div class="nav-item-modern nav-dropdown" id="ddAcademic">
+                <a href="#" class="nav-link-modern" onclick="toggleDropdown(event,'ddAcademic')">
+                    <i class="fas fa-graduation-cap"></i> একাডেমিক <i class="fas fa-chevron-down caret"></i>
+                </a>
+                <div class="dropdown-panel">
+                    <a href="departments.html"><i class="fas fa-school"></i>বিভাগসমূহ</a>
+                    <a href="#"><i class="fas fa-book"></i>পাঠ্যক্রম</a>
+                    <a href="#"><i class="fas fa-calendar-alt"></i>ক্লাস রুটিন</a>
+                    <a href="#"><i class="fas fa-file-alt"></i>পরীক্ষা ব্যবস্থা</a>
+                    <a href="#"><i class="fas fa-chart-line"></i>ফলাফল</a>
+                </div>
+            </div>
+            <div class="nav-item-modern">
+                <a href="admission.html" class="nav-link-modern active"><i class="fas fa-user-graduate"></i> ভর্তি তথ্য</a>
+            </div>
+            <div class="nav-item-modern">
+                <a href="fee.html" class="nav-link-modern"><i class="fas fa-money-bill-wave"></i> ফি কাঠামো</a>
+            </div>
+            <div class="nav-item-modern">
+                <a href="facilities.html" class="nav-link-modern"><i class="fas fa-tools"></i> সুবিধাসমূহ</a>
+            </div>
+            <div class="nav-item-modern">
+                <a href="gallery.html" class="nav-link-modern"><i class="fas fa-images"></i> গ্যালারি</a>
+            </div>
+            <div class="nav-item-modern">
+                <a href="contact.html" class="nav-link-modern"><i class="fas fa-phone-alt"></i> যোগাযোগ</a>
+            </div>
+            <form class="nav-search" onsubmit="return checkSearch(event)">
+                <input type="search" placeholder="খুঁজুন..." aria-label="Search">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
         </div>
     </div>
 </nav>
@@ -2194,7 +2173,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 <!-- ==================== PRINT FORM (A4 - Hidden on screen, visible on print) ==================== -->
 <div class="print-form" id="printForm">
-    <!-- Header -->
     <div class="pf-header">
         <img src="https://i.ibb.co/9HydQGR4/logo.jpg" alt="লোগো" class="pf-logo">
         <h1>দারুল হিকমাহ মডেল মাদ্রাসা</h1>
@@ -2202,17 +2180,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <p class="pf-address">মোবাইল: ০১৯৭০-৫১৭৫৬৬ | ইমেইল: darulhikmahphulpur2025@gmail.com</p>
     </div>
 
-    <!-- Title Bar -->
-    <div class="pf-title-bar">
-        ভর্তি আবেদন ফরম - ২০২৭ শিক্ষাবর্ষ
-    </div>
+    <div class="pf-title-bar">ভর্তি আবেদন ফরম - ২০২৭ শিক্ষাবর্ষ</div>
 
-    <!-- Photo Box -->
-    <div class="pf-photo-box">
-        পাসপোর্ট সাইজ<br>ছবি
-    </div>
+    <div class="pf-photo-box">পাসপোর্ট সাইজ<br>ছবি</div>
 
-    <!-- Student Info -->
     <div class="pf-section-title">১. শিক্ষার্থীর তথ্য</div>
 
     <div class="pf-row">
@@ -2261,7 +2232,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </div>
     </div>
 
-    <!-- Class Applied -->
     <div class="pf-section-title">২. যে শ্রেণি/বিভাগে ভর্তি হতে ইচ্ছুক</div>
 
     <div class="pf-checkbox-group" style="padding-left: 8px;">
@@ -2281,7 +2251,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <div class="pf-checkbox-item"><span class="box"></span> হিফয (আবাসিক)</div>
     </div>
 
-    <!-- Father Info -->
     <div class="pf-section-title">৩. পিতার তথ্য</div>
 
     <div class="pf-row">
@@ -2306,7 +2275,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </div>
     </div>
 
-    <!-- Mother Info -->
     <div class="pf-section-title">৪. মাতার তথ্য</div>
 
     <div class="pf-row">
@@ -2331,7 +2299,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </div>
     </div>
 
-    <!-- Address -->
     <div class="pf-section-title">৫. ঠিকানা</div>
 
     <div class="pf-row">
@@ -2350,7 +2317,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </div>
     </div>
 
-    <!-- Emergency Contact -->
     <div class="pf-section-title">৬. জরুরি যোগাযোগের তথ্য</div>
 
     <div class="pf-row">
@@ -2375,7 +2341,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </div>
     </div>
 
-    <!-- Additional -->
     <div class="pf-section-title">৭. অতিরিক্ত তথ্য</div>
 
     <div class="pf-row">
@@ -2401,13 +2366,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
     <div class="pf-clear"></div>
 
-    <!-- Declaration -->
     <div class="pf-declaration">
         <strong>ঘোষণা:</strong>
         আমি এই মর্মে ঘোষণা করছি যে, উপরোক্ত সকল তথ্য সঠিক ও সত্য। কোনো তথ্য ভুয়া প্রমাণিত হলে মাদ্রাসা কর্তৃপক্ষ যেকোনো সময় ভর্তি বাতিল করার অধিকার রাখে। আমি মাদ্রাসার সকল নিয়ম-কানুন মেনে চলার অঙ্গীকার করছি।
     </div>
 
-    <!-- Signatures -->
     <div class="pf-signatures">
         <div class="pf-signature">
             <div class="line">শিক্ষার্থীর স্বাক্ষর</div>
@@ -2420,7 +2383,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </div>
     </div>
 
-    <!-- Footer Note -->
     <div class="pf-footer-note">
         <strong>প্রয়োজনীয় কাগজপত্র:</strong> জন্ম নিবন্ধন সনদ (২ কপি) | শিক্ষার্থীর ছবি (৩ কপি) | পিতার NID (২ কপি) | মাতার NID (২ কপি) | পিতামাতার ছবি (২ কপি) | পূর্ববর্তী প্রতিষ্ঠানের TC (প্রযোজ্য ক্ষেত্রে)
         <br>
@@ -2432,58 +2394,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 
 <script>
-/* ==================== SMART STICKY NAV ==================== */
-const smartNav = document.getElementById('smartNav');
-const heroHeader = document.getElementById('heroHeader');
-const noticeBar = document.querySelector('.notice-bar');
+/* ==================== NAV TOGGLE ==================== */
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 const toggleIcon = navToggle.querySelector('i');
 const backToTop = document.getElementById('backToTop');
 
-let navThreshold = 0;
-
-function calculateThreshold() {
-    const headerH = heroHeader ? heroHeader.offsetHeight : 0;
-    const noticeH = noticeBar ? noticeBar.offsetHeight : 0;
-    navThreshold = headerH + noticeH - 10;
-}
-
-window.addEventListener('load', calculateThreshold);
-window.addEventListener('resize', calculateThreshold);
-calculateThreshold();
-
-/* ==================== SCROLL HANDLER ==================== */
-let ticking = false;
-
-function handleScroll() {
-    const currentY = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (currentY > navThreshold) {
-        if (!smartNav.classList.contains('visible')) {
-            smartNav.classList.add('visible');
-        }
-    } else {
-        if (smartNav.classList.contains('visible')) {
-            smartNav.classList.remove('visible');
-            navMenu.classList.remove('open');
-            toggleIcon.classList.remove('fa-times');
-            toggleIcon.classList.add('fa-bars');
-        }
-    }
-
-    backToTop.style.display = currentY > 400 ? 'flex' : 'none';
-    ticking = false;
-}
-
-window.addEventListener('scroll', function() {
-    if (!ticking) {
-        window.requestAnimationFrame(handleScroll);
-        ticking = true;
-    }
-}, { passive: true });
-
-/* ==================== NAV TOGGLE ==================== */
 navToggle.addEventListener('click', function() {
     navMenu.classList.toggle('open');
     if (navMenu.classList.contains('open')) {
@@ -2497,24 +2413,21 @@ navToggle.addEventListener('click', function() {
 
 /* ==================== DROPDOWN TOGGLE ==================== */
 function toggleDropdown(e, id) {
-    if (window.innerWidth <= 991) {
-        e.preventDefault();
-        const parent = document.getElementById(id);
-        document.querySelectorAll('.nav-dropdown').forEach(dd => {
-            if (dd.id !== id) dd.classList.remove('open');
-        });
-        parent.classList.toggle('open');
-    }
+    e.preventDefault();
+    const parent = document.getElementById(id);
+    document.querySelectorAll('.nav-dropdown').forEach(dd => {
+        if (dd.id !== id) dd.classList.remove('open');
+    });
+    parent.classList.toggle('open');
 }
 
 /* ==================== CLOSE NAV ON LINK CLICK ==================== */
 document.querySelectorAll('.nav-menu-modern a:not([onclick])').forEach(link => {
     link.addEventListener('click', () => {
-        if (window.innerWidth <= 991) {
-            navMenu.classList.remove('open');
-            toggleIcon.classList.remove('fa-times');
-            toggleIcon.classList.add('fa-bars');
-        }
+        navMenu.classList.remove('open');
+        toggleIcon.classList.remove('fa-times');
+        toggleIcon.classList.add('fa-bars');
+        document.querySelectorAll('.nav-dropdown').forEach(dd => dd.classList.remove('open'));
     });
 });
 
@@ -2528,6 +2441,22 @@ function checkSearch(e) {
     }
     return true;
 }
+
+/* ==================== SCROLL HANDLER ==================== */
+let ticking = false;
+
+function handleScroll() {
+    const currentY = window.pageYOffset || document.documentElement.scrollTop;
+    backToTop.style.display = currentY > 400 ? 'flex' : 'none';
+    ticking = false;
+}
+
+window.addEventListener('scroll', function() {
+    if (!ticking) {
+        window.requestAnimationFrame(handleScroll);
+        ticking = true;
+    }
+}, { passive: true });
 
 /* ==================== BACK TO TOP ==================== */
 backToTop.addEventListener('click', function() {
