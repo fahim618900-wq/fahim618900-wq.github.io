@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fahim618900-wq.github.io/sitemap.xml
