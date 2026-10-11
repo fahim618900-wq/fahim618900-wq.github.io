@@ -6,56 +6,56 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <!-- ═══════════════════════════════════════
-     মূল সাইট (Dh ফোল্ডার)
+     মূল সাইট (রুট ফোল্ডার)
      ═══════════════════════════════════════ -->
 <url>
-  <loc>https://fahim618900-wq.github.io/Dh/</loc>
+  <loc>https://fahim618900-wq.github.io/</loc>
   <lastmod>2026-02-04T18:32:46+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://fahim618900-wq.github.io/Dh/admission.html</loc>
+  <loc>https://fahim618900-wq.github.io/index.html</loc>
   <lastmod>2026-02-04T18:32:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://fahim618900-wq.github.io/Dh/index.html</loc>
+  <loc>https://fahim618900-wq.github.io/admission.html</loc>
   <lastmod>2026-02-04T18:32:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://fahim618900-wq.github.io/Dh/about.html</loc>
+  <loc>https://fahim618900-wq.github.io/about.html</loc>
   <lastmod>2026-02-04T18:32:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://fahim618900-wq.github.io/Dh/departments.html</loc>
+  <loc>https://fahim618900-wq.github.io/departments.html</loc>
   <lastmod>2026-02-04T18:32:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://fahim618900-wq.github.io/Dh/fee.html</loc>
+  <loc>https://fahim618900-wq.github.io/fee.html</loc>
   <lastmod>2026-02-04T18:32:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://fahim618900-wq.github.io/Dh/facilities.html</loc>
+  <loc>https://fahim618900-wq.github.io/facilities.html</loc>
   <lastmod>2026-02-04T18:32:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://fahim618900-wq.github.io/Dh/gallery.html</loc>
+  <loc>https://fahim618900-wq.github.io/gallery.html</loc>
   <lastmod>2026-02-04T18:32:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://fahim618900-wq.github.io/Dh/contact.html</loc>
+  <loc>https://fahim618900-wq.github.io/contact.html</loc>
   <lastmod>2026-02-04T18:32:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <!-- ═══════════════════════════════════════
-     নতুন ফলাফল সেকশন (result ফোল্ডার)
+     ফলাফল সেকশন (result ফোল্ডার)
      ═══════════════════════════════════════ -->
 <url>
   <loc>https://fahim618900-wq.github.io/result/</loc>
