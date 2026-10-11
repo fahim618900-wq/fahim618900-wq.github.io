@@ -4,9 +4,10 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-
+<!-- ═══════════════════════════════════════
+     মূল সাইট (Dh ফোল্ডার)
+     ═══════════════════════════════════════ -->
 <url>
   <loc>https://fahim618900-wq.github.io/Dh/</loc>
   <lastmod>2026-02-04T18:32:46+00:00</lastmod>
@@ -53,5 +54,23 @@
   <priority>0.80</priority>
 </url>
 
+<!-- ═══════════════════════════════════════
+     নতুন ফলাফল সেকশন (result ফোল্ডার)
+     ═══════════════════════════════════════ -->
+<url>
+  <loc>https://fahim618900-wq.github.io/result/</loc>
+  <lastmod>2026-10-12T00:00:00+00:00</lastmod>
+  <priority>0.95</priority>
+</url>
+<url>
+  <loc>https://fahim618900-wq.github.io/result/2026/</loc>
+  <lastmod>2026-10-12T00:00:00+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://fahim618900-wq.github.io/result/2026/3rd_semester.html</loc>
+  <lastmod>2026-10-12T00:00:00+00:00</lastmod>
+  <priority>0.95</priority>
+</url>
 
 </urlset>
