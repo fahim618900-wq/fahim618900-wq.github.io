@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>নোটিশ বোর্ড - দারুল হিকমাহ মডেল মাদ্রাসা ফুলপুর ময়মনসিংহ</title>
-<meta name="description" content="দারুল হিকমাহ মডেল মাদ্রাসার সকল নোটিশ, বিজ্ঞপ্তি ও ঘোষণা এক জায়গায়। ভর্তি, পরীক্ষা, ফলাফল ও অন্যান্য তথ্য।">
+<meta name="description" content="দারুল হিকমাহ মডেল মাদ্রাসার সকল নোটিশ, বিজ্ঞপ্তি ও ঘোষণা এক জায়গায়। ভর্তি, পরীক্ষা, ফলাফল, নিয়োগ ও অন্যান্য তথ্য।">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://fahim618900-wq.github.io/Dh/notice/index.html">
 
@@ -52,6 +52,7 @@
     --border: #e5e0d5;
     --info: #1e5fa8;
     --danger: #b91c1c;
+    --success: #0e6b45;
     --shadow-sm: 0 2px 10px rgba(10, 82, 52, 0.08);
     --shadow-md: 0 6px 24px rgba(10, 82, 52, 0.12);
     --shadow-lg: 0 12px 45px rgba(10, 82, 52, 0.16);
@@ -564,6 +565,47 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     padding: 20px 26px 30px;
 }
 
+/* ==================== FILTER TABS ==================== */
+.notice-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 22px 0 6px;
+    padding-bottom: 18px;
+    border-bottom: 1px dashed var(--border);
+}
+
+.filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 18px;
+    border-radius: 50px;
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    color: var(--text-body);
+    font-family: var(--font-main);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--primary-soft);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: var(--bg-white);
+    border-color: var(--primary);
+    box-shadow: 0 4px 14px rgba(10, 82, 52, 0.25);
+}
+
+.filter-btn i { font-size: 0.78rem; }
+
 /* ==================== NOTICE ITEM ==================== */
 .notice-item {
     display: flex;
@@ -735,47 +777,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     color: var(--primary-deep);
     transform: translateX(4px) rotate(-45deg);
 }
-
-/* ==================== FILTER TABS ==================== */
-.notice-filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 22px 0 6px;
-    padding-bottom: 18px;
-    border-bottom: 1px dashed var(--border);
-}
-
-.filter-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 8px 18px;
-    border-radius: 50px;
-    background: var(--bg);
-    border: 1.5px solid var(--border);
-    color: var(--text-body);
-    font-family: var(--font-main);
-    font-size: 0.88rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.filter-btn:hover {
-    border-color: var(--primary);
-    color: var(--primary);
-    background: var(--primary-soft);
-}
-
-.filter-btn.active {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-    color: var(--bg-white);
-    border-color: var(--primary);
-    box-shadow: 0 4px 14px rgba(10, 82, 52, 0.25);
-}
-
-.filter-btn i { font-size: 0.78rem; }
 
 /* ==================== EMPTY STATE ==================== */
 .notice-empty {
@@ -1186,9 +1187,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
                     <span class="notice-pipe">❖</span>
                     <a href="../form.pdf" download class="notice-link">📝 ভর্তি ফরম ডাউনলোড করুন এখনই!</a>
                     <span class="notice-pipe">❖</span>
-                    <a href="#" class="notice-link">📅 বার্ষিক পরীক্ষার রুটিন প্রকাশিত হয়েছে</a>
+                    <a href="teacher-recruitment-2027.html" class="notice-link">👨‍🏫 নতুন শিক্ষক নিয়োগ বিজ্ঞপ্তি ২০২৭</a>
                     <span class="notice-pipe">❖</span>
-                    <a href="#" class="notice-link">👨‍🏫 নতুন শিক্ষক নিয়োগ বিজ্ঞপ্তি ২০২৭</a>
+                    <a href="#" class="notice-link">📅 বার্ষিক পরীক্ষার রুটিন প্রকাশিত হয়েছে</a>
                     <span class="notice-pipe">❖</span>
                     <a href="#" class="notice-link">🏆 বার্ষিক পুরস্কার বিতরণী ২৫ ডিসেম্বর</a>
                     <span class="notice-pipe">❖</span>
@@ -1196,9 +1197,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
                     <span class="notice-pipe">❖</span>
                     <a href="../form.pdf" download class="notice-link">📝 ভর্তি ফরম ডাউনলোড করুন এখনই!</a>
                     <span class="notice-pipe">❖</span>
-                    <a href="#" class="notice-link">📅 বার্ষিক পরীক্ষার রুটিন প্রকাশিত হয়েছে</a>
+                    <a href="teacher-recruitment-2027.html" class="notice-link">👨‍🏫 নতুন শিক্ষক নিয়োগ বিজ্ঞপ্তি ২০২৭</a>
                     <span class="notice-pipe">❖</span>
-                    <a href="#" class="notice-link">👨‍🏫 নতুন শিক্ষক নিয়োগ বিজ্ঞপ্তি ২০২৭</a>
+                    <a href="#" class="notice-link">📅 বার্ষিক পরীক্ষার রুটিন প্রকাশিত হয়েছে</a>
                     <span class="notice-pipe">❖</span>
                     <a href="#" class="notice-link">🏆 বার্ষিক পুরস্কার বিতরণী ২৫ ডিসেম্বর</a>
                     <span class="notice-pipe">❖</span>
@@ -1306,6 +1307,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
                     <button class="filter-btn" data-filter="admission">
                         <i class="fas fa-user-graduate"></i> ভর্তি
                     </button>
+                    <button class="filter-btn" data-filter="recruitment">
+                        <i class="fas fa-briefcase"></i> নিয়োগ
+                    </button>
                     <button class="filter-btn" data-filter="exam">
                         <i class="fas fa-file-alt"></i> পরীক্ষা
                     </button>
@@ -1320,9 +1324,29 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
                     </button>
                 </div>
 
-                <!-- Notice Items -->
+                <!-- ═══════════════════════════════════════════ -->
+                <!-- NOTICE ITEMS — এখানে সব নোটিশ যোগ করুন -->
+                <!-- ═══════════════════════════════════════════ -->
 
-                <!-- 1. Admission -->
+                <!-- 1. Teacher Recruitment (notice/ ফোল্ডারের ভেতরে) -->
+                <a href="teacher-recruitment-2027.html" class="notice-item" data-category="recruitment">
+                    <div class="notice-item-icon gold">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="notice-item-content">
+                        <div class="notice-item-meta">
+                            <span class="notice-item-badge urgent"><i class="fas fa-fire"></i> জরুরি</span>
+                            <span class="notice-item-date"><i class="fas fa-calendar-alt"></i> ২০ নভেম্বর ২০২৬</span>
+                        </div>
+                        <h3 class="notice-item-title">নতুন শিক্ষক নিয়োগ বিজ্ঞপ্তি ২০২৭</h3>
+                        <p class="notice-item-text">নূরানী, নাজেরা, হিফজ ও সাধারণ শিক্ষা বিভাগের জন্য অভিজ্ঞ শিক্ষক নিয়োগ করা হবে। আগ্রহীরা বিস্তারিত জানুন।</p>
+                    </div>
+                    <div class="notice-item-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <!-- 2. Admission Notice -->
                 <a href="../admission.html" class="notice-item" data-category="admission">
                     <div class="notice-item-icon gold">
                         <i class="fas fa-user-graduate"></i>
@@ -1340,7 +1364,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
                     </div>
                 </a>
 
-                <!-- 2. Admission Form -->
+                <!-- 3. Admission Form Download -->
                 <a href="../form.pdf" download class="notice-item" data-category="admission">
                     <div class="notice-item-icon">
                         <i class="fas fa-file-pdf"></i>
@@ -1358,7 +1382,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
                     </div>
                 </a>
 
-                <!-- 3. Exam Routine -->
+                <!-- 4. Exam Routine -->
                 <div class="notice-item" data-category="exam">
                     <div class="notice-item-icon">
                         <i class="fas fa-calendar-alt"></i>
@@ -1370,24 +1394,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
                         </div>
                         <h3 class="notice-item-title">বার্ষিক পরীক্ষার রুটিন প্রকাশিত হয়েছে</h3>
                         <p class="notice-item-text">২০২৬ শিক্ষাবর্ষের বার্ষিক পরীক্ষার সময়সূচি প্রকাশ করা হয়েছে। সকল শিক্ষার্থী রুটিন সংগ্রহ করুন।</p>
-                    </div>
-                    <div class="notice-item-arrow">
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-                </div>
-
-                <!-- 4. Teacher Recruitment -->
-                <div class="notice-item" data-category="general">
-                    <div class="notice-item-icon gold">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
-                    <div class="notice-item-content">
-                        <div class="notice-item-meta">
-                            <span class="notice-item-badge new"><i class="fas fa-star"></i> নতুন</span>
-                            <span class="notice-item-date"><i class="fas fa-calendar-alt"></i> ২০ নভেম্বর ২০২৬</span>
-                        </div>
-                        <h3 class="notice-item-title">নতুন শিক্ষক নিয়োগ বিজ্ঞপ্তি ২০২৭</h3>
-                        <p class="notice-item-text">আরবি, বাংলা, ইংরেজি ও গণিত বিষয়ের অভিজ্ঞ শিক্ষক নিয়োগ করা হবে। আগ্রহীরা অফিসে যোগাযোগ করুন।</p>
                     </div>
                     <div class="notice-item-arrow">
                         <i class="fas fa-arrow-right"></i>
@@ -1501,6 +1507,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
                         <i class="fas fa-arrow-right"></i>
                     </div>
                 </a>
+
+                <!-- ═══════════════════════════════════════════ -->
+                <!-- নতুন নোটিশ উপরে কপি করে যোগ করুন -->
+                <!-- ═══════════════════════════════════════════ -->
 
                 <!-- Empty State -->
                 <div class="notice-empty" id="noticeEmpty">
