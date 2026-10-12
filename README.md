@@ -1,24 +1,20 @@
+ <div align="center">
 
+<img src="logo.png" alt="দারুল হিকমাহ মডেল মাদ্রাসার লোগো" width="120" />
 
----
+# দারুল হিকমাহ মডেল মাদ্রাসা
 
-```markdown
-<div align="center">
-
-<img src="logo.png" alt="Darul Hikmah Model Madrasah Logo" width="120" />
-
-# 🕌 দারুল হিকমাহ মডেল মাদ্রাসা
 ### Darul Hikmah Model Madrasah
 
-**ইসলামী ব্যাংকের বিপরীত পার্শ্বে, ফুলপুর, ময়মনসিংহ**
+**ইসলামী ব্যাংকের বিপরীতে, ফুলপুর, ময়মনসিংহ, বাংলাদেশ**
 
-*"জ্ঞানের আলোয় আলোকিত হোক প্রতিটি প্রাণ"*
+*“জ্ঞানের আলোয় আলোকিত হোক প্রতিটি প্রাণ”*
 
-[![Live Site](https://img.shields.io/badge/🌐_Live_Site-Visit-brightgreen?style=for-the-badge)](https://fahim618900-wq.github.io)
-[![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-blue?style=for-the-badge&logo=github)](https://pages.github.com/)
-[![Made with HTML](https://img.shields.io/badge/HTML-95.9%25-orange?style=for-the-badge&logo=html5)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![Made with CSS](https://img.shields.io/badge/CSS-3.6%25-blue?style=for-the-badge&logo=css3)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![Made with JS](https://img.shields.io/badge/JavaScript-0.5%25-yellow?style=for-the-badge&logo=javascript)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Live Website](https://img.shields.io/badge/Live_Website-Visit-brightgreen?style=for-the-badge)](https://fahim618900-wq.github.io/)
+[![GitHub Pages](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-222222?style=for-the-badge&logo=github)](https://pages.github.com/)
+[![HTML](https://img.shields.io/badge/HTML-Structure-orange?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS](https://img.shields.io/badge/CSS-Design-blue?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-Interaction-yellow?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 </div>
 
@@ -26,224 +22,101 @@
 
 ## 📖 পরিচিতি | About
 
-**দারুল হিকমাহ মডেল মাদ্রাসা** একটি আধুনিক ও ইসলামী শিক্ষার সমন্বিত শিক্ষাপ্রতিষ্ঠান, যা ২০২৫ সালে ফুলপুর, ময়মনসিংহে প্রতিষ্ঠিত হয়। এই ওয়েবসাইটটি প্রতিষ্ঠানের সকল তথ্য — ভর্তি, ফলাফল, বিভাগ, সুবিধা, ফি, গ্যালারি ও যোগাযোগ — সহজে সবার কাছে পৌঁছে দেওয়ার জন্য তৈরি করা হয়েছে।
+**দারুল হিকমাহ মডেল মাদ্রাসা** ময়মনসিংহ জেলার ফুলপুরে অবস্থিত একটি শিক্ষাপ্রতিষ্ঠান। ইসলামী শিক্ষার পাশাপাশি সাধারণ শিক্ষার সমন্বয়ে শিক্ষার্থীদের জ্ঞান, নৈতিকতা ও দক্ষতা বিকাশে প্রতিষ্ঠানটি কাজ করে।
 
-> A modern Islamic educational institution combining **Qawmi and General education**, located in Phulpur, Mymensingh. This website serves as the official online portal for students, parents, and well-wishers.
+এই ওয়েবসাইটের মাধ্যমে শিক্ষার্থী, অভিভাবক ও আগ্রহী ব্যক্তিরা মাদ্রাসার পরিচিতি, ভর্তি কার্যক্রম, পরীক্ষার ফলাফল, শিক্ষাবিভাগ, ফি কাঠামো, ছবি এবং যোগাযোগের তথ্য সহজে জানতে পারবেন।
+
+**English Description**
+
+Darul Hikmah Model Madrasah is an educational institution located in Phulpur, Mymensingh, Bangladesh. It aims to support students' academic development, Islamic knowledge, moral values, and practical skills.
+
+The official website provides information about admissions, examination results, academic programs, fees, photo galleries, and contact details for students, parents, and visitors.
 
 ---
 
-## ✨ বৈশিষ্ট্য | Features
+## ✨ ওয়েবসাইটের বৈশিষ্ট্য | Website Features
 
-- 📱 **সম্পূর্ণ রেসপনসিভ ডিজাইন** — মোবাইল, ট্যাব ও ডেস্কটপে নিখুঁত
-- 🧭 **সহজ নেভিগেশন** — একাধিক পেজে বিভক্ত পরিচ্ছন্ন মেনু
-- 🎓 **ভর্তি তথ্য ২০২৭** — ভর্তি ফরম ডাউনলোড ও নির্দেশনা
-- 📊 **ফলাফল চেক** — শিক্ষার্থীদের ফলাফল দেখার সুবিধা
-- 🖼️ **ফটো গ্যালারি** — মাদ্রাসার কার্যক্রমের ছবি
-- 💰 **ফি কাঠামো** — স্বচ্ছ ফি তালিকা
-- 🏫 **বিভাগসমূহ** — হিফয, নূরানী, কওমী ও সাধারণ বিভাগ
-- 🔍 **SEO অপটিমাইজড** — `robots.txt` ও `sitemap.xml` সহ
-- ⚡ **দ্রুত লোডিং** — শুধুমাত্র HTML, CSS, JavaScript (কোনো ফ্রেমওয়ার্ক নেই)
-- 📄 **অ্যাডমিশন ফরম PDF** — সরাসরি ডাউনলোডযোগ্য
+- **রেসপনসিভ ডিজাইন:** মোবাইল, ট্যাবলেট ও ডেস্কটপে ব্যবহার উপযোগী।
+- **সহজ নেভিগেশন:** পরিচ্ছন্ন মেনু ও সুসংগঠিত পেজ।
+- **ভর্তি কার্যক্রম:** ভর্তি-সংক্রান্ত তথ্য, নির্দেশনা ও ফরম।
+- **অনলাইন ফলাফল:** শিক্ষার্থীদের পরীক্ষার ফলাফল খোঁজার সুবিধা।
+- **ফটো গ্যালারি:** মাদ্রাসার বিভিন্ন কার্যক্রমের ছবি প্রদর্শন।
+- **ফি কাঠামো:** প্রযোজ্য ফি ও অন্যান্য আর্থিক তথ্য।
+- **শিক্ষাবিভাগ:** নূরানী, নাজেরা, হিফজ ও সাধারণ শিক্ষার বিভাগ-সংক্রান্ত তথ্য।
+- **সার্চ ইঞ্জিন অপটিমাইজেশন (SEO):** সার্চ ইঞ্জিনে ওয়েবসাইটের উপস্থিতি উন্নত করার ব্যবস্থা।
+- **দ্রুত লোডিং:** HTML, CSS ও JavaScript-ভিত্তিক ওয়েব প্রযুক্তি।
+- **ডাউনলোড সুবিধা:** উপলভ্য ভর্তি ফরম ও প্রয়োজনীয় PDF নথি ডাউনলোড।
 
 ---
 
 ## 🏫 এক নজরে মাদ্রাসা | At a Glance
 
-| বিষয় | তথ্য |
+| বিষয় | বিবরণ |
 |---|---|
-| **নাম** | দারুল হিকমাহ মডেল মাদ্রাসা |
-| **প্রতিষ্ঠা** | ২০২৫ সাল |
-| **ঠিকানা** | ইসলামী ব্যাংকের বিপরীতে, ফুলপুর, ময়মনসিংহ |
-| **ধরণ** | কওমী ও সাধারণ শিক্ষার সমন্বয় |
-| **শিক্ষার্থী** | ২০০+ |
-| **শিক্ষক** | ১৫+ |
-| **বিভাগ** | ৪টি |
-| **নিরাপত্তা** | ২৪/৭ |
+| প্রতিষ্ঠানের নাম | দারুল হিকমাহ মডেল মাদ্রাসা |
+| ইংরেজি নাম | Darul Hikmah Model Madrasah |
+| অবস্থান | ফুলপুর, ময়মনসিংহ, বাংলাদেশ |
+| ঠিকানা নির্দেশক | ইসলামী ব্যাংকের বিপরীতে |
+| শিক্ষার ধরন | ইসলামী ও সাধারণ শিক্ষা |
+| শিক্ষাবিভাগ | নূরানী, নাজেরা, হিফজ ও সাধারণ বিভাগ |
+| ওয়েবসাইট | [fahim618900-wq.github.io](https://fahim618900-wq.github.io/) |
+| হোস্টিং | GitHub Pages |
+
+> **দ্রষ্টব্য:** প্রতিষ্ঠার সাল, শিক্ষার্থী ও শিক্ষকের সংখ্যা এবং অন্যান্য পরিবর্তনশীল তথ্য নিশ্চিত করে এই অংশে যুক্ত করা উচিত।
 
 ---
 
-## 📂 প্রজেক্ট স্ট্রাকচার | Project Structure
+## 💻 ব্যবহৃত প্রযুক্তি | Technologies Used
 
-```
-darul-hikmah-website/
-│
-├── index.html                  # 🏠 হোমপেজ
-├── about.html                  # ℹ️ আমাদের সম্পর্কে
-├── admission.html              # 🎓 ভর্তি তথ্য ২০২৭
-├── departments.html            # 🏫 বিভাগসমূহ
-├── facilities.html             # 🛠️ সুবিধাসমূহ
-├── fee.html                    # 💰 ফি কাঠামো
-├── gallery.html                # 🖼️ ফটো গ্যালারি
-├── contact.html                # 📞 যোগাযোগ
-│
-├── result/                     # 📊 ফলাফল পেজ
-├── ph/                         # 🖼️ ছবি ও ফটো
-│
-├── style.css                   # 🎨 স্টাইলশিট
-├── script.js                   # ⚙️ জাভাস্ক্রিপ্ট
-├── logo.png                    # 🕌 মাদ্রাসার লোগো
-├── form.pdf                    # 📄 ভর্তি ফরম
-│
-├── robots.txt                  # 🔍 SEO - ক্রলার নিয়ম
-├── sitemap.xml                 # 🗺️ SEO - সাইটম্যাপ
-└── README.md                   # 📖 এই ফাইল
-```
+- **HTML5** — ওয়েবপেজের কাঠামো তৈরি।
+- **CSS3** — ডিজাইন, রং, বিন্যাস ও রেসপনসিভ লেআউট।
+- **JavaScript** — ইন্টারঅ্যাকটিভ সুবিধা ও ডায়নামিক কার্যক্রম।
+- **GitHub** — সোর্স কোড সংরক্ষণ ও সংস্করণ নিয়ন্ত্রণ।
+- **GitHub Pages** — ওয়েবসাইট প্রকাশ ও হোস্টিং।
 
 ---
 
-## 🚀 ব্যবহারবিধি | Getting Started
+## 📂 প্রজেক্টের কাঠামো | Project Structure
 
-### লোকালি চালানোর জন্য:
-
-**১. রিপোজিটরি ক্লোন করুন:**
-```bash
-git clone https://github.com/fahim618900-wq/fahim618900-wq.github.io.git
+```text
+fahim618900-wq.github.io/
+├── index.html
+├── logo.png
+├── style.css
+├── script.js
+├── robots.txt
+├── sitemap.xml
+├── admission/
+├── results/
+├── gallery/
+└── assets/
+    ├── images/
+    ├── documents/
+    └── icons/
 ```
 
-**২. ফোল্ডারে প্রবেশ করুন:**
-```bash
-cd fahim618900-wq.github.io
-```
-
-**৩. `index.html` ব্রাউজারে ওপেন করুন**
-
-অথবা লোকাল সার্ভার চালান:
-```bash
-python -m http.server 8000
-```
-তারপর ব্রাউজারে যান: `http://localhost:8000`
+*এটি একটি নমুনা কাঠামো। প্রকৃত রিপোজিটরিতে যে ফাইল ও ফোল্ডার রয়েছে, সেগুলোর সঙ্গে মিলিয়ে এই অংশটি সংশোধন করতে হবে।*
 
 ---
 
-## 🌐 ডিপ্লয়মেন্ট | Deployment
+## 🌐 ওয়েবসাইট | Live Website
 
-এই ওয়েবসাইটটি **GitHub Pages**-এর মাধ্যমে স্বয়ংক্রিয়ভাবে হোস্ট করা হয়েছে।
+ওয়েবসাইটটি দেখতে নিচের লিংকে প্রবেশ করুন:
 
-- **Branch:** `main`
-- **Live URL:** [https://fahim618900-wq.github.io](https://fahim618900-wq.github.io)
-- `main` ব্রাঞ্চে যেকোনো পুশ করলে কয়েক মিনিটের মধ্যে লাইভ সাইট আপডেট হয়ে যায়।
+**[https://fahim618900-wq.github.io/](https://fahim618900-wq.github.io/)**
 
 ---
 
-## 🛠️ ব্যবহৃত প্রযুক্তি | Tech Stack
+## 🎯 আমাদের লক্ষ্য | Our Mission
 
-| প্রযুক্তি | ব্যবহার |
-|---|---|
-| ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) | সাইটের স্ট্রাকচার (95.9%) |
-| ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white) | ডিজাইন ও স্টাইলিং (3.6%) |
-| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black) | ইন্টারঅ্যাকশন (0.5%) |
-| ![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-181717?style=flat&logo=github&logoColor=white) | হোস্টিং |
-
----
-
-## 👥 শিক্ষকমণ্ডলী | Faculty
-
-| নাম | পদ | বিষয় |
-|---|---|---|
-| আশিকুর রহমান | প্রধান শিক্ষক | — |
-| মো: হাফেজ ফজলে রাব্বি | হিফয বিভাগ প্রধান | হিফয |
-| শেখ হাবিব | সহকারী শিক্ষক | ইংরেজি (১ম-১০ম) |
-| মাওলানা শরিফুল ইসলাম | সহকারী শিক্ষক | আরবি, বাংলা (প্রে-নার্সারি) |
-| মোঃ আতিকুর রহমান | সাংস্কৃতিক শিক্ষক | প্রে-নার্সারি |
-| মো: রাসেল আহমেদ | পিয়ন | — |
-
----
-
-## 🏛️ গভর্নিং বডি | Governing Body
-
-**পরিচালনা পরিষদ:**
-- প্রধান পরিচালক — মোঃ সাদেকুল ইসলাম
-- পরিচালক — মোহাম্মদ আলী
-- পরিচালক — সিরাজ আলী
-- পরিচালক — উসমান গণী
-- পরিচালক — সাবিহা ইয়াসমীন সাথী
-
-**কমিটিসমূহ:** একাডেমিক • শৃঙ্খলা • অর্থ • সহপাঠ্যক্রমিক • নিরাপত্তা ও স্বাস্থ্য
-
----
-
-## 📞 যোগাযোগ | Contact
-
-| মাধ্যম | তথ্য |
-|---|---|
-| 📍 **ঠিকানা** | ইসলামী ব্যাংকের বিপরীত পার্শ্বে, ফুলপুর, ময়মনসিংহ |
-| 📱 **প্রধান শিক্ষক** | ০১৯৭০-৫১৭৫৬৬ |
-| 📱 **অফিস সহকারী** | ০১৯৭০-৫১৭৫৬৭ |
-| 📧 **ইমেইল** | darulhikmahphulpur2025@gmail.com |
-| 🕘 **অফিস সময়** | সকাল ৯টা – রাত ৯টা |
-
----
-
-## 🤝 অবদান রাখুন | Contributing
-
-উন্নয়নের পরামর্শ ও সংশোধনী সাদরে গ্রহণ করা হয়!
-
-1. এই রিপোজিটরি **Fork** করুন
-2. একটি নতুন **Branch** তৈরি করুন (`git checkout -b feature/improvement`)
-3. পরিবর্তন **Commit** করুন (`git commit -m 'Add some improvement'`)
-4. **Push** করুন (`git push origin feature/improvement`)
-5. একটি **Pull Request** খুলুন
-
-অথবা শুধু একটি **Issue** খুলে আপনার মতামত জানান। 🙏
-
----
-
-## 👨‍💻 ডেভেলপার | Developer
-
-<div align="center">
-
-**আব্দুল্লাহ ফাহিম**
-
-[![GitHub](https://img.shields.io/badge/GitHub-fahim618900--wq-181717?style=for-the-badge&logo=github)](https://github.com/fahim618900-wq)
-
-*এই ওয়েবসাইটের ডিজাইন ও ডেভেলপমেন্ট*
-
-</div>
-
----
-
-## 📄 লাইসেন্স | License
-
-```
-© ২০২৭ দারুল হিকমাহ মডেল মাদ্রাসা, ফুলপুর, ময়মনসিংহ।
-সকল অধিকার সংরক্ষিত।
-```
-
-এই প্রজেক্টটি **শিক্ষামূলক উদ্দেশ্যে** প্রকাশিত। মাদ্রাসার অনুমতি ছাড়া বাণিজ্যিক ব্যবহার নিষিদ্ধ। কোড শেখার উদ্দেশ্যে দেখা ও রেফারেন্স করা যাবে।
+শিক্ষার্থীদের মধ্যে জ্ঞানার্জনের আগ্রহ, নৈতিক মূল্যবোধ, শৃঙ্খলা ও দায়িত্ববোধ গড়ে তুলতে সহায়তা করা এবং ইসলামী শিক্ষার পাশাপাশি প্রয়োজনীয় সাধারণ শিক্ষার বিকাশে ভূমিকা রাখা।
 
 ---
 
 <div align="center">
 
-### 🌟 ভালো লাগলে একটি ⭐ স্টার দিন!
+**দারুল হিকমাহ মডেল মাদ্রাসা**
 
-**© ২০২৭ দারুল হিকমাহ মডেল মাদ্রাসা | ডিজাইন ও ডেভেলপমেন্ট: আব্দুল্লাহ ফাহিম**
-
-*"জ্ঞানের আলোয় আলোকিত হোক প্রতিটি প্রাণ"*
+*জ্ঞানের আলোয় আলোকিত হোক প্রতিটি প্রাণ।*
 
 </div>
-```
-
----
-
-## ✅ আমি যা যা নিজে থেকে যোগ করেছি (আপনি চাইলে এডিট করুন)
-
-| আইটেম | যা লিখেছি | কারণ |
-|---|---|---|
-| লাইসেন্স | Educational Use Only | আপনার প্রতিষ্ঠানের জন্য সবচেয়ে উপযুক্ত |
-| Tech Stack ব্যাজ | HTML/CSS/JS + GitHub Pages | আপনার রিপোতে যা আছে |
-| Contributing গাইড | স্ট্যান্ডার্ড GitHub ফরম্যাট | প্রফেশনাল দেখায় |
-| শিক্ষকমণ্ডলী টেবিল | আপনার ফাইল থেকে | সরাসরি নেওয়া |
-| গভর্নিং বডি | আপনার ফাইল থেকে | সরাসরি নেওয়া |
-| স্টার রিকোয়েস্ট | শেষে যুক্ত | README-তে প্রচলিত |
-
----
-
-## 📌 পরবর্তী ধাপ
-
-1. GitHub-এ যান → আপনার রিপোজিটরি → **Add a README** ক্লিক করুন
-2. উপরের পুরো কোডটি **কপি-পেস্ট** করুন
-3. **Commit changes** ক্লিক করুন
-4. ব্যস! আপনার রিপোজিটরির হোমপেজে সুন্দর README দেখা যাবে ✨
-
----
