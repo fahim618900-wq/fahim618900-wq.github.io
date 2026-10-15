@@ -1890,6 +1890,33 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #56b8
  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
 
+/* ==================== REFERENCE-ALIGNED HOME + MOBILE ==================== */
+:root{--primary:#176fc4;--primary-dark:#163d5d;--primary-deep:#102e48;--primary-light:#2d8ce5;--primary-soft:#eaf5ff;--accent:#15977e;--accent-dark:#117b68;--accent-light:#70d5b7;--accent-soft:#e9f8f3;--text-main:#17344e;--text-body:#3d5870;--text-muted:#6e879b;--bg:#f1f9ff;--border:#d7e8f4;--shadow-sm:0 4px 15px rgba(21,72,111,.07);--shadow-md:0 10px 28px rgba(21,72,111,.11);--shadow-lg:0 18px 42px rgba(21,72,111,.15)}
+body{background:linear-gradient(180deg,#eaf7ff 0%,#f8fcff 54%,#edf7ff 100%);color:var(--text-body)}.container{max-width:1480px}
+.hero-header{position:relative;isolation:isolate;padding:40px 0 44px;min-height:370px;border:0;overflow:hidden;background:linear-gradient(90deg,rgba(239,249,255,.98) 0%,rgba(239,249,255,.92) 39%,rgba(239,249,255,.20) 74%),url('https://fahim618900-wq.github.io/ph/building.jpg') center 46%/cover no-repeat}
+.hero-header::before{z-index:-1;background:linear-gradient(0deg,rgba(22,91,131,.06),transparent 55%),radial-gradient(circle at 10% 10%,rgba(255,255,255,.65),transparent 40%)}
+.hero-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,280px);gap:30px;align-items:center}.hero-logo-wrap{display:none}.hero-text{min-width:0}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#117d6d,#21a68e);color:white;border-radius:30px;padding:5px 16px;font-weight:700;font-size:.88rem;margin-bottom:14px;box-shadow:0 5px 14px rgba(17,125,109,.16)}
+.hero-title{font-size:clamp(2rem,3.6vw,3.15rem);line-height:1.28;color:#123451;background:none;-webkit-text-fill-color:#123451;filter:none;text-shadow:none;margin-bottom:9px}
+.hero-tagline{color:#315570;font-size:clamp(1rem,1.45vw,1.2rem);font-weight:500;max-width:760px;margin-bottom:18px}.hero-divider{display:none}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px 20px;margin:20px 0 22px;color:#244e6c;font-size:.98rem;font-weight:600}.hero-meta span{display:inline-flex;align-items:center;gap:8px}.hero-meta i{color:#1979c7}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}.hero-actions a{min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:11px 20px;border-radius:14px;font-weight:700;transition:transform .2s,box-shadow .2s}.hero-actions a:hover{transform:translateY(-2px)}
+.hero-action-primary{color:white;background:linear-gradient(135deg,#287fe0,#1686dc);box-shadow:0 8px 20px rgba(34,126,218,.22)}.hero-action-primary:hover{color:white;box-shadow:0 11px 24px rgba(34,126,218,.3)}.hero-action-secondary{color:#205c86;background:rgba(255,255,255,.8);border:1px solid #8eb7d6}.hero-action-secondary:hover{color:#124a75;background:#fff}
+.hero-quote{background:rgba(255,255,255,.90);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.92);border-radius:22px;padding:24px 20px;text-align:center;box-shadow:0 16px 35px rgba(17,67,101,.15);align-self:center}
+.quote-icon{width:48px;height:48px;border-radius:14px;background:#e5f5f4;color:#147f83;display:grid;place-items:center;margin:0 auto 12px;font-size:1.45rem}.hero-quote blockquote{font-family:var(--font-display);font-size:1.15rem;line-height:1.8;color:#183d5b;margin:0 0 8px;font-weight:600}.hero-quote p{font-size:.85rem;color:#6d879a;margin:0}
+.notice-bar{background:rgba(255,255,255,.96);border-bottom:1px solid #d8e9f5;box-shadow:0 3px 12px rgba(21,74,112,.05)}.notice-tag{background:linear-gradient(135deg,#147d72,#20a58d);color:#fff;clip-path:none;border-radius:0 12px 12px 0;padding:0 22px}.notice-link{color:#205372}
+.modern-nav{background:rgba(255,255,255,.95);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid #d9eaf6;box-shadow:0 5px 18px rgba(18,66,103,.08);padding:8px 0}.nav-brand-mobile{color:#143956}.nav-brand-mobile img{border:2px solid #bce9dd}.nav-toggle-btn{border:1px solid #d2e4f1;color:#174e76;background:#f4faff;border-radius:12px}
+.nav-link-modern{color:#244d6b;border-bottom:1px solid #eaf2f8}.nav-link-modern i{color:#168f83}.nav-link-modern:hover,.nav-link-modern.active{color:#126bc3;background:#eaf5ff;border-radius:10px}.nav-link-modern:hover i,.nav-link-modern.active i{color:#126bc3}.dropdown-panel{background:#f5faff}.dropdown-panel a{color:#315975}.dropdown-panel a:hover{background:#e6f4ff;color:#096bc6}.nav-search input{background:#f5faff;border-color:#d6e7f4;color:#193f5d}.nav-search input::placeholder{color:#7890a3}.nav-search input:focus{background:#fff;border-color:#72b8ed}.nav-search button{background:#1676d2;color:#fff}
+.main-content{padding:28px 0 48px}.hero-slider{border:1px solid #d7e8f5;border-radius:22px;box-shadow:var(--shadow-md);margin-bottom:28px}.hero-slider .carousel-item img{height:clamp(220px,32vw,390px)}.hero-slider .carousel-caption{background:linear-gradient(0deg,rgba(13,47,72,.82),transparent);padding:50px 30px 26px}
+.welcome-card,.stats-strip,.quick-tile,.dept-card,.fac-card,.events-card{border:1px solid #d7e8f5;border-radius:20px;background:rgba(255,255,255,.94);box-shadow:var(--shadow-sm)}.welcome-card{padding:clamp(22px,3vw,38px);margin-bottom:28px}.welcome-card::before{background:linear-gradient(180deg,#1676d2,#20ad91)}.section-title{color:#153e60;font-size:clamp(1.4rem,2.3vw,2rem)}.section-title::after{background:linear-gradient(90deg,#1676d2,#20b396);border-radius:8px}.section-subtitle{color:#68839a}
+.stats-strip{padding:20px 12px;margin:24px 0 30px}.stat-number{color:#1676d2}.quick-grid{gap:18px}.quick-tile{padding:23px 20px;transition:transform .22s,box-shadow .22s,border-color .22s}.quick-tile:hover,.dept-card:hover,.fac-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:#b8d9ef}.quick-tile-icon{background:linear-gradient(135deg,#1676d2,#53b6e9);box-shadow:0 8px 18px rgba(22,118,210,.19)}.dept-card,.fac-card{padding:22px}.dept-icon,.fac-icon{background:linear-gradient(135deg,#e5f3ff,#e2faf3);color:#137d94;border:1px solid #d2eee7}.btn-modern{border-radius:12px}.btn-primary-modern{background:linear-gradient(135deg,#1676d2,#318fea)}.btn-gold-modern{background:linear-gradient(135deg,#159b82,#27b89b);color:#fff}
+.footer{background:linear-gradient(135deg,#102f49,#164e70);border-top:4px solid #20a58d;color:#e5f2fb;padding:34px 0 18px}.footer h4{color:#fff}.footer p,.footer-contact-item p{color:#d2e6f3}.footer-links a{color:#d8eaf8}.footer-links a:hover{color:#77e0c5}.social-link{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16)}.copyright{border-top:1px solid rgba(255,255,255,.15)}#backToTop{background:#1676d2;border-radius:14px}
+@media(min-width:992px){.nav-container{flex-wrap:nowrap}.nav-toggle-btn{display:none}.nav-brand-mobile{margin-right:12px;flex-shrink:0}.nav-menu-modern{display:flex!important;flex-direction:row;align-items:center;justify-content:center;width:auto;flex:1;background:transparent;padding:0;margin:0;max-height:none;overflow:visible;border:0;border-radius:0;gap:0}.nav-menu-modern .nav-item-modern{width:auto}.nav-link-modern{width:auto;padding:10px 9px;border:0;border-radius:10px;white-space:nowrap;font-size:.88rem}.dropdown-panel{position:absolute;top:calc(100% + 8px);left:0;min-width:220px;max-height:none;padding:8px;overflow:visible;background:#fff;border:1px solid #d9e9f5;border-radius:14px;box-shadow:0 15px 35px rgba(14,57,91,.16);opacity:0;visibility:hidden;transform:translateY(8px);transition:all .2s ease;z-index:1050}.nav-dropdown:hover .dropdown-panel,.nav-dropdown:focus-within .dropdown-panel,.nav-dropdown.open .dropdown-panel{opacity:1;visibility:visible;transform:translateY(0);padding:8px}.dropdown-panel a{border-radius:8px;padding:10px 12px}.nav-search{width:170px;margin:0 0 0 6px;flex-shrink:0}}
+@media(max-width:991.98px){.hero-header{background-position:62% center}.hero-inner{grid-template-columns:minmax(0,1fr) 220px;gap:18px}.hero-title{font-size:clamp(1.8rem,4vw,2.5rem)}.hero-quote{padding:18px 14px}.hero-quote blockquote{font-size:1rem}}
+@media(max-width:767.98px){body{font-size:16px;line-height:1.8}.container{padding-left:15px;padding-right:15px}.hero-header{padding:27px 0 30px;min-height:0;background-image:linear-gradient(90deg,rgba(239,249,255,.96),rgba(239,249,255,.88)),url('https://fahim618900-wq.github.io/ph/building.jpg');background-position:center}.hero-inner{grid-template-columns:1fr;gap:18px;text-align:center}.hero-badge{font-size:.78rem;margin-bottom:12px}.hero-title{font-size:clamp(1.75rem,7vw,2.35rem);line-height:1.35}.hero-tagline{font-size:1rem;margin:0 auto 14px}.hero-meta{justify-content:center;gap:8px 14px;font-size:.86rem;margin:17px 0}.hero-actions{justify-content:center}.hero-actions a{width:100%;min-height:48px}.hero-quote{width:100%;max-width:420px;margin:0 auto;padding:16px}.quote-icon{width:40px;height:40px;margin-bottom:8px}.hero-quote blockquote{font-size:1rem}.notice-bar-inner{min-height:46px}.notice-tag{padding:0 12px;font-size:.82rem}.notice-link{font-size:.85rem;padding:0 9px}.modern-nav{padding:6px 0}.nav-container{gap:8px}.nav-brand-mobile{font-size:.96rem}.nav-menu-modern{max-height:0;overflow:hidden;transition:max-height .28s ease;background:rgba(255,255,255,.98);border-radius:0 0 15px 15px}.nav-menu-modern.open{max-height:75vh;overflow-y:auto;padding:8px 0 14px}.nav-link-modern{padding:12px 16px;min-height:46px}.nav-search{margin:12px 14px;width:calc(100% - 28px)}.main-content{padding:20px 0 34px}.hero-slider{border-radius:16px;margin-bottom:22px}.hero-slider .carousel-item img{height:clamp(210px,58vw,310px)}.carousel-caption{padding:34px 14px 18px}.welcome-card{margin:20px 0;padding:21px 17px}.stats-strip{padding:14px 7px;margin:18px 0 28px}.stat-number{font-size:clamp(1.7rem,7vw,2.4rem)}.quick-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.quick-tile{padding:17px 13px;min-width:0}.quick-tile h5{font-size:1rem;overflow-wrap:anywhere}.quick-tile p{font-size:.88rem}.dept-card,.fac-card{padding:18px 14px}.footer{padding:28px 0 16px}.float-group{right:11px;bottom:82px}.float-btn{width:43px;height:43px}}
+@media(max-width:380px){.quick-grid{grid-template-columns:1fr}.hero-title{font-size:1.7rem}.hero-meta{font-size:.8rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
 </style>
 </head>
 <body>
@@ -1899,17 +1926,28 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #56b8
     <div class="container">
         <div class="hero-inner">
             <div class="hero-logo-wrap">
-                <img src="https://i.ibb.co/9HydQGR4/logo.jpg" alt="লোগো" class="hero-logo">
+                <img src="https://i.ibb.co/9HydQGR4/logo.jpg" alt="দারুল হিকমাহ মডেল মাদ্রাসার লোগো" class="hero-logo">
             </div>
             <div class="hero-text">
-                <h1 class="hero-title">দারুল হিকমাহ মডেল মাদ্রাসা</h1>
-                <div class="hero-location">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>ইসলামী ব্যাংকের বিপরীত পার্শ্বে, ফুলপুর, ময়মনসিংহ</span>
+                <div class="hero-badge"><i class="fas fa-seedling"></i> শিক্ষা · প্রযুক্তি · সমাজের জন্য কাজ</div>
+                <h1 class="hero-title">দারুল হিকমাহ মডেল মাদ্রাসা, ফুলপুর</h1>
+                <p class="hero-tagline">মেধা জন্মগত কিন্তু একে বিকশিত করার দায়িত্ব আমাদের।</p>
+                <div class="hero-meta">
+                    <span><i class="fas fa-map-marker-alt"></i> ফুলপুর, ময়মনসিংহ</span>
+                    <span><i class="fas fa-calendar-alt"></i> স্থাপিত: ২০২৪</span>
+                    <span><i class="fas fa-id-card"></i> EIIN: 107906</span>
+                    <span><i class="fas fa-code"></i> Code: 11004</span>
                 </div>
-                <div class="hero-divider"></div>
-                <p class="hero-tagline">আধুনিক শিক্ষা ও ইসলামী মূল্যবোধের সমন্বয়ে গড়ে উঠেছে একটি আদর্শ শিক্ষাপ্রতিষ্ঠান | ২০২৭ শিক্ষাবর্ষ</p>
+                <div class="hero-actions">
+                    <a href="result/index.html" class="hero-action-primary"><i class="fas fa-globe"></i> অনলাইন ফলাফল দেখুন <i class="fas fa-chevron-right"></i></a>
+                    <a href="about.html" class="hero-action-secondary"><i class="fas fa-file-alt"></i> বিস্তারিত জানুন</a>
+                </div>
             </div>
+            <aside class="hero-quote" aria-label="কুরআনের উদ্ধৃতি">
+                <div class="quote-icon"><i class="fas fa-book-open"></i></div>
+                <blockquote>“পড় তোমার প্রভুর নামে যিনি তোমাকে সৃষ্টি করেছেন।”</blockquote>
+                <p>— সূরা আল-আলাক (৯৬:১)</p>
+            </aside>
         </div>
     </div>
 </header>
